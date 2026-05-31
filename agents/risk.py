@@ -25,12 +25,12 @@ ACE_INHIBITORS = {"lisinopril", "enalapril", "ramipril", "benazepril", "captopri
 POTASSIUM_SPARING_DIURETICS = {"spironolactone", "eplerenone", "amiloride", "triamterene"}
 
 
-def _numbers_after(label: str, text: str) -> list[float]:
+def _numbers_after(label: str, text: str) -> list:
     matches = re.findall(rf"\b{re.escape(label)}\s*[:=]?\s*(\d+(?:\.\d+)?)", text, re.I)
     return [float(match) for match in matches]
 
 
-def _max_number_after(label: str, text: str) -> float | None:
+def _max_number_after(label: str, text: str):
     values = _numbers_after(label, text)
     return max(values) if values else None
 
