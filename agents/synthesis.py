@@ -36,9 +36,14 @@ def run(
         risk_msg["payload"].get("flags", []),
         key=lambda f: {"HIGH": 0, "MEDIUM": 1, "LOW": 2}.get(f.get("severity", "LOW"), 3)
     )
+    # Truncate interaction warnings to keep prompt within token limits
+    interactions = [
+        {**i, "warnings": i["warnings"][:150]}
+        for i in medication_msg["payload"].get("interactions", [])
+    ]
     payload_in = {
         "medications": json.dumps(medication_msg["payload"].get("medications", [])),
-        "interactions": json.dumps(medication_msg["payload"].get("interactions", [])),
+        "interactions": json.dumps(interactions),
         "timeline": json.dumps(timeline_msg["payload"].get("events", [])),
         "flags": json.dumps(flags),
         "raw_text": ingestion_msg["payload"]["raw_text"][:1500]
