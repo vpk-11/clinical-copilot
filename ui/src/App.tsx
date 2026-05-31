@@ -9,15 +9,15 @@ export default function App() {
   const [step, setStep] = useState<AppStep>("upload");
   const [patientId, setPatientId] = useState("DEMO-001");
   const [normalizedText, setNormalizedText] = useState("");
-  const [filename, setFilename] = useState("");
+  const [filenames, setFilenames] = useState<string[]>([]);
   const [showPreview, setShowPreview] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<AnalysisResult | null>(null);
 
-  const handleFileReady = useCallback((text: string, name: string) => {
+  const handleFileReady = useCallback((text: string, names: string[]) => {
     setNormalizedText(text);
-    setFilename(name);
+    setFilenames(names);
     setStep("preview");
     setError("");
     setShowPreview(false);
@@ -40,7 +40,7 @@ export default function App() {
   const handleReset = useCallback(() => {
     setStep("upload");
     setNormalizedText("");
-    setFilename("");
+    setFilenames([]);
     setResult(null);
     setError("");
     setShowPreview(false);
@@ -106,7 +106,7 @@ export default function App() {
                   Structured Clinical Text
                 </h2>
                 <p className="text-xs text-slate-500 mt-0.5">
-                  Normalized from {filename} by InputAgent — review before analysis
+                  Normalized from {filenames.join(", ")} by InputAgent — review before analysis
                 </p>
               </div>
               <div className="flex items-center gap-2">

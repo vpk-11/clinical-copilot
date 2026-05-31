@@ -77,6 +77,7 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
               content={result.doctor_report}
               icon="doctor"
               accentClass="bg-clinical-50 text-clinical-800"
+              downloadFilename="clinical-report"
             />
           </div>
           <div className={activeTab === "doctor" ? "hidden md:flex flex-col" : "flex flex-col"}>
@@ -86,6 +87,7 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
               content={result.patient_report}
               icon="patient"
               accentClass="bg-teal-50 text-teal-800"
+              downloadFilename="patient-summary"
             />
           </div>
         </div>

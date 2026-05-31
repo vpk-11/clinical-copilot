@@ -7,20 +7,30 @@ import json
 from datetime import date
 from shared.llm import chat
 
-PATIENT_PROMPT = """You are writing a health summary for a patient with no medical background.
-Use simple, clear language a 10th grader can understand.
-Avoid medical jargon. When you must use a medical term, explain it in parentheses right away.
-Write in second person ("You came in because...").
-Be warm but factual. Do not alarm unnecessarily, but do not downplay serious issues.
+PATIENT_PROMPT = """You are writing a personal health summary for a patient with no medical background.
+Use simple, clear language anyone can understand. Avoid medical jargon entirely.
+When you must use a medical term, explain it in plain words in parentheses immediately after.
+Write in second person ("You came in...", "Your body is...").
+Be honest, warm, and direct. Do not minimize serious findings, but do not cause unnecessary panic.
 
-Structure your response as markdown with these sections:
-## Why You Came In
-## Warning Signs We Found
-For each flag: one sentence saying what it is, one sentence explaining why it matters.
-## Your Medications
-Brief table: Drug | What it does
-## What to Expect Next
-2-3 sentences on next steps from the plan.
+Use exactly these four sections:
+
+## What Is Happening
+2-3 sentences explaining the diagnosis and current state in plain terms.
+Describe what is physically happening inside the body — no jargon.
+
+## Why This Happened
+1-2 sentences on the cause or contributing factors. What led to this.
+
+## What We Are Doing About It
+Bullet list: specific treatments, medications being given or changed, procedures ordered.
+One bullet per action. Plain language — "We are giving you water pills through an IV to remove excess fluid."
+
+## What You Should Do Next
+Bullet list: patient instructions, warning signs to watch for, follow-up steps, questions to ask.
+Include anything the patient needs to actively do or know before leaving.
+
+Clinical data:
 
 Clinical data:
 SOAP Note: {soap}
