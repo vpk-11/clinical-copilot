@@ -30,6 +30,6 @@ def chat(prompt: str, max_tokens: int = 1000, retries: int = 3) -> str:
             return resp.choices[0].message.content
         except Exception as e:
             if attempt < retries - 1 and ("rate" in str(e).lower() or "429" in str(e)):
-                time.sleep(2 ** attempt)  # 1s, 2s backoff
+                time.sleep(5 * (attempt + 1))  # 5s, 10s backoff
                 continue
             raise
