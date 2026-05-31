@@ -1,19 +1,19 @@
-# ClinicalCopilot 🏥
+# ClinicalCopilot
 
-> Multi-agent AI system that transforms unstructured medical charts into structured SOAP notes with automated red flag detection.
+> Transforms unstructured medical charts into structured SOAP notes with red flag detection.
 > Built at AGI House × W&B Multi-Agent Orchestration Build Day — May 31, 2026
 
 ---
 
 ## What It Does
 
-Paste a raw, messy clinical chart → ClinicalCopilot runs **5 specialized AI agents in parallel** and returns:
+Paste a raw clinical chart and get back:
 
-- ✅ A structured **SOAP note** (Subjective / Objective / Assessment / Plan)
-- 🚨 Prioritized **red flags** (critical vitals, dangerous lab values, acute diagnoses)
-- 💊 **Medication list** with drug interaction alerts via OpenFDA
-- 📅 **Chronological medical timeline** reconstructed from notes
-- 🔍 Full **W&B Weave audit trail** of every agent decision
+- A structured **SOAP note** (Subjective / Objective / Assessment / Plan)
+- Prioritized **red flags** (critical vitals, dangerous lab values, acute diagnoses)
+- **Medication list** with drug interaction alerts via OpenFDA
+- **Chronological medical timeline** reconstructed from notes
+- **W&B Weave audit trail** of every agent decision
 
 ---
 
