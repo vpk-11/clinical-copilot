@@ -92,10 +92,12 @@ if __name__ == "__main__":
     total_passed = 0
     total_checks = 0
 
-    for name, path in CASES:
+    for idx, (name, path) in enumerate(CASES):
         p, t = run_case(name, path)
         total_passed += p
         total_checks += t
+        if idx < len(CASES) - 1:
+            time.sleep(2)  # avoid Groq rate limits between cases
 
     print(f"\n{'='*55}")
     print(f"  TOTAL: {total_passed}/{total_checks} checks passed across {len(CASES)} cases")
