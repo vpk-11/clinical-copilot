@@ -217,7 +217,7 @@ Every agent call is wrapped with a `@weave.op` decorator. The Weave dashboard sh
 - Token usage per LLM call
 - Full trace graph showing the parallel fan-out
 
-**Weave Dashboard:** [INSERT URL after setup]
+**Weave Dashboard:** https://wandb.ai/abhale-university-of-massachusetts/clinical-copilot/weave
 
 ---
 
