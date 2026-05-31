@@ -9,3 +9,7 @@ build/
 .venv/
 venv/
 *.venv
+graphify-out/manifest.json
+graphify-out/cost.json
+
+.claude/
