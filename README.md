@@ -3,6 +3,8 @@
 > Transforms unstructured medical charts into structured SOAP notes with red flag detection.
 > Built at AGI House × W&B Multi-Agent Orchestration Build Day — May 31, 2026
 
+**📹 Demo Recording:** [Watch here](https://drive.google.com/file/d/1O5VG0oMqfU5h_XWtX1KQuSq83G04O8Xy/view?usp=sharing)
+
 ---
 
 ## What It Does
