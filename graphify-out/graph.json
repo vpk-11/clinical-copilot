@@ -1,0 +1,999 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "multi_agent_pipeline_flow",
+        "label": "Multi-Agent Clinical Pipeline Flow",
+        "nodes": [
+          "readme_agent_ingestion",
+          "readme_agent_medication",
+          "readme_agent_timeline",
+          "readme_agent_risk",
+          "readme_agent_synthesis"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "README.md"
+      },
+      {
+        "id": "weave_tracing_integration",
+        "label": "W&B Weave Tracing Integration",
+        "nodes": [
+          "weave_integration_tracer_init_weave",
+          "weave_integration_tracer_trace_agent",
+          "readme_wandb_weave"
+        ],
+        "relation": "implement",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "weave_integration/tracer.py"
+      },
+      {
+        "id": "api_pipeline_contract",
+        "label": "API-Pipeline-Contract Data Flow",
+        "nodes": [
+          "api_main_analyze_endpoint",
+          "orchestrator_pipeline_run_pipeline",
+          "shared_models_agentmessage"
+        ],
+        "relation": "participate_in",
+        "confidence": "INFERRED",
+        "confidence_score": 0.95,
+        "source_file": "api/main.py"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "weave_integration/__init__.py",
+      "source_location": "L1",
+      "id": "weave_integration_init_py",
+      "community": 6,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "tracer.py",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L1",
+      "id": "weave_integration_tracer_py",
+      "community": 0,
+      "norm_label": "tracer.py"
+    },
+    {
+      "label": "init_weave()",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L13",
+      "id": "weave_integration_tracer_init_weave",
+      "community": 0,
+      "norm_label": "init_weave()"
+    },
+    {
+      "label": "trace_agent()",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L30",
+      "id": "weave_integration_tracer_trace_agent",
+      "community": 0,
+      "norm_label": "trace_agent()"
+    },
+    {
+      "label": "Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med",
+      "file_type": "rationale",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L31",
+      "id": "weave_integration_tracer_rationale_31",
+      "community": 0,
+      "norm_label": "decorator factory. wraps an agent run() function with a weave op.     usage: med"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "agents/__init__.py",
+      "source_location": "L1",
+      "id": "agents_init_py",
+      "community": 7,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "models.py",
+      "file_type": "code",
+      "source_file": "shared/models.py",
+      "source_location": "L1",
+      "id": "shared_models_py",
+      "community": 5,
+      "norm_label": "models.py"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "shared/models.py",
+      "source_location": "L4",
+      "id": "shared_models_agentmessage",
+      "community": 5,
+      "norm_label": "agentmessage"
+    },
+    {
+      "label": "TypedDict",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "typeddict",
+      "community": 5,
+      "norm_label": "typeddict"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "shared/__init__.py",
+      "source_location": "L1",
+      "id": "shared_init_py",
+      "community": 8,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "api/__init__.py",
+      "source_location": "L1",
+      "id": "api_init_py",
+      "community": 9,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L1",
+      "id": "api_main_py",
+      "community": 2,
+      "norm_label": "main.py"
+    },
+    {
+      "label": "AnalyzeRequest",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L27",
+      "id": "api_main_analyzerequest",
+      "community": 2,
+      "norm_label": "analyzerequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "id": "basemodel",
+      "community": 2,
+      "norm_label": "basemodel"
+    },
+    {
+      "label": "AnalyzeResponse",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L32",
+      "id": "api_main_analyzeresponse",
+      "community": 2,
+      "norm_label": "analyzeresponse"
+    },
+    {
+      "label": "analyze()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L45",
+      "id": "api_main_analyze",
+      "community": 2,
+      "norm_label": "analyze()"
+    },
+    {
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L69",
+      "id": "api_main_health",
+      "community": 2,
+      "norm_label": "health()"
+    },
+    {
+      "label": "serve_ui()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L74",
+      "id": "api_main_serve_ui",
+      "community": 4,
+      "norm_label": "serve_ui()"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "orchestrator/__init__.py",
+      "source_location": "L1",
+      "id": "orchestrator_init_py",
+      "community": 10,
+      "norm_label": "__init__.py"
+    },
+    {
+      "label": "pipeline.py",
+      "file_type": "code",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L1",
+      "id": "orchestrator_pipeline_py",
+      "community": 3,
+      "norm_label": "pipeline.py"
+    },
+    {
+      "label": "run_pipeline()",
+      "file_type": "code",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L8",
+      "id": "orchestrator_pipeline_run_pipeline",
+      "community": 3,
+      "norm_label": "run_pipeline()"
+    },
+    {
+      "label": "Temporary stub for testing the API.     Person 3 replaces this entire file with",
+      "file_type": "rationale",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L9",
+      "id": "orchestrator_pipeline_rationale_9",
+      "community": 3,
+      "norm_label": "temporary stub for testing the api.     person 3 replaces this entire file with"
+    },
+    {
+      "label": "W&B wandb.init call",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 18",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "weave_integration_tracer_wandb_init",
+      "community": 0,
+      "norm_label": "w&b wandb.init call"
+    },
+    {
+      "label": "weave.op decorator wrapping",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 37",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "weave_integration_tracer_weave_op",
+      "community": 0,
+      "norm_label": "weave.op decorator wrapping"
+    },
+    {
+      "label": "analyze endpoint (POST /analyze)",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "line 44",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "api_main_analyze_endpoint",
+      "community": 4,
+      "norm_label": "analyze endpoint (post /analyze)"
+    },
+    {
+      "label": "health endpoint (GET /health)",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "line 68",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "api_main_health_endpoint",
+      "community": 11,
+      "norm_label": "health endpoint (get /health)"
+    },
+    {
+      "label": "FastAPI app instance",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "line 16",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "api_main_fastapi_app",
+      "community": 12,
+      "norm_label": "fastapi app instance"
+    },
+    {
+      "label": "Pipeline Stub Design",
+      "file_type": "rationale",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Stub allows Person 2's API to run independently for testing before the real async pipeline (Person 3) is ready. Separation lets parallel team development proceed without blocking on full pipeline integration.",
+      "id": "orchestrator_pipeline_stub_design",
+      "community": 3,
+      "norm_label": "pipeline stub design"
+    },
+    {
+      "label": "analyze() JS function",
+      "file_type": "code",
+      "source_file": "ui/index.html",
+      "source_location": "line 90",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui_index_analyze_fn",
+      "community": 4,
+      "norm_label": "analyze() js function"
+    },
+    {
+      "label": "renderResults() JS function",
+      "file_type": "code",
+      "source_file": "ui/index.html",
+      "source_location": "line 118",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "ui_index_renderresults_fn",
+      "community": 4,
+      "norm_label": "renderresults() js function"
+    },
+    {
+      "label": "ClinicalCopilot System",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "line 1",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Multi-agent AI system built at AGI House x W&B hackathon. Architecture decision: 5 specialized agents run with asyncio parallel fan-out (Medication + Timeline parallel, Risk waits for Medication, Synthesis waits for all 4) to minimize latency. W&B Weave chosen for full auditability of clinical AI decisions.",
+      "id": "readme_clinicalcopilot",
+      "community": 0,
+      "norm_label": "clinicalcopilot system"
+    },
+    {
+      "label": "IngestionAgent",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 26",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Cleans and chunks raw clinical text without using an LLM, keeping preprocessing deterministic and fast.",
+      "id": "readme_agent_ingestion",
+      "community": 1,
+      "norm_label": "ingestionagent"
+    },
+    {
+      "label": "MedicationAgent",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 29",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_agent_medication",
+      "community": 1,
+      "norm_label": "medicationagent"
+    },
+    {
+      "label": "TimelineAgent",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 31",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_agent_timeline",
+      "community": 1,
+      "norm_label": "timelineagent"
+    },
+    {
+      "label": "RiskAgent",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 33",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_agent_risk",
+      "community": 1,
+      "norm_label": "riskagent"
+    },
+    {
+      "label": "SynthesisAgent",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 36",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_agent_synthesis",
+      "community": 1,
+      "norm_label": "synthesisagent"
+    },
+    {
+      "label": "AgentMessage Shared Contract",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 88",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Every agent input/output uses one typed contract (AgentMessage TypedDict) so team members can build agents independently and integrate reliably. The trace_id field propagates the same UUID4 across all agents in a pipeline run, enabling full Weave trace correlation.",
+      "id": "readme_agentmessage_contract",
+      "community": 5,
+      "norm_label": "agentmessage shared contract"
+    },
+    {
+      "label": "OpenFDA Drug Label API",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 148",
+      "source_url": "https://api.fda.gov/drug/label.json",
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_openfda_integration",
+      "community": 1,
+      "norm_label": "openfda drug label api"
+    },
+    {
+      "label": "W&B Weave Audit Trail",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 189",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_wandb_weave",
+      "community": 0,
+      "norm_label": "w&b weave audit trail"
+    },
+    {
+      "label": "Anthropic Claude API (claude-sonnet-4-20250514)",
+      "file_type": "concept",
+      "source_file": "README.md",
+      "source_location": "line 144",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "id": "readme_anthropic_claude",
+      "community": 1,
+      "norm_label": "anthropic claude api (claude-sonnet-4-20250514)"
+    },
+    {
+      "label": "Parallel asyncio Agent Fan-out Pattern",
+      "file_type": "rationale",
+      "source_file": "README.md",
+      "source_location": "line 48",
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Medication and Timeline run in parallel to reduce total pipeline latency. Risk waits for Medication output because drug risk analysis depends on the extracted medication list. Synthesis waits for all four because it merges all outputs into the SOAP note.",
+      "id": "readme_parallel_asyncio_pattern",
+      "community": 3,
+      "norm_label": "parallel asyncio agent fan-out pattern"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_py",
+      "target": "weave_integration_tracer_init_weave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_py",
+      "target": "weave_integration_tracer_trace_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/main.py",
+      "source_location": "line 12",
+      "weight": 1.0,
+      "source": "api_main_analyze_endpoint",
+      "target": "weave_integration_tracer_init_weave"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 18",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_init_weave",
+      "target": "weave_integration_tracer_wandb_init"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 13",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_init_weave",
+      "target": "readme_wandb_weave"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_rationale_31",
+      "target": "weave_integration_tracer_trace_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 37",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_trace_agent",
+      "target": "weave_integration_tracer_weave_op"
+    },
+    {
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 30",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_trace_agent",
+      "target": "readme_wandb_weave"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "line 30",
+      "weight": 1.0,
+      "source": "weave_integration_tracer_trace_agent",
+      "target": "readme_agent_ingestion"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/models.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "shared_models_py",
+      "target": "shared_models_agentmessage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/models.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "shared_models_agentmessage",
+      "target": "typeddict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "api/main.py",
+      "source_location": "line 32",
+      "weight": 1.0,
+      "source": "api_main_analyzeresponse",
+      "target": "shared_models_agentmessage"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "line 8",
+      "weight": 1.0,
+      "source": "orchestrator_pipeline_run_pipeline",
+      "target": "shared_models_agentmessage"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "shared/models.py",
+      "source_location": "line 4",
+      "weight": 1.0,
+      "source": "shared_models_agentmessage",
+      "target": "readme_agentmessage_contract"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "api_main_py",
+      "target": "api_main_analyzerequest",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "api_main_py",
+      "target": "api_main_analyzeresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "api_main_py",
+      "target": "api_main_analyze",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "api_main_py",
+      "target": "api_main_health",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "api_main_py",
+      "target": "api_main_serve_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "api_main_analyzerequest",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "api_main_analyzeresponse",
+      "target": "basemodel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "api_main_analyze",
+      "target": "api_main_analyzeresponse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "api/main.py",
+      "source_location": "line 32",
+      "weight": 1.0,
+      "source": "api_main_analyzeresponse",
+      "target": "ui_index_renderresults_fn"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "api/main.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "api_main_analyze",
+      "target": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "api/main.py",
+      "source_location": "line 73",
+      "weight": 1.0,
+      "source": "api_main_serve_ui",
+      "target": "ui_index_analyze_fn"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "orchestrator_pipeline_py",
+      "target": "orchestrator_pipeline_run_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "orchestrator_pipeline_rationale_9",
+      "target": "orchestrator_pipeline_run_pipeline",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "api/main.py",
+      "source_location": "line 49",
+      "weight": 1.0,
+      "source": "api_main_analyze_endpoint",
+      "target": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "line 32",
+      "weight": 1.0,
+      "source": "orchestrator_pipeline_run_pipeline",
+      "target": "readme_agent_ingestion"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "line 1",
+      "weight": 1.0,
+      "source": "orchestrator_pipeline_stub_design",
+      "target": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 48",
+      "weight": 1.0,
+      "source": "readme_parallel_asyncio_pattern",
+      "target": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/index.html",
+      "source_location": "line 100",
+      "weight": 1.0,
+      "source": "ui_index_analyze_fn",
+      "target": "api_main_analyze_endpoint"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/index.html",
+      "source_location": "line 110",
+      "weight": 1.0,
+      "source": "ui_index_analyze_fn",
+      "target": "ui_index_renderresults_fn"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 26",
+      "weight": 1.0,
+      "source": "readme_clinicalcopilot",
+      "target": "readme_agent_ingestion"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 189",
+      "weight": 1.0,
+      "source": "readme_clinicalcopilot",
+      "target": "readme_wandb_weave"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 28",
+      "weight": 1.0,
+      "source": "readme_agent_ingestion",
+      "target": "readme_agent_medication"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 31",
+      "weight": 1.0,
+      "source": "readme_agent_ingestion",
+      "target": "readme_agent_timeline"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 33",
+      "weight": 1.0,
+      "source": "readme_agent_medication",
+      "target": "readme_agent_risk"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 29",
+      "weight": 1.0,
+      "source": "readme_agent_medication",
+      "target": "readme_openfda_integration"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 144",
+      "weight": 1.0,
+      "source": "readme_agent_medication",
+      "target": "readme_anthropic_claude"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 36",
+      "weight": 1.0,
+      "source": "readme_agent_timeline",
+      "target": "readme_agent_synthesis"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 144",
+      "weight": 1.0,
+      "source": "readme_agent_timeline",
+      "target": "readme_anthropic_claude"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 36",
+      "weight": 1.0,
+      "source": "readme_agent_risk",
+      "target": "readme_agent_synthesis"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 144",
+      "weight": 1.0,
+      "source": "readme_agent_risk",
+      "target": "readme_anthropic_claude"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "line 144",
+      "weight": 1.0,
+      "source": "readme_agent_synthesis",
+      "target": "readme_anthropic_claude"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "multi_agent_pipeline_flow",
+      "label": "Multi-Agent Clinical Pipeline Flow",
+      "nodes": [
+        "readme_agent_ingestion",
+        "readme_agent_medication",
+        "readme_agent_timeline",
+        "readme_agent_risk",
+        "readme_agent_synthesis"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md"
+    },
+    {
+      "id": "weave_tracing_integration",
+      "label": "W&B Weave Tracing Integration",
+      "nodes": [
+        "weave_integration_tracer_init_weave",
+        "weave_integration_tracer_trace_agent",
+        "readme_wandb_weave"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "weave_integration/tracer.py"
+    },
+    {
+      "id": "api_pipeline_contract",
+      "label": "API-Pipeline-Contract Data Flow",
+      "nodes": [
+        "api_main_analyze_endpoint",
+        "orchestrator_pipeline_run_pipeline",
+        "shared_models_agentmessage"
+      ],
+      "relation": "participate_in",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "api/main.py"
+    }
+  ],
+  "built_at_commit": "21e12df56e05aa3df336564cd4431a0603731c5d"
+}
