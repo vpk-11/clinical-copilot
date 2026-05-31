@@ -2,12 +2,20 @@
 End-to-end test runner for all patient cases.
 Usage: python tests/run_all.py
 """
-import json
 import os
 import sys
 import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
+
+from weave_integration.tracer import init_weave
+init_weave()
+
+try:
+    import wandb as _wandb
+    _WANDB_AVAILABLE = True
+except ImportError:
+    _WANDB_AVAILABLE = False
 
 from agents.ingestion import run as ing
 from agents.medication import run as med
@@ -38,6 +46,7 @@ def run_case(name, path):
     print(f"  {name.upper()}")
     print(f"{'='*55}")
     start = time.time()
+    elapsed = 0.0
     passed = 0
     total = 0
 
@@ -82,20 +91,37 @@ def run_case(name, path):
         print(f"  Medications: {[x['name'] for x in meds]}")
 
     except Exception as e:
+        elapsed = round(time.time() - start, 1)
         print(f"  \033[91mCRASHED: {e}\033[0m")
 
     print(f"\n  Result: {passed}/{total} checks passed")
-    return passed, total
+    return passed, total, elapsed
 
 
 if __name__ == "__main__":
     total_passed = 0
     total_checks = 0
 
+    bench_table = None
+    if _WANDB_AVAILABLE and _wandb.run is not None:
+        bench_table = _wandb.Table(columns=["case", "passed", "total", "pass_rate", "latency_s"])
+
     for idx, (name, path) in enumerate(CASES):
-        p, t = run_case(name, path)
+        p, t, elapsed = run_case(name, path)
         total_passed += p
         total_checks += t
+
+        if _WANDB_AVAILABLE and _wandb.run is not None:
+            pass_rate = round(p / t, 3) if t else 0.0
+            _wandb.log({
+                f"benchmark/{name}/passed":   p,
+                f"benchmark/{name}/total":    t,
+                f"benchmark/{name}/pass_rate": pass_rate,
+                f"benchmark/{name}/latency_s": elapsed,
+            })
+            if bench_table is not None:
+                bench_table.add_data(name, p, t, pass_rate, elapsed)
+
         if idx < len(CASES) - 1:
             print(f"\n  Waiting 20s to avoid rate limits...")
             time.sleep(20)
@@ -103,6 +129,17 @@ if __name__ == "__main__":
     print(f"\n{'='*55}")
     print(f"  TOTAL: {total_passed}/{total_checks} checks passed across {len(CASES)} cases")
     print(f"{'='*55}\n")
+
+    if _WANDB_AVAILABLE and _wandb.run is not None:
+        overall_pass_rate = round(total_passed / total_checks, 3) if total_checks else 0.0
+        _wandb.log({
+            "benchmark/total_passed":   total_passed,
+            "benchmark/total_checks":   total_checks,
+            "benchmark/overall_pass_rate": overall_pass_rate,
+        })
+        if bench_table is not None:
+            _wandb.log({"benchmark/results": bench_table})
+        _wandb.finish()
 
     if total_passed < total_checks:
         sys.exit(1)
