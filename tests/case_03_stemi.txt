@@ -1,0 +1,46 @@
+PATIENT: Robert Chen  |  DOB: 1958-11-03  |  MRN: 00472610
+DATE: 2026-05-31  |  PROVIDER: Dr. S. Williams, MD
+
+CHIEF COMPLAINT:
+Crushing chest pain radiating to left arm x 45 minutes.
+
+HISTORY OF PRESENT ILLNESS:
+67M with PMH of HTN, hyperlipidemia, 40 pack-year smoking history. Presents with sudden
+onset severe substernal chest pain 8/10, radiating to left jaw and arm. Associated with
+diaphoresis, nausea, and shortness of breath. Took 2 aspirin at home. Pain not relieved.
+No prior cardiac history. Last meal 2 hours ago.
+
+MEDICATIONS:
+1. Lisinopril 20mg PO daily
+2. Atorvastatin 80mg PO daily
+3. Aspirin 81mg PO daily (took 2 extra tablets at home — total 3 today)
+
+VITALS:
+BP 158/96, HR 96, RR 20, SpO2 96% on RA, Temp 37.0C, Wt 91kg
+
+LABS & DIAGNOSTICS:
+Troponin I: 4.8 ng/mL (CRITICALLY HIGH — myocardial injury)
+Troponin repeat at 1hr: 9.2 ng/mL (rising — confirms STEMI)
+CK-MB: 28 U/L (elevated)
+EKG: ST elevation >2mm leads V1-V4, reciprocal changes inferior leads
+BMP: Na 139, K 4.3, Cr 1.0, Glucose 142
+
+PAST MEDICAL HISTORY:
+- Hypertension diagnosed 2005
+- Hyperlipidemia diagnosed 2008
+- 40 pack-year smoking history, quit 2020
+- Father died of MI at age 62
+
+PHYSICAL EXAM:
+General: Diaphoretic, clutching chest, in moderate distress
+Cardiovascular: Regular rate, no murmurs, no S3
+Respiratory: Clear to auscultation bilaterally
+Extremities: No edema
+
+ASSESSMENT & PLAN:
+1. STEMI — anterior wall. ACTIVATE CATH LAB IMMEDIATELY. Door-to-balloon target <90 min.
+2. Dual antiplatelet: Aspirin 325mg + Ticagrelor 180mg loading dose NOW
+3. Anticoagulation: Heparin 60 units/kg IV bolus
+4. Cardiology and interventional cardiology notified STAT
+5. Hold lisinopril pre-procedure. NPO. Type and screen.
+6. Post-PCI: Beta blocker, ACE inhibitor, statin, DAPT per AHA guidelines.

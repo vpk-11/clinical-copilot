@@ -1,0 +1,48 @@
+PATIENT: Maria Gonzalez  |  DOB: 2001-04-18  |  MRN: 00519384
+DATE: 2026-05-31  |  PROVIDER: Dr. T. Patel, MD
+
+CHIEF COMPLAINT:
+Nausea, vomiting, abdominal pain, and confusion x 1 day.
+
+HISTORY OF PRESENT ILLNESS:
+25F with known T1DM on insulin pump. Presents with 1-day history of nausea, vomiting x8,
+diffuse abdominal pain, and increasing confusion. Roommate states she ran out of insulin
+pump supplies 2 days ago and has been missing doses. Blood glucose at home: 480 mg/dL.
+Fruity breath noted by EMS. Last ate yesterday morning.
+
+MEDICATIONS:
+1. Insulin lispro via pump — MISSED x 48 hours
+2. Insulin glargine 20 units SQ nightly (backup — not taken)
+3. Metformin 500mg PO daily (secondary)
+
+VITALS:
+BP 98/62, HR 124, RR 28 (Kussmaul breathing), SpO2 97% on RA, Temp 37.3C, Wt 62kg
+
+LABS (TODAY):
+Glucose 512 mg/dL (CRITICALLY HIGH)
+Na 128 (corrected Na 136), K 5.9 (will drop with insulin — monitor closely)
+Bicarb 8 (CRITICALLY LOW — severe acidosis), pH 7.08 (CRITICALLY LOW)
+Anion gap 28 (CRITICALLY HIGH)
+BUN 32, Cr 1.4 (mild AKI — dehydration)
+Beta-hydroxybutyrate 6.8 mmol/L (CRITICALLY HIGH — ketoacidosis confirmed)
+Urine ketones: Large
+
+PAST MEDICAL HISTORY:
+- Type 1 Diabetes Mellitus diagnosed age 12
+- No prior DKA episodes
+- Celiac disease diagnosed 2019
+
+PHYSICAL EXAM:
+General: Confused, lethargic, Kussmaul breathing pattern
+Cardiovascular: Tachycardic
+Respiratory: Deep rapid respirations, fruity odor
+Abdomen: Diffuse tenderness, guarding
+Skin: Dry mucous membranes, decreased skin turgor
+
+ASSESSMENT & PLAN:
+1. DKA — severe. Insulin drip 0.1 units/kg/hr. Do NOT bolus until K >3.5.
+2. Aggressive IV fluids: 1L NS bolus, then 250-500mL/hr. Add dextrose when glucose <250.
+3. Potassium replacement: K 5.9 now but will crash with insulin. Replace when K <5.0.
+4. Monitor glucose q1h, BMP q2h, repeat VBG in 2 hours.
+5. Endocrinology consult. Investigate trigger (infection vs. missed insulin).
+6. NPO until mental status improves and vomiting resolves.

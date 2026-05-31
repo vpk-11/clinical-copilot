@@ -1,0 +1,49 @@
+PATIENT: Dorothy Williams  |  DOB: 1952-09-30  |  MRN: 00603847
+DATE: 2026-05-31  |  PROVIDER: Dr. K. Singh, MD
+
+CHIEF COMPLAINT:
+Sudden left-sided weakness and slurred speech x 1.5 hours.
+
+HISTORY OF PRESENT ILLNESS:
+73F with PMH of atrial fibrillation (on warfarin), HTN, T2DM. Husband witnessed sudden
+onset left arm and leg weakness, facial droop, and inability to speak clearly at 14:30.
+Called 911 immediately. Last known well 14:30. Arrived ED 15:45. NIHSS score 14 on arrival.
+Patient denies headache, vision changes. No recent falls or trauma.
+
+MEDICATIONS:
+1. Warfarin 5mg PO daily (INR today: 1.4 — subtherapeutic)
+2. Metoprolol succinate 50mg PO daily
+3. Lisinopril 10mg PO daily
+4. Metformin 500mg PO BID
+5. Atorvastatin 40mg PO daily
+
+VITALS:
+BP 188/104, HR 88 (irregular), RR 18, SpO2 95% on RA, Temp 37.1C, Wt 76kg
+
+LABS & DIAGNOSTICS:
+INR 1.4 (subtherapeutic — on warfarin for AFib)
+Na 138, K 4.0, Cr 1.1, Glucose 168
+CBC: WBC 9.2, Hgb 12.1, Plt 224
+CT head (non-contrast): No hemorrhage. Hyperdense MCA sign right side.
+CT angiography: Right MCA occlusion confirmed.
+Last known well to door: 75 minutes — within tPA window.
+
+PAST MEDICAL HISTORY:
+- Atrial fibrillation diagnosed 2018, on anticoagulation
+- Hypertension diagnosed 2005
+- Type 2 Diabetes Mellitus diagnosed 2012
+- No prior stroke or TIA
+
+PHYSICAL EXAM:
+General: Alert but dysarthric
+Neurological: Left hemiplegia, left facial droop, gaze deviation to right, NIHSS 14
+Cardiovascular: Irregularly irregular rhythm
+Respiratory: Clear
+
+ASSESSMENT & PLAN:
+1. Acute ischemic stroke — right MCA territory. STROKE ALERT ACTIVATED.
+2. IV tPA (alteplase) 0.9mg/kg — eligible (INR 1.4 <1.7, within time window). Administer NOW.
+3. Mechanical thrombectomy — IR/neurology notified for right MCA occlusion, large vessel.
+4. BP management: Hold antihypertensives. Target BP <185/110 pre-tPA.
+5. Hold warfarin and metformin. Heparin drip contraindicated post-tPA x 24 hours.
+6. Neuro ICU admission. Repeat CT head in 24 hours to assess for hemorrhagic transformation.

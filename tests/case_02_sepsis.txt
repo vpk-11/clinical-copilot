@@ -1,0 +1,45 @@
+PATIENT: John Smith  |  DOB: 1965-07-22  |  MRN: 00384921
+DATE: 2026-05-31  |  PROVIDER: Dr. R. Mehta, MD
+
+CHIEF COMPLAINT:
+Fever, confusion, and low blood pressure x 12 hours.
+
+HISTORY OF PRESENT ILLNESS:
+61M with PMH of T2DM, HTN. Presents via EMS with altered mental status, fever to 39.8C,
+and hypotension. Wife reports patient was complaining of right flank pain and burning
+urination for 3 days prior. Did not seek care. Found unresponsive at home this morning.
+No recent travel. No sick contacts.
+
+MEDICATIONS:
+1. Metformin 1000mg PO BID
+2. Amlodipine 5mg PO daily
+3. Atorvastatin 40mg PO daily
+
+VITALS:
+BP 82/54, HR 118, RR 24, SpO2 93% on 4L NC, Temp 39.8C, Wt 84kg
+
+LABS (TODAY):
+Na 131, K 4.1, BUN 58, Cr 3.1 (baseline unknown)
+WBC 18.4 (critically high), Lactate 4.2 mmol/L (CRITICALLY HIGH — septic shock)
+Hgb 11.2, Plt 98
+Procalcitonin 42 ng/mL (severely elevated)
+UA: >100 WBC, bacteria present, nitrite positive
+
+PAST MEDICAL HISTORY:
+- Type 2 Diabetes Mellitus diagnosed 2010
+- Hypertension diagnosed 2008
+- No prior hospitalizations
+
+PHYSICAL EXAM:
+General: Obtunded, not following commands
+Cardiovascular: Tachycardic, weak thready pulse
+Respiratory: Tachypneic, accessory muscle use
+Abdomen: Right CVA tenderness
+Skin: Warm, flushed, capillary refill >3 seconds
+
+ASSESSMENT & PLAN:
+1. Septic shock — urosepsis source. Activate sepsis protocol. 30mL/kg IV fluid bolus NOW.
+2. Start broad-spectrum antibiotics: Piperacillin-tazobactam 3.375g IV q6h + Vancomycin
+3. AKI — Cr 3.1, likely sepsis-induced. Hold metformin. Foley catheter, strict I&Os.
+4. Altered mental status — likely septic encephalopathy. CT head ordered to rule out bleed.
+5. ICU admission. Vasopressors on standby (norepinephrine). Repeat lactate in 2 hours.
