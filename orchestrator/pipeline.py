@@ -19,6 +19,16 @@ _executor = ThreadPoolExecutor(max_workers=4)
 
 
 def run_pipeline(raw_text: str, patient_id: str = "ANON") -> dict:
+    try:
+        loop = asyncio.get_running_loop()
+    except RuntimeError:
+        loop = None
+
+    if loop and loop.is_running():
+        # Called from within FastAPI's event loop — run in a fresh thread
+        import concurrent.futures
+        with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
+            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id)).result()
     return asyncio.run(_async_pipeline(raw_text, patient_id))
 
 
