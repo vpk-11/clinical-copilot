@@ -17,6 +17,7 @@ except Exception as e:
 _executor = ThreadPoolExecutor(max_workers=4)
 
 
+
 def run_pipeline(raw_text: str, patient_id: str = "ANON") -> dict:
     return asyncio.run(_async_pipeline(raw_text, patient_id))
 
