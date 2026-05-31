@@ -1,0 +1,51 @@
+PATIENT: Jane Doe  |  DOB: 1958-03-14  |  MRN: 00291847
+DATE: 2026-05-31  |  PROVIDER: Dr. A. Patel, MD
+
+CHIEF COMPLAINT:
+Shortness of breath and leg swelling x 4 days.
+
+HISTORY OF PRESENT ILLNESS:
+68F with PMH of CHF (EF 35%, dx 2021), T2DM, HTN, CKD stage 3.
+Presents with progressive dyspnea on exertion, bilateral ankle edema,
+and orthopnea x2 pillows. Denies chest pain. 6 lbs weight gain in 5 days.
+No recent medication changes. Last BMP 3 weeks ago: K 5.2, Cr 1.8, Na 139.
+
+MEDICATIONS:
+1. Furosemide 40mg PO daily
+2. Carvedilol 12.5mg PO BID
+3. Lisinopril 10mg PO daily
+4. Metformin 500mg PO BID (held today given contrast CT)
+5. Spironolactone 25mg PO daily (started 2026-03-01)
+6. Aspirin 81mg PO daily
+
+VITALS:
+BP 164/98, HR 102, RR 22, SpO2 91% on RA, Temp 37.1C, Wt 89kg
+
+LABS (TODAY):
+Na 137, K 6.1 (CRITICALLY HIGH), BUN 42, Cr 2.3 (elevated from baseline 1.8)
+Hgb 9.8, WBC 8.2, Plt 210
+BNP 1840 pg/mL (CRITICALLY HIGH — severe heart failure)
+
+PAST MEDICAL HISTORY:
+- Congestive heart failure (EF 35%) diagnosed January 2021
+- Type 2 Diabetes Mellitus diagnosed 2015
+- Hypertension diagnosed 2012
+- CKD Stage 3 diagnosed 2023
+- NSTEMI (heart attack) 2019, managed medically, no intervention
+
+REVIEW OF SYSTEMS:
+Positive: dyspnea, orthopnea, bilateral leg swelling, fatigue, decreased urine output
+Negative: chest pain, syncope, fever, cough, hemoptysis
+
+PHYSICAL EXAM:
+General: Mild respiratory distress, speaking in short sentences
+Cardiovascular: S3 gallop, JVD present, 2+ pitting edema bilateral LE to knees
+Respiratory: Bilateral basilar crackles
+Abdomen: Mild hepatomegaly
+
+ASSESSMENT & PLAN:
+1. Acute decompensated CHF exacerbation — admit for IV Lasix diuresis, strict I&Os, daily weights
+2. Hyperkalemia K 6.1 — HOLD lisinopril and spironolactone immediately, cardiology notified, repeat BMP in 4 hours, cardiac monitoring
+3. AKI on CKD — Cr 2.3 from baseline 1.8, likely cardiorenal. Hold metformin. Nephrology consult placed.
+4. Poorly controlled HTN — uptitrate antihypertensives once K normalized
+Cardiology consult placed. Repeat BMP in 4 hours. Echo pending.
