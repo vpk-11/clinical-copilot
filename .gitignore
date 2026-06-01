@@ -31,3 +31,4 @@ graphify-out/cost.json
 
 # Claude Code
 .claude/
+wandb/
