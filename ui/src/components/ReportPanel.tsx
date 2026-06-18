@@ -47,7 +47,7 @@ export default function ReportPanel({
   content,
   icon,
   accentClass,
-  downloadFilename: _downloadFilename,
+  downloadFilename,
 }: ReportPanelProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
@@ -62,7 +62,7 @@ export default function ReportPanel({
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>${title}</title>
+  <title>${downloadFilename || title}</title>
   <style>${PRINT_CSS}</style>
 </head>
 <body>${html}</body>
