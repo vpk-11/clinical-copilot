@@ -12,7 +12,7 @@ def extract_text(filename: str, content: bytes) -> str:
 
     if ext == "pdf":
         return _extract_pdf(content, filename)
-    elif ext in ("docx", "doc"):
+    elif ext == "docx":
         return _extract_docx(content)
     elif ext in ("md", "txt"):
         return content.decode("utf-8", errors="replace")
@@ -36,6 +36,7 @@ def _extract_pdf(content: bytes, filename: str) -> str:
     low_text_pages = 0
 
     with pdfplumber.open(io.BytesIO(content)) as pdf:
+        total_pages = len(pdf.pages)
         for i, page in enumerate(pdf.pages):
             text = page.extract_text(x_tolerance=3, y_tolerance=3) or ""
             text = text.strip()
@@ -58,8 +59,7 @@ def _extract_pdf(content: bytes, filename: str) -> str:
     combined = "\n\n".join(pages_text)
 
     # Warn if the PDF is mostly images with minimal text
-    total_pages = low_text_pages + len(pages_text) - low_text_pages
-    if total_pages > 0 and low_text_pages / max(total_pages, 1) > 0.6:
+    if total_pages > 0 and low_text_pages / total_pages > 0.6:
         combined = (
             "[NOTE: This PDF appears to contain mostly images (scanned document or image-heavy report). "
             "Only the text annotations, captions, and footnotes below images were extracted. "

@@ -50,12 +50,14 @@ async def _async_pipeline(raw_text: str, patient_id: str) -> dict:
     )
 
     return {
-        "trace_id":        trace_id,
-        "soap_note":       synth["payload"]["soap_note"],
-        "red_flags":       synth["payload"]["red_flags"],
-        "summary":         synth["payload"].get("summary", ""),
-        "medications":     med["payload"]["medications"],
-        "interactions":    med["payload"]["interactions"],
-        "timeline_events": tl["payload"]["events"],
-        "risk_flags":      risk_msg["payload"]["flags"],
+        "trace_id":              trace_id,
+        "pipeline_status":       synth["status"],
+        "pipeline_status_reason": synth["payload"].get("reason", ""),
+        "soap_note":             synth["payload"]["soap_note"],
+        "red_flags":             synth["payload"]["red_flags"],
+        "summary":               synth["payload"].get("summary", ""),
+        "medications":           med["payload"]["medications"],
+        "interactions":          med["payload"]["interactions"],
+        "timeline_events":       tl["payload"]["events"],
+        "risk_flags":            risk_msg["payload"]["flags"],
     }

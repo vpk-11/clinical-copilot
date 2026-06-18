@@ -10,8 +10,14 @@ Examples:
 """
 import os
 import time
-from litellm import completion
 from dotenv import load_dotenv
+
+try:
+    from litellm import completion as _litellm_completion
+    _LITELLM_AVAILABLE = True
+except ImportError:
+    _litellm_completion = None
+    _LITELLM_AVAILABLE = False
 
 try:
     import wandb as _wandb
@@ -26,11 +32,15 @@ DEFAULT_MODEL = "anthropic/claude-sonnet-4-20250514"
 
 
 def chat(prompt: str, max_tokens: int = 1000, retries: int = 3) -> str:
+    if not _LITELLM_AVAILABLE:
+        raise RuntimeError(
+            "litellm is not installed. Run: pip install litellm"
+        )
     model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
     for attempt in range(retries):
         try:
             t0 = time.time()
-            resp = completion(
+            resp = _litellm_completion(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=max_tokens,

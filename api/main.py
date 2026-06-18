@@ -1,16 +1,22 @@
+import logging
 import os
-from fastapi import FastAPI, HTTPException, UploadFile, File
+from fastapi import FastAPI, HTTPException, Request, UploadFile, File
+from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from dotenv import load_dotenv
 from pathlib import Path
 
 load_dotenv()
 
-from weave_integration.tracer import init_weave
-init_weave()
+logger = logging.getLogger(__name__)
+
+try:
+    from weave_integration.tracer import init_weave
+    init_weave()
+except Exception as e:
+    logger.warning("Weave init failed — tracing disabled: %s", e)
 
 from orchestrator.pipeline import run_pipeline
 from shared.parser import extract_text
@@ -18,15 +24,40 @@ from shared.reports import generate_doctor_report, generate_patient_report
 
 app = FastAPI(title="ClinicalCopilot", version="2.0.0")
 
+_API_KEY = os.environ.get("API_KEY")
+
+# .doc is intentionally excluded — python-docx parses .docx (Office Open XML)
+# but cannot parse binary .doc (Word 97-2003) format.
+ALLOWED_EXTENSIONS = {"pdf", "docx", "md", "txt"}
+
+_ALLOWED_ORIGINS = [
+    o.strip()
+    for o in os.environ.get("ALLOWED_ORIGINS", "http://localhost:5173").split(",")
+    if o.strip()
+]
+
+
+@app.middleware("http")
+async def api_key_middleware(request: Request, call_next):
+    if _API_KEY and request.url.path not in ("/health", "/"):
+        client_key = request.headers.get("X-API-Key")
+        if client_key != _API_KEY:
+            return JSONResponse(
+                status_code=401,
+                content={"detail": "Missing or invalid API key. Set X-API-Key header."},
+            )
+    return await call_next(request)
+
+
+# CORS must be added after the API key middleware so it wraps everything
+# and adds CORS headers even to 401 responses.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-ALLOWED_EXTENSIONS = {"pdf", "docx", "doc", "md", "txt"}
 
 
 class NormalizeRequest(BaseModel):
@@ -38,6 +69,8 @@ class NormalizeResponse(BaseModel):
     normalized_text: str
     original_char_count: int
     normalized_char_count: int
+    status: str = "ok"
+    status_reason: str = ""
 
 
 class AnalyzeRequest(BaseModel):
@@ -47,6 +80,8 @@ class AnalyzeRequest(BaseModel):
 
 class AnalyzeResponse(BaseModel):
     trace_id: str
+    pipeline_status: str
+    pipeline_status_reason: str
     doctor_report: str
     patient_report: str
     soap_note: dict
@@ -105,6 +140,8 @@ async def normalize(req: NormalizeRequest):
         normalized_text=normalized,
         original_char_count=len(req.text),
         normalized_char_count=len(normalized),
+        status=result["status"],
+        status_reason=result["payload"].get("reason", ""),
     )
 
 
@@ -128,6 +165,8 @@ async def analyze(req: AnalyzeRequest):
 
         return AnalyzeResponse(
             trace_id=result["trace_id"],
+            pipeline_status=result.get("pipeline_status", "ok"),
+            pipeline_status_reason=result.get("pipeline_status_reason", ""),
             doctor_report=doctor_report,
             patient_report=patient_report,
             soap_note=result["soap_note"],
@@ -155,5 +194,4 @@ if _dist.exists():
 else:
     @app.get("/")
     def serve_ui():
-        # Fall back to legacy HTML during development
         return FileResponse("ui/index.html")
