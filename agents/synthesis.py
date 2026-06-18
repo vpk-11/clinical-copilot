@@ -48,19 +48,22 @@ def run(
         "flags": json.dumps(flags),
         "raw_text": ingestion_msg["payload"]["raw_text"][:1500]
     }
+    degraded_reason = None
     try:
         raw = chat(SYNTHESIS_PROMPT.format(**payload_in), max_tokens=1500)
         raw = raw.replace("```json", "").replace("```", "").strip()
         result = json.loads(raw)
     except Exception as e:
+        degraded_reason = f"Synthesis LLM failed ({type(e).__name__}): {e}"
         result = {
             "soap_note": {"subjective": "Error", "objective": "Error", "assessment": "Error", "plan": str(e)},
-            "summary": "Synthesis failed",
-            "red_flags": [f["flag"] for f in flags[:3]]
+            "summary": "Synthesis failed — deterministic fallback data may still be available",
+            "red_flags": [f["flag"] for f in flags[:3]],
+            "reason": degraded_reason,
         }
     return AgentMessage(
         agent="synthesis",
-        status="ok",
+        status="degraded" if degraded_reason else "ok",
         payload=result,
         trace_id=trace_id,
         timestamp=datetime.utcnow().isoformat()
