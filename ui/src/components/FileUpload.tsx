@@ -8,7 +8,7 @@ import { uploadFile, normalizeText } from "../api";
 const ACCEPTED_TYPES = {
   "application/pdf": [".pdf"],
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document": [".docx"],
-  "application/msword": [".doc"],
+  // .doc (Word 97-2003 binary) is excluded — python-docx cannot parse it
   "text/markdown": [".md"],
   "text/plain": [".txt"],
 };
@@ -70,10 +70,11 @@ export default function FileUpload({ patientId, onPatientIdChange, onReady }: Fi
       }));
 
       setFiles((prev) => {
-        // Deduplicate by name+size
-        const existing = new Set(prev.map((f) => `${f.file.name}-${f.file.size}`));
+        const existing = new Set(
+          prev.map((f) => `${f.file.name}-${f.file.size}-${f.file.lastModified}`)
+        );
         const fresh = newEntries.filter(
-          (e) => !existing.has(`${e.file.name}-${e.file.size}`)
+          (e) => !existing.has(`${e.file.name}-${e.file.size}-${e.file.lastModified}`)
         );
         return [...prev, ...fresh];
       });
@@ -173,7 +174,7 @@ export default function FileUpload({ patientId, onPatientIdChange, onReady }: Fi
             </p>
           </div>
           <div className="flex items-center gap-1.5">
-            {["PDF", "DOCX", "MD", "TXT"].map((t) => (
+            {(["PDF", "DOCX", "MD", "TXT"] as const).map((t) => (
               <span
                 key={t}
                 className="px-2 py-0.5 bg-slate-100 text-slate-500 text-xs font-medium rounded border border-slate-200"
