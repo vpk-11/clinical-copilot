@@ -84,9 +84,12 @@ def check_interactions(meds: list) -> list:
         })
     for m in meds:
         try:
-            drug = m["name"].lower().replace(" ", "+")
-            url = f"https://api.fda.gov/drug/label.json?search=openfda.generic_name:{drug}&limit=1"
-            r = requests.get(url, timeout=4)
+            drug_name = m["name"].lower()
+            r = requests.get(
+                "https://api.fda.gov/drug/label.json",
+                params={"search": f"openfda.generic_name:{drug_name}", "limit": 1},
+                timeout=4,
+            )
             if r.status_code == 200:
                 results = r.json().get("results", [])
                 if results:
