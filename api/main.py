@@ -189,10 +189,10 @@ def health():
 
 
 # Serve built React app — only mounted when dist/ exists
-_dist = Path("ui/dist")
+_dist = Path("client/dist")
 if _dist.exists():
-    app.mount("/", StaticFiles(directory=str(_dist), html=True), name="ui")
+    app.mount("/", StaticFiles(directory=str(_dist), html=True), name="client")
 else:
     @app.get("/")
     def serve_ui():
-        return FileResponse("ui/index.html")
+        return FileResponse("client/index.html")

@@ -1,6 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: "Inter", system-ui, sans-serif;
+  --color-clinical-50: #f0f9ff;
+  --color-clinical-100: #e0f2fe;
+  --color-clinical-500: #0ea5e9;
+  --color-clinical-600: #0284c7;
+  --color-clinical-700: #0369a1;
+}
 
 @layer base {
   body {
