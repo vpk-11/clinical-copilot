@@ -1,3 +1,4 @@
+import hmac
 import logging
 import os
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
@@ -40,8 +41,8 @@ _ALLOWED_ORIGINS = [
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
     if _API_KEY and request.url.path not in ("/health", "/"):
-        client_key = request.headers.get("X-API-Key")
-        if client_key != _API_KEY:
+        client_key = request.headers.get("X-API-Key", "")
+        if not hmac.compare_digest(client_key, _API_KEY):
             return JSONResponse(
                 status_code=401,
                 content={"detail": "Missing or invalid API key. Set X-API-Key header."},
