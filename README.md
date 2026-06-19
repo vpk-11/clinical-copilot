@@ -74,16 +74,16 @@ If `WANDB_API_KEY` is missing, the server starts in degraded mode (no tracing). 
 ### Frontend
 
 ```bash
-cd ui
-npm install
-npm run dev   # dev server on :5173 with proxy to :8000
+cd client
+pnpm install
+pnpm dev   # dev server on :5173 with proxy to :8000
 ```
 
 Build for production:
 
 ```bash
-cd ui
-npm run build   # outputs to ui/dist/ — served by FastAPI at /
+cd client
+pnpm build   # outputs to client/dist/ — served by FastAPI at /
 ```
 
 ### Authentication
@@ -172,7 +172,7 @@ clinical-copilot/
 │   └── reports.py         <- doctor + patient markdown report generation
 ├── weave_integration/
 │   └── tracer.py          <- W&B Weave init and agent trace decorators
-├── ui/                    <- React + Vite frontend
+├── client/                <- React + Vite frontend
 ├── tests/                 <- synthetic clinical test cases
 ├── .env.example
 ├── requirements.txt

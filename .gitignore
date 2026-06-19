@@ -11,11 +11,11 @@ __pycache__/
 venv/
 *.venv
 
-# UI — build artifacts and deps
-ui/node_modules/
-ui/dist/
-ui/.vite/
-ui/tsconfig.tsbuildinfo
+# Client — build artifacts and deps
+node_modules/
+client/dist/
+client/.vite/
+client/tsconfig.tsbuildinfo
 
 # OS
 .DS_Store
