@@ -2,11 +2,13 @@
   "0": "Task Documentation",
   "1": "Agent Implementations",
   "2": "FastAPI + Contract Layer",
+  "3": "Community 3",
   "4": "Multi-Agent Pipeline Docs",
   "5": "Clinical Test Cases",
   "6": "LiteLLM Config",
   "7": "Environment Setup",
   "8": "Task Scaffolding",
+  "9": "Community 9",
   "10": "Weave Tracing",
   "11": "Orchestrator Pipeline",
   "12": "Shared Models",
@@ -23,5 +25,7 @@
   "23": "Community 23",
   "24": "Community 24",
   "25": "Community 25",
-  "26": "Community 26"
+  "26": "Community 26",
+  "27": "Community 27",
+  "28": "Community 28"
 }

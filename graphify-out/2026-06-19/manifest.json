@@ -40,8 +40,8 @@
     "semantic_hash": ""
   },
   "api/main.py": {
-    "mtime": 1781790592.1381488,
-    "ast_hash": "d999bbe33a4dca8b5359b855b81981d5",
+    "mtime": 1781880264.4426346,
+    "ast_hash": "8f45711aba21d2e964f0c43df0adcc94",
     "semantic_hash": ""
   },
   "orchestrator/__init__.py": {
@@ -84,71 +84,6 @@
     "ast_hash": "16ea739edc4bff3221ce0e5777d3c2f5",
     "semantic_hash": ""
   },
-  "ui/package.json": {
-    "mtime": 1780260140.9321396,
-    "ast_hash": "859846b4b219495f77d3d2cdcc06528e",
-    "semantic_hash": ""
-  },
-  "ui/postcss.config.js": {
-    "mtime": 1780260154.7932038,
-    "ast_hash": "c735540bb63936a123bc867d950c9f69",
-    "semantic_hash": ""
-  },
-  "ui/src/App.tsx": {
-    "mtime": 1780262512.1679058,
-    "ast_hash": "5a9fc7c5d6af94c3fa8cc7e242b75e13",
-    "semantic_hash": ""
-  },
-  "ui/src/api.ts": {
-    "mtime": 1781789260.842732,
-    "ast_hash": "d338b1f6a39ee3326d500dd5578ce60d",
-    "semantic_hash": ""
-  },
-  "ui/src/components/FileUpload.tsx": {
-    "mtime": 1781789279.8937783,
-    "ast_hash": "8907f33e81f6207d246fcec516ec29ad",
-    "semantic_hash": ""
-  },
-  "ui/src/components/FlagBadge.tsx": {
-    "mtime": 1780260192.575763,
-    "ast_hash": "b0e13bb16f7997a2a587a255d50e5deb",
-    "semantic_hash": ""
-  },
-  "ui/src/components/ReportPanel.tsx": {
-    "mtime": 1781789287.752895,
-    "ast_hash": "1c0da8288812c448f92815ca143ca890",
-    "semantic_hash": ""
-  },
-  "ui/src/components/ResultsDashboard.tsx": {
-    "mtime": 1780262490.786375,
-    "ast_hash": "ec36759ff8c3c305e0a82e345d1fffc3",
-    "semantic_hash": ""
-  },
-  "ui/src/main.tsx": {
-    "mtime": 1780260162.400674,
-    "ast_hash": "447c8ceb74e5081b004ef36157813957",
-    "semantic_hash": ""
-  },
-  "ui/src/types.ts": {
-    "mtime": 1780260178.4995115,
-    "ast_hash": "3bd08c6deea59663d4f2df1ad2486181",
-    "semantic_hash": ""
-  },
-  "ui/tailwind.config.js": {
-    "mtime": 1780260151.855193,
-    "ast_hash": "3e2ac0f326f45b31940e6afe1dc95493",
-    "semantic_hash": ""
-  },
-  "ui/tsconfig.json": {
-    "mtime": 1780260148.2307463,
-    "ast_hash": "439ed1c7ff0bd33ff6328fe52716f70e",
-    "semantic_hash": ""
-  },
-  "ui/vite.config.ts": {
-    "mtime": 1780260144.320764,
-    "ast_hash": "b799835800d3e3670c34f6964a3f7185",
-    "semantic_hash": ""
-  },
   "weave_integration/__init__.py": {
     "mtime": 1780248392.3887498,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
@@ -170,8 +105,8 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1781790034.9775229,
-    "ast_hash": "395f7b55fbb13862df73635b385cb322",
+    "mtime": 1781880284.5412264,
+    "ast_hash": "b95c10f7fae7d25074cf1ba2a9afc028",
     "semantic_hash": ""
   },
   "Session-plan.md": {
@@ -209,7 +144,67 @@
     "ast_hash": "6589e3d74bc9326c9fc6fe470848e346",
     "semantic_hash": ""
   },
-  "ui/index.html": {
+  "client/package.json": {
+    "mtime": 1781880321.2649279,
+    "ast_hash": "5d5590d2bb706ca61f6c5e4d7ecae864",
+    "semantic_hash": ""
+  },
+  "client/src/App.tsx": {
+    "mtime": 1780262512.1679058,
+    "ast_hash": "5a9fc7c5d6af94c3fa8cc7e242b75e13",
+    "semantic_hash": ""
+  },
+  "client/src/api.ts": {
+    "mtime": 1781789260.842732,
+    "ast_hash": "d338b1f6a39ee3326d500dd5578ce60d",
+    "semantic_hash": ""
+  },
+  "client/src/components/FileUpload.tsx": {
+    "mtime": 1781789279.8937783,
+    "ast_hash": "8907f33e81f6207d246fcec516ec29ad",
+    "semantic_hash": ""
+  },
+  "client/src/components/FlagBadge.tsx": {
+    "mtime": 1780260192.575763,
+    "ast_hash": "b0e13bb16f7997a2a587a255d50e5deb",
+    "semantic_hash": ""
+  },
+  "client/src/components/ReportPanel.tsx": {
+    "mtime": 1781789287.752895,
+    "ast_hash": "1c0da8288812c448f92815ca143ca890",
+    "semantic_hash": ""
+  },
+  "client/src/components/ResultsDashboard.tsx": {
+    "mtime": 1780262490.786375,
+    "ast_hash": "ec36759ff8c3c305e0a82e345d1fffc3",
+    "semantic_hash": ""
+  },
+  "client/src/main.tsx": {
+    "mtime": 1780260162.400674,
+    "ast_hash": "447c8ceb74e5081b004ef36157813957",
+    "semantic_hash": ""
+  },
+  "client/src/types.ts": {
+    "mtime": 1780260178.4995115,
+    "ast_hash": "3bd08c6deea59663d4f2df1ad2486181",
+    "semantic_hash": ""
+  },
+  "client/src/vite-env.d.ts": {
+    "mtime": 1781880409.9648724,
+    "ast_hash": "0352474ba2918efe13895edbc3780d94",
+    "semantic_hash": ""
+  },
+  "client/tsconfig.json": {
+    "mtime": 1780260148.2307463,
+    "ast_hash": "439ed1c7ff0bd33ff6328fe52716f70e",
+    "semantic_hash": ""
+  },
+  "client/vite.config.ts": {
+    "mtime": 1781880329.7680554,
+    "ast_hash": "0eca695606aecdaaa5a6370d45dfa2c2",
+    "semantic_hash": ""
+  },
+  "client/index.html": {
     "mtime": 1780263295.409551,
     "ast_hash": "de81a59c6c202a104c87e1fad312da74",
     "semantic_hash": ""

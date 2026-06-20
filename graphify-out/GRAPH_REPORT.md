@@ -1,16 +1,16 @@
 # Graph Report - clinical-copilot  (2026-06-19)
 
 ## Corpus Check
-- 35 files · ~13,524 words
+- 35 files · ~13,456 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 264 nodes · 350 edges · 29 communities (27 shown, 2 thin omitted)
+- 265 nodes · 351 edges · 29 communities (27 shown, 2 thin omitted)
 - Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.75)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `e5931bed`
+- Built from commit: `44bc9604`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -39,7 +39,7 @@
 3. `AgentMessage` - 15 edges
 4. `chat()` - 14 edges
 5. `PROJECT_CONTEXT` - 14 edges
-6. `ClinicalCopilot` - 9 edges
+6. `ClinicalCopilot` - 10 edges
 7. `ClinicalCopilot — Session Plan` - 9 edges
 8. `Core Stack` - 8 edges
 9. `run()` - 7 edges
@@ -68,8 +68,8 @@
 ## Communities (29 total, 2 thin omitted)
 
 ### Community 0 - "Task Documentation"
-Cohesion: 0.14
-Nodes (13): `/analyze` response, API, Architecture, Authentication, Backend, ClinicalCopilot, Frontend, LLM Provider (+5 more)
+Cohesion: 0.13
+Nodes (14): `/analyze` response, API, Architecture, Authentication, Backend, ClinicalCopilot, Environment Variables, Frontend (+6 more)
 
 ### Community 1 - "Agent Implementations"
 Cohesion: 0.07
@@ -128,7 +128,7 @@ Cohesion: 0.11
 Nodes (22): run(), AgentMessage, InputAgent: normalizes raw, messy clinical text into structured chart format. Th, run(), check_interactions(), extract_medications(), _fallback_extract_medications(), _med_key() (+14 more)
 
 ## Knowledge Gaps
-- **110 isolated node(s):** `str`, `AgentMessage`, `AgentMessage`, `Request`, `UploadFile` (+105 more)
+- **111 isolated node(s):** `What It Does`, `Architecture`, `Stack`, `Backend`, `Frontend` (+106 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -136,7 +136,7 @@ Nodes (22): run(), AgentMessage, InputAgent: normalizes raw, messy clinical text
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `run()` connect `Community 3` to `Agents Module`, `Multi-Agent Pipeline Docs`, `Environment Setup`?**
-  _High betweenness centrality (0.055) - this node is a cross-community bridge._
+  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Why does `AgentMessage` connect `Agents Module` to `Community 3`?**
   _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Why does `run()` connect `Agents Module` to `Environment Setup`?**
@@ -145,7 +145,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`AgentMessage` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `chat()` (e.g. with `run()` and `run()`) actually correct?**
   _`chat()` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `str`, `AgentMessage`, `AgentMessage` to the rest of the system?**
-  _120 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `What It Does`, `Architecture`, `Stack` to the rest of the system?**
+  _121 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Task Documentation` be split into smaller, more focused modules?**
-  _Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
