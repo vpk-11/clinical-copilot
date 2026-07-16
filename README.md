@@ -1,5 +1,8 @@
 # ClinicalCopilot
 
+<!-- version: v1.0.0 -->
+![Version](https://img.shields.io/badge/version-v1.0.0-blue)
+
 Multi-agent clinical chart analyzer. Paste a raw patient note and get a structured SOAP note, prioritized red flags, medication reconciliation with drug interaction alerts, and a reconstructed medical timeline.
 
 > **Demo only.** Do not use with real patient data. Clinical text is sent to third-party LLM and tracing services (Anthropic, W&B Weave). No PHI redaction is applied.
@@ -210,3 +213,7 @@ clinical-copilot/
 ├── requirements.txt
 └── README.md
 ```
+
+---
+
+## Changelog
