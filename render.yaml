@@ -1,0 +1,27 @@
+services:
+  - type: web
+    name: clinical-copilot
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn api.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: LLM_MODEL
+        value: "anthropic/claude-sonnet-4-20250514"
+      - key: ANTHROPIC_API_KEY
+        sync: false   # set in Render dashboard under Environment -> Secret Files
+
+      - key: WANDB_PROJECT
+        value: "clinical-copilot"
+      - key: WANDB_ENTITY
+        value: ""   # optional - set in dashboard if using a W&B org/team
+      - key: WANDB_API_KEY
+        sync: false   # optional - missing key runs the server in degraded (no tracing) mode
+
+      - key: API_KEY
+        sync: false   # optional - enables X-API-Key auth on all endpoints when set
+
+      - key: ALLOWED_ORIGINS
+        value: ""   # set to the deployed Render URL in dashboard; single-origin deploy means this is a defensive default, not load-bearing

@@ -13,7 +13,6 @@ venv/
 
 # Client — build artifacts and deps
 node_modules/
-client/dist/
 client/.vite/
 client/tsconfig.tsbuildinfo
 
@@ -25,9 +24,15 @@ Thumbs.db
 dist/
 build/
 
-# Graphify runtime files
+# Keep frontend build — committed by CI, served by FastAPI in production
+!client/dist/
+
+# Graphify — machine-local files
 graphify-out/manifest.json
 graphify-out/cost.json
+graphify-out/.graphify_root
+graphify-out/.graphify_python
+graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
 
 # Claude Code
 .claude/
