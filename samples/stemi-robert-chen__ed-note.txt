@@ -1,4 +1,5 @@
 PATIENT: Robert Chen  |  DOB: 1958-11-03  |  MRN: 00472610
+DEMO ID: DEMO-MI-01 (use this in the app's Patient ID field)
 DATE: 2026-05-31  |  PROVIDER: Dr. S. Williams, MD
 
 CHIEF COMPLAINT:

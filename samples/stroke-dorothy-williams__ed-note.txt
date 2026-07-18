@@ -1,4 +1,5 @@
 PATIENT: Dorothy Williams  |  DOB: 1952-09-30  |  MRN: 00603847
+DEMO ID: DEMO-CVA-01 (use this in the app's Patient ID field)
 DATE: 2026-05-31  |  PROVIDER: Dr. K. Singh, MD
 
 CHIEF COMPLAINT:
