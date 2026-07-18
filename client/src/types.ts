@@ -43,3 +43,13 @@ export interface AnalysisResult {
 }
 
 export type AppStep = "upload" | "preview" | "analyzing" | "results";
+
+export type LLMProvider = "anthropic" | "openai" | "groq" | "ollama";
+
+export interface LLMConfig {
+  provider: LLMProvider | "";
+  model: string;
+  apiKey: string;
+}
+
+export const DEFAULT_LLM_CONFIG: LLMConfig = { provider: "", model: "", apiKey: "" };
