@@ -52,11 +52,17 @@ Raw clinical text:
 {text}"""
 
 
-def run(raw_text: str, patient_id: str = "ANON") -> AgentMessage:
+def run(raw_text: str, patient_id: str = "ANON", llm_config: dict | None = None) -> AgentMessage:
     trace_id = str(uuid.uuid4())
     degraded_reason = None
+    llm_config = llm_config or {}
     try:
-        normalized = chat(NORMALIZE_PROMPT.format(text=raw_text[:4000]), max_tokens=1500)
+        normalized = chat(
+            NORMALIZE_PROMPT.format(text=raw_text[:4000]),
+            max_tokens=1500,
+            model=llm_config.get("model"),
+            api_key=llm_config.get("api_key"),
+        )
         normalized = normalized.strip()
         if not normalized or len(normalized) < 50:
             normalized = raw_text
