@@ -1,4 +1,5 @@
 PATIENT: Maria Gonzalez  |  DOB: 2001-04-18  |  MRN: 00519384
+DEMO ID: DEMO-DKA-01 (use this in the app's Patient ID field)
 DATE: 2026-05-31  |  PROVIDER: Dr. T. Patel, MD
 
 CHIEF COMPLAINT:

@@ -1,4 +1,5 @@
 PATIENT: John Smith  |  DOB: 1965-07-22  |  MRN: 00384921
+DEMO ID: DEMO-SEP-01 (use this in the app's Patient ID field)
 DATE: 2026-05-31  |  PROVIDER: Dr. R. Mehta, MD
 
 CHIEF COMPLAINT:

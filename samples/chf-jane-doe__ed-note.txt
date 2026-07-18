@@ -1,4 +1,5 @@
 PATIENT: Jane Doe  |  DOB: 1958-03-14  |  MRN: 00291847
+DEMO ID: DEMO-CHF-01 (use this in the app's Patient ID field)
 DATE: 2026-05-31  |  PROVIDER: Dr. A. Patel, MD
 
 CHIEF COMPLAINT:

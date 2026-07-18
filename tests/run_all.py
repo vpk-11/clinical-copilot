@@ -24,11 +24,11 @@ from agents.risk import run as risk
 from agents.synthesis import run as synth
 
 CASES = [
-    ("case_01_chf",    "tests/sample_chart.txt"),
-    ("case_02_sepsis", "tests/case_02_sepsis.txt"),
-    ("case_03_stemi",  "tests/case_03_stemi.txt"),
-    ("case_04_dka",    "tests/case_04_dka.txt"),
-    ("case_05_stroke", "tests/case_05_stroke.txt"),
+    ("case_01_chf",    "samples/chf-jane-doe__ed-note.txt"),
+    ("case_02_sepsis", "samples/sepsis-john-smith__ed-note.txt"),
+    ("case_03_stemi",  "samples/stemi-robert-chen__ed-note.txt"),
+    ("case_04_dka",    "samples/dka-maria-gonzalez__ed-note.txt"),
+    ("case_05_stroke", "samples/stroke-dorothy-williams__ed-note.txt"),
 ]
 
 PASS = "\033[92m PASS\033[0m"
