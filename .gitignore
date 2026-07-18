@@ -36,3 +36,4 @@ graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
 
 # Claude Code
 .claude/
+.vscode/

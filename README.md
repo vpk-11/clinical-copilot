@@ -72,17 +72,17 @@ conda activate clinical-copilot
 pip install -r requirements.txt
 cp .env.example .env
 # Edit .env: add ANTHROPIC_API_KEY and WANDB_API_KEY at minimum
-uvicorn api.main:app --reload --port 8000
+python -m api.main
 ```
 
-If `WANDB_API_KEY` is missing, the server starts in degraded mode (no tracing, no crash). If `ANTHROPIC_API_KEY` is missing, LLM agents fall back to deterministic extraction.
+Runs on `PORT` from `.env` (default `8000`). If `WANDB_API_KEY` is missing, the server starts in degraded mode (no tracing, no crash). If `ANTHROPIC_API_KEY` is missing, LLM agents fall back to deterministic extraction.
 
 ### Frontend
 
 ```bash
 cd client
 pnpm install
-pnpm dev   # dev server on :5173 with proxy to :8000
+pnpm dev   # dev server on CLIENT_PORT from .env (default 5173), proxies to PORT (default 8000)
 ```
 
 Build for production:
@@ -104,12 +104,15 @@ Set `API_KEY` in `.env` to enforce API key auth on all endpoints. Clients must s
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | For Anthropic models | none | Provider key for default LiteLLM model |
 | `WANDB_API_KEY` | No | none | W&B/Weave tracing. Missing = degraded mode |
+| `WANDB_ENABLED` | No | `true` | Set to `false` to disable W&B/Weave entirely, regardless of whether `WANDB_API_KEY` is set |
 | `LLM_MODEL` | No | `anthropic/claude-sonnet-4-20250514` | Any LiteLLM model string |
 | `API_KEY` | No | none | Enables `X-API-Key` header enforcement |
 | `ALLOWED_ORIGINS` | No | `http://localhost:5173` | Comma-separated CORS origin list |
 | `WANDB_PROJECT` | No | `clinical-copilot` | W&B project name |
 | `WANDB_ENTITY` | No | none | W&B username or org |
 | `VITE_API_BASE_URL` | No | `` (same-origin) | Frontend backend base URL |
+| `PORT` | No | `8000` | Backend port. Render sets this itself in production. |
+| `CLIENT_PORT` | No | `5173` | Frontend dev server port (`pnpm dev` only, irrelevant to the production build). |
 
 ---
 
@@ -134,10 +137,25 @@ The matching provider SDK must be installed and the correct API key must be set.
 |---|---|---|
 | POST | `/upload` | Upload PDF, DOCX, MD, or TXT. Returns extracted text. |
 | POST | `/normalize` | Normalize raw chart text via InputAgent. |
-| POST | `/analyze` | Full pipeline. Returns SOAP note, flags, meds, timeline. |
+| POST | `/analyze` | Full pipeline. Returns SOAP note, flags, meds, timeline. Rate limited to 10/minute per IP. |
 | GET | `/health` | Health check. No auth required. |
+| GET | `/samples` | List sample patient bundles (synthetic data), grouped with demo ID, patient name, and file list. No auth required. |
+| GET | `/samples/{filename}` | Download a single sample file (`.txt`/`.md`/`.pdf`/`.docx`). No auth required. |
+| GET | `/samples/zip/{group}` | Download a whole patient's document bundle as a `.zip`. No auth required. |
 
-All endpoints except `/health` and `/` require `X-API-Key` when `API_KEY` is set.
+All endpoints except `/health`, `/`, and `/samples*` require `X-API-Key` when `API_KEY` is set.
+
+### Bring your own key
+
+Every request to `/normalize` and `/analyze` can override the server's default LLM provider/model/key via headers, read once per request and never logged or persisted:
+
+| Header | Purpose |
+|---|---|
+| `x-llm-provider` | `anthropic` \| `openai` \| `groq` \| `ollama`. Omit to use the server default entirely. |
+| `x-llm-model` | Bare model id (e.g. `gpt-4o`). Blank falls back to that provider's default model. |
+| `x-anthropic-api-key` / `x-openai-api-key` / `x-groq-api-key` | Caller-supplied key for the selected provider. Blank falls back to the server's env-configured key. |
+
+The UI exposes this as a settings panel (top-right gear icon): keys are held in `sessionStorage`, sent as request headers, and cleared when the tab closes.
 
 ### `/analyze` response
 
@@ -161,6 +179,21 @@ All endpoints except `/health` and `/` require `X-API-Key` when `API_KEY` is set
 
 ---
 
+## Sample Data
+
+`samples/` holds synthetic patient bundles for demoing without real data. Files are named
+`{group}__{document}.{ext}` — one group per patient, files vary in count and format per
+group (2 to 4 files each: `.txt`, `.md`, `.pdf`, `.docx`) to mimic how real charts arrive
+as a mismatched pile of documents rather than one clean file.
+
+Every file in a group carries that patient's **Demo ID** (e.g. `DEMO-CHF-01`) so whichever
+document gets opened first still tells you what to type into the app's Patient ID field.
+The UI's sample picker shows the Demo ID, a copy button, per-file downloads, and a
+"Download all" zip per patient.
+
+To regenerate or edit sample content: `pip install -r requirements-dev.txt`, then edit and
+rerun `python scripts/generate_samples.py`. Not a runtime dependency of the app.
+
 ## Pipeline Smoke Test
 
 ```bash
@@ -168,7 +201,7 @@ conda activate clinical-copilot
 python -c "
 from orchestrator.pipeline import run_pipeline
 import json
-result = run_pipeline(open('tests/sample_chart.txt').read())
+result = run_pipeline(open('samples/chf-jane-doe__ed-note.txt').read())
 print(json.dumps(result, indent=2))
 "
 ```
@@ -189,7 +222,8 @@ clinical-copilot/
 ├── orchestrator/
 │   └── pipeline.py        <- parallel fan-out orchestration
 ├── api/
-│   └── main.py            <- FastAPI app, auth middleware, CORS, endpoints
+│   ├── main.py            <- FastAPI app, auth middleware, CORS, endpoints
+│   └── limiter.py         <- slowapi rate limiter instance
 ├── shared/
 │   ├── llm.py             <- LiteLLM wrapper, single LLM entry point
 │   ├── models.py          <- AgentMessage TypedDict contract
@@ -202,15 +236,22 @@ clinical-copilot/
 │   │   ├── App.tsx                    <- page state machine
 │   │   ├── api.ts                     <- fetch wrappers
 │   │   ├── types.ts                   <- shared TypeScript types
+│   │   ├── hooks/
+│   │   │   └── useSession.ts          <- sessionStorage-backed state (BYOK config)
 │   │   └── components/
-│   │       ├── FileUpload.tsx         <- file intake + normalization
+│   │       ├── FileUpload.tsx         <- file intake + normalization + sample downloads
 │   │       ├── ResultsDashboard.tsx   <- flags, reports, meds, timeline
 │   │       ├── ReportPanel.tsx        <- markdown render + print-to-PDF
-│   │       └── FlagBadge.tsx          <- severity badge
+│   │       ├── FlagBadge.tsx          <- severity badge
+│   │       └── SettingsPanel.tsx      <- BYOK provider/model/key panel
 │   └── vite.config.ts
-├── tests/                 <- synthetic clinical test cases
+├── samples/               <- synthetic patient document bundles, downloadable from the UI
+├── scripts/
+│   └── generate_samples.py <- authors samples/ content (needs requirements-dev.txt)
+├── tests/                 <- pipeline test runner (samples/ has the fixtures)
 ├── .env.example
 ├── requirements.txt
+├── requirements-dev.txt
 └── README.md
 ```
 
