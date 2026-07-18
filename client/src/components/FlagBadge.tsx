@@ -27,10 +27,11 @@ export default function FlagBadge({ flag, showEvidence = false }: FlagBadgeProps
       className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold border ring-1 ${styles}`}
       title={flag.evidence ?? flag.flag}
     >
-      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${dot}`} />
+      <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${dot}`} aria-hidden="true" />
+      <span className="sr-only">{sev} severity: </span>
       {flag.flag}
       {showEvidence && flag.evidence && (
-        <span className="font-normal opacity-75 ml-0.5">— {flag.evidence}</span>
+        <span className="font-normal opacity-75 ml-0.5">- {flag.evidence}</span>
       )}
     </span>
   );

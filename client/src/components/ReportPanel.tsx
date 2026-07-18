@@ -82,9 +82,9 @@ export default function ReportPanel({
         <div className="flex items-center justify-between gap-2">
           <div className="flex items-center gap-2.5">
             {icon === "doctor" ? (
-              <Stethoscope className="w-4 h-4 shrink-0" />
+              <Stethoscope className="w-4 h-4 shrink-0" aria-hidden="true" />
             ) : (
-              <User className="w-4 h-4 shrink-0" />
+              <User className="w-4 h-4 shrink-0" aria-hidden="true" />
             )}
             <div>
               <h3 className="text-sm font-semibold">{title}</h3>
@@ -95,8 +95,9 @@ export default function ReportPanel({
             onClick={handleDownloadPDF}
             className="inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg bg-white/60 hover:bg-white/90 transition-colors border border-current/20"
             title={`Download ${title} as PDF`}
+            aria-label={`Download ${title} as PDF`}
           >
-            <Download className="w-3 h-3" />
+            <Download className="w-3 h-3" aria-hidden="true" />
             PDF
           </button>
         </div>

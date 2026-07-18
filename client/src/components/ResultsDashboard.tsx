@@ -22,7 +22,7 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
       {highFlags.length > 0 && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4">
           <div className="flex items-center gap-2 mb-3">
-            <AlertTriangle className="w-4 h-4 text-red-600 shrink-0" />
+            <AlertTriangle className="w-4 h-4 text-red-600 shrink-0" aria-hidden="true" />
             <h2 className="text-sm font-semibold text-red-700">
               {highFlags.length} Critical Flag{highFlags.length > 1 ? "s" : ""}
             </h2>
@@ -49,13 +49,16 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
         </div>
       )}
 
-      {/* Reports — side-by-side on desktop, tabs on mobile */}
+      {/* Reports - side-by-side on desktop, tabs on mobile */}
       <div>
         {/* Mobile tabs */}
-        <div className="flex border-b border-slate-200 mb-4 md:hidden">
+        <div role="tablist" aria-label="Report view" className="flex border-b border-slate-200 mb-4 md:hidden">
           {(["doctor", "patient"] as const).map((tab) => (
             <button
               key={tab}
+              role="tab"
+              aria-selected={activeTab === tab}
+              aria-controls={`${tab}-report-panel`}
               onClick={() => setActiveTab(tab)}
               className={`flex-1 py-2.5 text-sm font-medium transition-colors ${
                 activeTab === tab
@@ -70,7 +73,11 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
 
         {/* Desktop: side-by-side. Mobile: single active tab */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4" style={{ minHeight: "520px" }}>
-          <div className={activeTab === "patient" ? "hidden md:flex flex-col" : "flex flex-col"}>
+          <div
+            id="doctor-report-panel"
+            role="tabpanel"
+            className={activeTab === "patient" ? "hidden md:flex flex-col" : "flex flex-col"}
+          >
             <ReportPanel
               title="Clinical Report"
               subtitle="Technical summary for care team"
@@ -80,7 +87,11 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
               downloadFilename="clinical-report"
             />
           </div>
-          <div className={activeTab === "doctor" ? "hidden md:flex flex-col" : "flex flex-col"}>
+          <div
+            id="patient-report-panel"
+            role="tabpanel"
+            className={activeTab === "doctor" ? "hidden md:flex flex-col" : "flex flex-col"}
+          >
             <ReportPanel
               title="Patient Summary"
               subtitle="Plain-language explanation for the patient"
@@ -97,17 +108,19 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
       <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
         <button
           onClick={() => setShowMeds((v) => !v)}
+          aria-expanded={showMeds}
+          aria-controls="medications-panel"
           className="w-full flex items-center justify-between px-5 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
         >
           <span>Medications ({result.medications.length})</span>
           {showMeds ? (
-            <ChevronUp className="w-4 h-4 text-slate-400" />
+            <ChevronUp className="w-4 h-4 text-slate-400" aria-hidden="true" />
           ) : (
-            <ChevronDown className="w-4 h-4 text-slate-400" />
+            <ChevronDown className="w-4 h-4 text-slate-400" aria-hidden="true" />
           )}
         </button>
         {showMeds && (
-          <div className="border-t border-slate-200">
+          <div id="medications-panel" className="border-t border-slate-200">
             <table className="w-full text-sm">
               <thead>
                 <tr className="bg-slate-50">
@@ -120,8 +133,8 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
                 {result.medications.map((m, i) => (
                   <tr key={i} className="border-t border-slate-100 hover:bg-slate-50">
                     <td className="px-5 py-3 font-medium text-slate-800">{m.name}</td>
-                    <td className="px-5 py-3 text-slate-600">{m.dose || "—"}</td>
-                    <td className="px-5 py-3 text-slate-600">{m.frequency || "—"}</td>
+                    <td className="px-5 py-3 text-slate-600">{m.dose || "-"}</td>
+                    <td className="px-5 py-3 text-slate-600">{m.frequency || "-"}</td>
                   </tr>
                 ))}
               </tbody>
@@ -149,17 +162,19 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
         <div className="bg-white border border-slate-200 rounded-xl overflow-hidden">
           <button
             onClick={() => setShowTimeline((v) => !v)}
+            aria-expanded={showTimeline}
+            aria-controls="timeline-panel"
             className="w-full flex items-center justify-between px-5 py-4 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
           >
             <span>Medical Timeline ({result.timeline_events.length} events)</span>
             {showTimeline ? (
-              <ChevronUp className="w-4 h-4 text-slate-400" />
+              <ChevronUp className="w-4 h-4 text-slate-400" aria-hidden="true" />
             ) : (
-              <ChevronDown className="w-4 h-4 text-slate-400" />
+              <ChevronDown className="w-4 h-4 text-slate-400" aria-hidden="true" />
             )}
           </button>
           {showTimeline && (
-            <div className="border-t border-slate-200 divide-y divide-slate-100">
+            <div id="timeline-panel" className="border-t border-slate-200 divide-y divide-slate-100">
               {result.timeline_events.map((e, i) => (
                 <div key={i} className="flex gap-4 px-5 py-3 hover:bg-slate-50">
                   <span className="text-xs text-slate-400 w-24 shrink-0 mt-0.5 font-mono">
@@ -176,26 +191,28 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
         </div>
       )}
 
-      {/* Weave trace footer */}
-      <div className="flex items-center justify-between bg-slate-100 rounded-xl px-5 py-3">
-        <div>
-          <p className="text-xs text-slate-500">
-            W&B Weave audit trail
-          </p>
-          <p className="text-xs text-slate-400 font-mono mt-0.5">
-            trace: {result.trace_id.slice(0, 16)}…
-          </p>
+      {/* Weave trace footer - hidden when W&B tracing is disabled server-side */}
+      {result.weave_url && (
+        <div className="flex items-center justify-between bg-slate-100 rounded-xl px-5 py-3">
+          <div>
+            <p className="text-xs text-slate-500">
+              W&B Weave audit trail
+            </p>
+            <p className="text-xs text-slate-400 font-mono mt-0.5">
+              trace: {result.trace_id.slice(0, 16)}…
+            </p>
+          </div>
+          <a
+            href={result.weave_url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-clinical-600 hover:text-clinical-700"
+          >
+            View W&B Weave
+            <ExternalLink className="w-3 h-3" aria-hidden="true" />
+          </a>
         </div>
-        <a
-          href={result.weave_url}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-clinical-600 hover:text-clinical-700"
-        >
-          View W&B Weave
-          <ExternalLink className="w-3 h-3" />
-        </a>
-      </div>
+      )}
     </div>
   );
 }
