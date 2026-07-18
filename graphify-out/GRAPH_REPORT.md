@@ -1,16 +1,16 @@
-# Graph Report - clinical-copilot  (2026-06-19)
+# Graph Report - clinical-copilot  (2026-07-18)
 
 ## Corpus Check
-- 35 files · ~13,456 words
+- 39 files · ~15,908 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 265 nodes · 351 edges · 29 communities (27 shown, 2 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 13 edges (avg confidence: 0.75)
+- 289 nodes · 396 edges · 33 communities (29 shown, 4 thin omitted)
+- Extraction: 97% EXTRACTED · 3% INFERRED · 0% AMBIGUOUS · INFERRED: 11 edges (avg confidence: 0.72)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `44bc9604`
+- Built from commit: `feb54179`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -19,7 +19,7 @@
 - [[_COMMUNITY_Agent Implementations|Agent Implementations]]
 - [[_COMMUNITY_FastAPI + Contract Layer|FastAPI + Contract Layer]]
 - [[_COMMUNITY_Community 3|Community 3]]
-- [[_COMMUNITY_Multi-Agent Pipeline Docs|Multi-Agent Pipeline Docs]]
+- [[_COMMUNITY_Community 4|Community 4]]
 - [[_COMMUNITY_Clinical Test Cases|Clinical Test Cases]]
 - [[_COMMUNITY_LiteLLM Config|LiteLLM Config]]
 - [[_COMMUNITY_Environment Setup|Environment Setup]]
@@ -32,30 +32,34 @@
 - [[_COMMUNITY_Test Runner|Test Runner]]
 - [[_COMMUNITY_Agents Module|Agents Module]]
 - [[_COMMUNITY_Shared Module|Shared Module]]
+- [[_COMMUNITY_Community 29|Community 29]]
+- [[_COMMUNITY_Community 30|Community 30]]
+- [[_COMMUNITY_Community 31|Community 31]]
+- [[_COMMUNITY_Community 32|Community 32]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `run()` - 17 edges
+1. `run()` - 16 edges
 2. `compilerOptions` - 16 edges
-3. `AgentMessage` - 15 edges
-4. `chat()` - 14 edges
-5. `PROJECT_CONTEXT` - 14 edges
-6. `ClinicalCopilot` - 10 edges
-7. `ClinicalCopilot — Session Plan` - 9 edges
-8. `Core Stack` - 8 edges
-9. `run()` - 7 edges
-10. `run_pipeline()` - 7 edges
+3. `AgentMessage` - 14 edges
+4. `PROJECT_CONTEXT` - 14 edges
+5. `chat()` - 13 edges
+6. `ClinicalCopilot` - 12 edges
+7. `run()` - 9 edges
+8. `ClinicalCopilot — Session Plan` - 9 edges
+9. `analyze()` - 8 edges
+10. `Core Stack` - 8 edges
 
 ## Surprising Connections (you probably didn't know these)
-- `Critical lab: Glucose 512 mg/dL, bicarb 8, anion gap 28` --conceptually_related_to--> `Clinical threshold constants (K>6.0 HIGH, BNP>1000 HIGH, SpO2<94, etc.)`  [INFERRED]
-  tests/case_04_dka.txt → agents/risk.py
-- `Critical lab: K 6.1 (CRITICALLY HIGH)` --conceptually_related_to--> `Clinical threshold constants (K>6.0 HIGH, BNP>1000 HIGH, SpO2<94, etc.)`  [INFERRED]
-  tests/sample_chart.txt → agents/risk.py
-- `AgentMessage` --uses--> `AgentMessage`  [INFERRED]
-  agents/input.py → shared/models.py
-- `AgentMessage` --uses--> `AgentMessage`  [INFERRED]
-  agents/medication.py → shared/models.py
-- `AgentMessage` --uses--> `AgentMessage`  [INFERRED]
-  agents/synthesis.py → shared/models.py
+- `analyze()` --calls--> `run_pipeline()`  [INFERRED]
+  api/main.py → orchestrator/pipeline.py
+- `analyze()` --calls--> `generate_doctor_report()`  [INFERRED]
+  api/main.py → /Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/shared/reports.py
+- `generate_patient_report()` --calls--> `chat()`  [INFERRED]
+  /Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/shared/reports.py → shared/llm.py
+- `run_case()` --calls--> `run()`  [EXTRACTED]
+  tests/run_all.py → agents/risk.py
+- `run_case()` --calls--> `run()`  [EXTRACTED]
+  tests/run_all.py → agents/synthesis.py
 
 ## Import Cycles
 - None detected.
@@ -65,11 +69,11 @@
 - **Pipeline execution order: ingestion -> [medication || timeline] -> risk -> synthesis** — agents_ingestion_run, agents_medication_run, agents_timeline_run, agents_risk_run, agents_synthesis_run [EXTRACTED 1.00]
 - **Five test cases covering five different acute emergencies for full pipeline validation** — tests_sample_chart_jane_doe, tests_case_02_sepsis_john_smith, tests_case_03_stemi_robert_chen, tests_case_04_dka_maria_gonzalez, tests_case_05_stroke_dorothy_williams [EXTRACTED 1.00]
 
-## Communities (29 total, 2 thin omitted)
+## Communities (33 total, 4 thin omitted)
 
 ### Community 0 - "Task Documentation"
-Cohesion: 0.13
-Nodes (14): `/analyze` response, API, Architecture, Authentication, Backend, ClinicalCopilot, Environment Variables, Frontend (+6 more)
+Cohesion: 0.11
+Nodes (17): `/analyze` response, API, Architecture, Authentication, Backend, Bring your own key, Changelog, ClinicalCopilot (+9 more)
 
 ### Community 1 - "Agent Implementations"
 Cohesion: 0.07
@@ -77,31 +81,31 @@ Nodes (26): AI / LLM Layer, API / Router Surface, Architecture Summary, Backend,
 
 ### Community 2 - "FastAPI + Contract Layer"
 Cohesion: 0.08
-Nodes (23): dependencies, react, react-dom, devDependencies, lucide-react, react-dropzone, react-markdown, remark-gfm (+15 more)
+Nodes (24): dependencies, react, react-dom, devDependencies, lucide-react, react-dropzone, react-markdown, remark-gfm (+16 more)
 
 ### Community 3 - "Community 3"
-Cohesion: 0.22
-Nodes (12): _add_flag(), _deterministic_flags(), _max_number_after(), _merge_flags(), _numbers_after(), run(), SOAP Note output structure (Subjective/Objective/Assessment/Plan), _fallback_events() (+4 more)
+Cohesion: 0.19
+Nodes (14): check_interactions(), extract_medications(), _fallback_extract_medications(), _med_key(), _merge_medications(), AgentMessage, run(), _async_pipeline() (+6 more)
 
-### Community 4 - "Multi-Agent Pipeline Docs"
-Cohesion: 0.21
-Nodes (9): check(), End-to-end test runner for all patient cases. Usage: python tests/run_all.py, run_case(), init_weave(), Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med, Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med, trace_agent(), W&B wandb.init call (+1 more)
+### Community 4 - "Community 4"
+Cohesion: 0.67
+Nodes (3): Diagnosis: DKA severe — pH 7.08, bicarb 8, glucose 512, Critical lab: Glucose 512 mg/dL, bicarb 8, anion gap 28, Patient: Maria Gonzalez — severe DKA (T1DM, missed insulin)
 
 ### Community 5 - "Clinical Test Cases"
-Cohesion: 0.22
-Nodes (9): Clinical threshold constants (K>6.0 HIGH, BNP>1000 HIGH, SpO2<94, etc.), Diagnosis: DKA severe — pH 7.08, bicarb 8, glucose 512, Critical lab: Glucose 512 mg/dL, bicarb 8, anion gap 28, Patient: Maria Gonzalez — severe DKA (T1DM, missed insulin), Critical lab: BNP 1840 pg/mL (CRITICALLY HIGH), Diagnosis: Acute decompensated CHF (EF 35%), Critical lab: K 6.1 (CRITICALLY HIGH), Patient: Jane Doe — CHF decompensation with hyperkalemia (+1 more)
+Cohesion: 0.40
+Nodes (5): Critical lab: BNP 1840 pg/mL (CRITICALLY HIGH), Diagnosis: Acute decompensated CHF (EF 35%), Critical lab: K 6.1 (CRITICALLY HIGH), Patient: Jane Doe — CHF decompensation with hyperkalemia, Drug combo: Lisinopril + Spironolactone (ACE + K-sparing diuretic)
 
 ### Community 6 - "LiteLLM Config"
 Cohesion: 0.09
-Nodes (19): ACCEPTED_TYPES, FileEntry, FileUploadProps, FlagBadgeProps, SEVERITY_DOT, SEVERITY_STYLES, ReportPanelProps, ResultsDashboardProps (+11 more)
+Nodes (19): FlagBadge(), FlagBadgeProps, SEVERITY_DOT, SEVERITY_STYLES, ReportPanelProps, ResultsDashboardProps, PROVIDERS, SettingsPanelProps (+11 more)
 
 ### Community 7 - "Environment Setup"
-Cohesion: 0.13
-Nodes (18): analyze(), AnalyzeRequest, AnalyzeResponse, api_key_middleware(), normalize(), NormalizeRequest, NormalizeResponse, Run InputAgent to normalize raw text into structured clinical chart format. (+10 more)
+Cohesion: 0.11
+Nodes (20): Kept in its own module to avoid a circular import between main.py and the route, analyze(), AnalyzeRequest, AnalyzeResponse, api_key_middleware(), _build_llm_config_from_headers(), list_samples(), normalize() (+12 more)
 
 ### Community 8 - "Task Scaffolding"
-Cohesion: 0.29
-Nodes (10): Extract text from an uploaded PDF, DOCX, MD, or TXT file., upload_file(), _extract_docx(), _extract_pdf(), _extract_pdf_fallback(), extract_text(), File text extraction. Pure Python, no LLM. Uses pdfplumber for PDFs — extracts t, Uses pdfplumber for spatial-aware extraction — captures text that sits     besid (+2 more)
+Cohesion: 0.16
+Nodes (14): ACCEPTED_TYPES, FileEntry, FileUploadProps, analyzeChart(), handleResponse(), listSamples(), llmHeaders(), normalizeText() (+6 more)
 
 ### Community 9 - "Community 9"
 Cohesion: 0.11
@@ -124,28 +128,36 @@ Cohesion: 0.67
 Nodes (3): Diagnosis: Anterior wall STEMI — cath lab activation, Patient: Robert Chen — anterior STEMI, Critical lab: Troponin I 4.8 rising to 9.2 ng/mL
 
 ### Community 16 - "Agents Module"
-Cohesion: 0.11
-Nodes (22): run(), AgentMessage, InputAgent: normalizes raw, messy clinical text into structured chart format. Th, run(), check_interactions(), extract_medications(), _fallback_extract_medications(), _med_key() (+14 more)
+Cohesion: 0.13
+Nodes (26): run(), AgentMessage, InputAgent: normalizes raw, messy clinical text into structured chart format. Th, run(), _add_flag(), _deterministic_flags(), _max_number_after(), _merge_flags() (+18 more)
+
+### Community 29 - "Community 29"
+Cohesion: 0.50
+Nodes (3): Issue, Pharmacy / Neurology Note - Anticoagulation Management, Plan
+
+### Community 32 - "Community 32"
+Cohesion: 0.25
+Nodes (10): Extract text from an uploaded PDF, DOCX, MD, or TXT file., upload_file(), _extract_docx(), _extract_pdf(), _extract_pdf_fallback(), extract_text(), File text extraction. Pure Python, no LLM. Uses pdfplumber for PDFs — extracts t, Uses pdfplumber for spatial-aware extraction — captures text that sits     besid (+2 more)
 
 ## Knowledge Gaps
-- **111 isolated node(s):** `What It Does`, `Architecture`, `Stack`, `Backend`, `Frontend` (+106 more)
+- **117 isolated node(s):** `What It Does`, `Architecture`, `Stack`, `Backend`, `Frontend` (+112 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **2 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `run()` connect `Community 3` to `Agents Module`, `Multi-Agent Pipeline Docs`, `Environment Setup`?**
-  _High betweenness centrality (0.054) - this node is a cross-community bridge._
 - **Why does `AgentMessage` connect `Agents Module` to `Community 3`?**
-  _High betweenness centrality (0.032) - this node is a cross-community bridge._
+  _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `run()` connect `Agents Module` to `Environment Setup`?**
-  _High betweenness centrality (0.031) - this node is a cross-community bridge._
+  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+- **Why does `run()` connect `Agents Module` to `Community 3`?**
+  _High betweenness centrality (0.010) - this node is a cross-community bridge._
 - **Are the 3 inferred relationships involving `AgentMessage` (e.g. with `AgentMessage` and `AgentMessage`) actually correct?**
   _`AgentMessage` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `chat()` (e.g. with `run()` and `run()`) actually correct?**
   _`chat()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `What It Does`, `Architecture`, `Stack` to the rest of the system?**
-  _121 weakly-connected nodes found - possible documentation gaps or missing edges._
+  _131 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Task Documentation` be split into smaller, more focused modules?**
-  _Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._

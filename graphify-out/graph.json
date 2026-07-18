@@ -75,7 +75,7 @@
       "label": "What It Does",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L9",
+      "source_location": "L12",
       "_origin": "ast",
       "id": "readme_what_it_does",
       "community": 0,
@@ -85,7 +85,7 @@
       "label": "Architecture",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L17",
+      "source_location": "L20",
       "_origin": "ast",
       "id": "readme_architecture",
       "community": 0,
@@ -95,7 +95,7 @@
       "label": "Stack",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L50",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "readme_stack",
       "community": 0,
@@ -105,7 +105,7 @@
       "label": "Setup",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L62",
+      "source_location": "L65",
       "_origin": "ast",
       "id": "readme_setup",
       "community": 0,
@@ -115,7 +115,7 @@
       "label": "Backend",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L64",
+      "source_location": "L67",
       "_origin": "ast",
       "id": "readme_backend",
       "community": 0,
@@ -125,7 +125,7 @@
       "label": "Frontend",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L77",
+      "source_location": "L80",
       "_origin": "ast",
       "id": "readme_frontend",
       "community": 0,
@@ -135,7 +135,7 @@
       "label": "Authentication",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L92",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "readme_authentication",
       "community": 0,
@@ -145,7 +145,7 @@
       "label": "Environment Variables",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L98",
+      "source_location": "L101",
       "_origin": "ast",
       "id": "readme_environment_variables",
       "community": 0,
@@ -155,7 +155,7 @@
       "label": "LLM Provider",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L113",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "readme_llm_provider",
       "community": 0,
@@ -165,27 +165,47 @@
       "label": "API",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L128",
+      "source_location": "L134",
       "_origin": "ast",
       "id": "readme_api",
       "community": 0,
       "norm_label": "api"
     },
     {
+      "label": "Bring your own key",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L148",
+      "_origin": "ast",
+      "id": "readme_bring_your_own_key",
+      "community": 0,
+      "norm_label": "bring your own key"
+    },
+    {
       "label": "`/analyze` response",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L139",
+      "source_location": "L160",
       "_origin": "ast",
       "id": "readme_analyze_response",
       "community": 0,
       "norm_label": "`/analyze` response"
     },
     {
+      "label": "Sample Data",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L182",
+      "_origin": "ast",
+      "id": "readme_sample_data",
+      "community": 0,
+      "norm_label": "sample data"
+    },
+    {
       "label": "Pipeline Smoke Test",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L161",
+      "source_location": "L197",
       "_origin": "ast",
       "id": "readme_pipeline_smoke_test",
       "community": 0,
@@ -195,751 +215,21 @@
       "label": "Project Structure",
       "file_type": "document",
       "source_file": "README.md",
-      "source_location": "L175",
+      "source_location": "L211",
       "_origin": "ast",
       "id": "readme_project_structure",
       "community": 0,
       "norm_label": "project structure"
     },
     {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/__init__.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 20,
-      "norm_label": "__init__.py",
-      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_init_py"
-    },
-    {
-      "label": "ingestion.py",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "ingestion.py",
-      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "run()",
-      "id": "agents_ingestion_run"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "str",
-      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_str"
-    },
-    {
-      "label": "AgentMessage",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "agentmessage",
-      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_agentmessage"
-    },
-    {
-      "label": "input.py",
-      "file_type": "code",
-      "source_file": "agents/input.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "input.py",
-      "id": "agents_input"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "agents/input.py",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "run()",
-      "id": "agents_input_run"
-    },
-    {
-      "label": "AgentMessage",
-      "file_type": "code",
-      "source_file": "agents/input.py",
-      "source_location": "L55",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "agentmessage",
-      "id": "agents_input_py_agentmessage"
-    },
-    {
-      "label": "InputAgent: normalizes raw, messy clinical text into structured chart format. Th",
-      "file_type": "rationale",
-      "source_file": "agents/input.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "inputagent: normalizes raw, messy clinical text into structured chart format. th",
-      "id": "agents_input_rationale_1"
-    },
-    {
-      "label": "medication.py",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "medication.py",
-      "id": "agents_medication"
-    },
-    {
-      "label": "_med_key()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "_med_key()",
-      "id": "agents_medication_med_key"
-    },
-    {
-      "label": "_fallback_extract_medications()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "_fallback_extract_medications()",
-      "id": "agents_medication_fallback_extract_medications"
-    },
-    {
-      "label": "_merge_medications()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L45",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "_merge_medications()",
-      "id": "agents_medication_merge_medications"
-    },
-    {
-      "label": "extract_medications()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L66",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "extract_medications()",
-      "id": "agents_medication_extract_medications"
-    },
-    {
-      "label": "check_interactions()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "check_interactions()",
-      "id": "agents_medication_check_interactions"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L104",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "run()",
-      "id": "agents_medication_run"
-    },
-    {
-      "label": "AgentMessage",
-      "file_type": "code",
-      "source_file": "agents/medication.py",
-      "source_location": "L104",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "agentmessage",
-      "id": "agents_medication_py_agentmessage"
-    },
-    {
-      "label": "risk.py",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "risk.py",
-      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py"
-    },
-    {
-      "label": "_numbers_after()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_numbers_after()",
-      "id": "agents_risk_numbers_after"
-    },
-    {
-      "label": "_max_number_after()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L33",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_max_number_after()",
-      "id": "agents_risk_max_number_after"
-    },
-    {
-      "label": "_add_flag()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_add_flag()",
-      "id": "agents_risk_add_flag"
-    },
-    {
-      "label": "_deterministic_flags()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L43",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_deterministic_flags()",
-      "id": "agents_risk_deterministic_flags"
-    },
-    {
-      "label": "_merge_flags()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L132",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_merge_flags()",
-      "id": "agents_risk_merge_flags"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
-      "source_location": "L150",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "run()",
-      "id": "agents_risk_run"
-    },
-    {
-      "label": "synthesis.py",
-      "file_type": "code",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "synthesis.py",
-      "id": "agents_synthesis"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "run()",
-      "id": "agents_synthesis_run"
-    },
-    {
-      "label": "AgentMessage",
-      "file_type": "code",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L28",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "agentmessage",
-      "id": "agents_synthesis_py_agentmessage"
-    },
-    {
-      "label": "timeline.py",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "timeline.py",
-      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py"
-    },
-    {
-      "label": "_fallback_events()",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_fallback_events()",
-      "id": "agents_timeline_fallback_events"
-    },
-    {
-      "label": "str",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "str",
-      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py_str"
-    },
-    {
-      "label": "_merge_events()",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L32",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "_merge_events()",
-      "id": "agents_timeline_merge_events"
-    },
-    {
-      "label": "run()",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L49",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "run()",
-      "id": "agents_timeline_run"
-    },
-    {
-      "label": "AgentMessage",
-      "file_type": "code",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L49",
-      "_origin": "ast",
-      "community": 3,
-      "norm_label": "agentmessage",
-      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py_agentmessage"
-    },
-    {
-      "label": "__init__.py",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/api/__init__.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 25,
-      "norm_label": "__init__.py",
-      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_api_init_py"
-    },
-    {
-      "label": "main.py",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "main.py",
-      "id": "api_main"
-    },
-    {
-      "label": "api_key_middleware()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "api_key_middleware()",
-      "id": "api_main_api_key_middleware"
-    },
-    {
-      "label": "Request",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L42",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "request",
-      "id": "request"
-    },
-    {
-      "label": "NormalizeRequest",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L64",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "normalizerequest",
-      "id": "api_main_normalizerequest"
-    },
-    {
-      "label": "BaseModel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "basemodel",
-      "id": "basemodel"
-    },
-    {
-      "label": "NormalizeResponse",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L69",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "normalizeresponse",
-      "id": "api_main_normalizeresponse"
-    },
-    {
-      "label": "AnalyzeRequest",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L77",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "analyzerequest",
-      "id": "api_main_analyzerequest"
-    },
-    {
-      "label": "AnalyzeResponse",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L82",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "analyzeresponse",
-      "id": "api_main_analyzeresponse"
-    },
-    {
-      "label": "upload_file()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L99",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "upload_file()",
-      "id": "api_main_upload_file"
-    },
-    {
-      "label": "UploadFile",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L99",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "uploadfile",
-      "id": "uploadfile"
-    },
-    {
-      "label": "normalize()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L131",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "normalize()",
-      "id": "api_main_normalize"
-    },
-    {
-      "label": "analyze()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L150",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "analyze()",
-      "id": "api_main_analyze"
-    },
-    {
-      "label": "health()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L187",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "health()",
-      "id": "api_main_health"
-    },
-    {
-      "label": "serve_ui()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L197",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "serve_ui()",
-      "id": "api_main_serve_ui"
-    },
-    {
-      "label": "Extract text from an uploaded PDF, DOCX, MD, or TXT file.",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L100",
-      "_origin": "ast",
-      "community": 8,
-      "norm_label": "extract text from an uploaded pdf, docx, md, or txt file.",
-      "id": "api_main_rationale_100"
-    },
-    {
-      "label": "Run InputAgent to normalize raw text into structured clinical chart format.",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L132",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "run inputagent to normalize raw text into structured clinical chart format.",
-      "id": "api_main_rationale_132"
-    },
-    {
-      "label": "package.json",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "package.json",
-      "id": "client_package"
-    },
-    {
-      "label": "name",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L2",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "name",
-      "id": "client_package_name"
-    },
-    {
-      "label": "private",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L3",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "private",
-      "id": "client_package_private"
-    },
-    {
-      "label": "version",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L4",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "version",
-      "id": "client_package_version"
-    },
-    {
-      "label": "type",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "type",
-      "id": "client_package_type"
-    },
-    {
-      "label": "scripts",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L6",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "scripts",
-      "id": "client_package_scripts"
-    },
-    {
-      "label": "dev",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L7",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "dev",
-      "id": "client_package_scripts_dev"
-    },
-    {
-      "label": "build",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L8",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "build",
-      "id": "client_package_scripts_build"
-    },
-    {
-      "label": "preview",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L9",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "preview",
-      "id": "client_package_scripts_preview"
-    },
-    {
-      "label": "dependencies",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "dependencies",
-      "id": "client_package_dependencies"
-    },
-    {
-      "label": "react",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L12",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react",
-      "id": "client_package_dependencies_react"
-    },
-    {
-      "label": "react-dom",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react-dom",
-      "id": "client_package_dependencies_react_dom"
-    },
-    {
-      "label": "devDependencies",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L15",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "devdependencies",
-      "id": "client_package_devdependencies"
-    },
-    {
-      "label": "@tailwindcss/vite",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L16",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@tailwindcss/vite",
-      "id": "client_package_devdependencies_tailwindcss_vite"
-    },
-    {
-      "label": "@types/react",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L17",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@types/react",
-      "id": "client_package_devdependencies_types_react"
-    },
-    {
-      "label": "@types/react-dom",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L18",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@types/react-dom",
-      "id": "client_package_devdependencies_types_react_dom"
-    },
-    {
-      "label": "@vitejs/plugin-react",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L19",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "@vitejs/plugin-react",
-      "id": "client_package_devdependencies_vitejs_plugin_react"
-    },
-    {
-      "label": "lucide-react",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "lucide-react",
-      "id": "client_package_devdependencies_lucide_react"
-    },
-    {
-      "label": "react-dropzone",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react-dropzone",
-      "id": "client_package_devdependencies_react_dropzone"
-    },
-    {
-      "label": "react-markdown",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "react-markdown",
-      "id": "client_package_devdependencies_react_markdown"
-    },
-    {
-      "label": "remark-gfm",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L23",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "remark-gfm",
-      "id": "client_package_devdependencies_remark_gfm"
-    },
-    {
-      "label": "tailwindcss",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L24",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "tailwindcss",
-      "id": "client_package_devdependencies_tailwindcss"
-    },
-    {
-      "label": "typescript",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L25",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "typescript",
-      "id": "client_package_devdependencies_typescript"
-    },
-    {
-      "label": "vite",
-      "file_type": "code",
-      "source_file": "client/package.json",
-      "source_location": "L26",
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "vite",
-      "id": "client_package_devdependencies_vite"
+      "label": "Changelog",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L260",
+      "_origin": "ast",
+      "id": "readme_changelog",
+      "community": 0,
+      "norm_label": "changelog"
     },
     {
       "label": "App.tsx",
@@ -955,61 +245,11 @@
       "label": "App()",
       "file_type": "code",
       "source_file": "client/src/App.tsx",
-      "source_location": "L8",
+      "source_location": "L11",
       "_origin": "ast",
       "community": 6,
       "norm_label": "app()",
       "id": "src_app_app"
-    },
-    {
-      "label": "api.ts",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "api.ts",
-      "id": "src_api"
-    },
-    {
-      "label": "handleResponse()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "handleresponse()",
-      "id": "src_api_handleresponse"
-    },
-    {
-      "label": "uploadFile()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L13",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "uploadfile()",
-      "id": "src_api_uploadfile"
-    },
-    {
-      "label": "normalizeText()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "normalizetext()",
-      "id": "src_api_normalizetext"
-    },
-    {
-      "label": "analyzeChart()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L34",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "analyzechart()",
-      "id": "src_api_analyzechart"
     },
     {
       "label": "FileUpload.tsx",
@@ -1017,17 +257,37 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "fileupload.tsx",
       "id": "components_fileupload"
+    },
+    {
+      "label": "extOf()",
+      "file_type": "code",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "extof()",
+      "id": "components_fileupload_extof"
+    },
+    {
+      "label": "docKind()",
+      "file_type": "code",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "dockind()",
+      "id": "components_fileupload_dockind"
     },
     {
       "label": "ACCEPTED_TYPES",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
-      "source_location": "L8",
+      "source_location": "L20",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "accepted_types",
       "id": "components_fileupload_accepted_types"
     },
@@ -1035,9 +295,9 @@
       "label": "formatBytes()",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
-      "source_location": "L16",
+      "source_location": "L28",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "formatbytes()",
       "id": "components_fileupload_formatbytes"
     },
@@ -1045,9 +305,9 @@
       "label": "FileEntry",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
-      "source_location": "L22",
+      "source_location": "L34",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "fileentry",
       "id": "components_fileupload_fileentry"
     },
@@ -1055,9 +315,9 @@
       "label": "FileUploadProps",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
-      "source_location": "L30",
+      "source_location": "L42",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "fileuploadprops",
       "id": "components_fileupload_fileuploadprops"
     },
@@ -1065,9 +325,9 @@
       "label": "FileUpload()",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
-      "source_location": "L36",
+      "source_location": "L49",
       "_origin": "ast",
-      "community": 6,
+      "community": 8,
       "norm_label": "fileupload()",
       "id": "components_fileupload_fileupload"
     },
@@ -1182,14 +442,184 @@
       "id": "components_resultsdashboard_resultsdashboard"
     },
     {
-      "label": "main.tsx",
+      "label": "api.ts",
       "file_type": "code",
-      "source_file": "client/src/main.tsx",
+      "source_file": "client/src/api.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "api.ts",
+      "id": "src_api"
+    },
+    {
+      "label": "PROVIDER_KEY_HEADERS",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "provider_key_headers",
+      "id": "src_api_provider_key_headers"
+    },
+    {
+      "label": "llmHeaders()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "llmheaders()",
+      "id": "src_api_llmheaders"
+    },
+    {
+      "label": "handleResponse()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "handleresponse()",
+      "id": "src_api_handleresponse"
+    },
+    {
+      "label": "uploadFile()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "uploadfile()",
+      "id": "src_api_uploadfile"
+    },
+    {
+      "label": "normalizeText()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "normalizetext()",
+      "id": "src_api_normalizetext"
+    },
+    {
+      "label": "analyzeChart()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L52",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "analyzechart()",
+      "id": "src_api_analyzechart"
+    },
+    {
+      "label": "SampleGroup",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L65",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "samplegroup",
+      "id": "src_api_samplegroup"
+    },
+    {
+      "label": "SamplesResponse",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L73",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "samplesresponse",
+      "id": "src_api_samplesresponse"
+    },
+    {
+      "label": "listSamples()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L77",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "listsamples()",
+      "id": "src_api_listsamples"
+    },
+    {
+      "label": "sampleDownloadUrl()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "sampledownloadurl()",
+      "id": "src_api_sampledownloadurl"
+    },
+    {
+      "label": "sampleZipUrl()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L86",
+      "_origin": "ast",
+      "community": 8,
+      "norm_label": "samplezipurl()",
+      "id": "src_api_samplezipurl"
+    },
+    {
+      "label": "SettingsPanel.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/SettingsPanel.tsx",
       "source_location": "L1",
       "_origin": "ast",
       "community": 6,
-      "norm_label": "main.tsx",
-      "id": "src_main"
+      "norm_label": "settingspanel.tsx",
+      "id": "components_settingspanel"
+    },
+    {
+      "label": "PROVIDERS",
+      "file_type": "code",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "providers",
+      "id": "components_settingspanel_providers"
+    },
+    {
+      "label": "SettingsPanelProps",
+      "file_type": "code",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "settingspanelprops",
+      "id": "components_settingspanel_settingspanelprops"
+    },
+    {
+      "label": "SettingsPanel()",
+      "file_type": "code",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "settingspanel()",
+      "id": "components_settingspanel_settingspanel"
+    },
+    {
+      "label": "useSession.ts",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useSession.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "usesession.ts",
+      "id": "hooks_usesession"
+    },
+    {
+      "label": "useSession()",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useSession.ts",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "usesession()",
+      "id": "hooks_usesession_usesession"
     },
     {
       "label": "types.ts",
@@ -1270,6 +700,1223 @@
       "community": 6,
       "norm_label": "appstep",
       "id": "src_types_appstep"
+    },
+    {
+      "label": "LLMProvider",
+      "file_type": "code",
+      "source_file": "client/src/types.ts",
+      "source_location": "L47",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "llmprovider",
+      "id": "src_types_llmprovider"
+    },
+    {
+      "label": "LLMConfig",
+      "file_type": "code",
+      "source_file": "client/src/types.ts",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "llmconfig",
+      "id": "src_types_llmconfig"
+    },
+    {
+      "label": "DEFAULT_LLM_CONFIG",
+      "file_type": "code",
+      "source_file": "client/src/types.ts",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "default_llm_config",
+      "id": "src_types_default_llm_config"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "client/vite.config.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 17,
+      "norm_label": "vite.config.ts",
+      "id": "client_vite_config"
+    },
+    {
+      "label": "chf-jane-doe__labs-panel.md",
+      "file_type": "document",
+      "source_file": "samples/chf-jane-doe__labs-panel.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "chf-jane-doe__labs-panel.md",
+      "id": "samples_chf_jane_doe_labs_panel"
+    },
+    {
+      "label": "Repeat BMP - Jane Doe (DEMO-CHF-01)",
+      "file_type": "document",
+      "source_file": "samples/chf-jane-doe__labs-panel.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 30,
+      "norm_label": "repeat bmp - jane doe (demo-chf-01)",
+      "id": "samples_chf_jane_doe_labs_panel_repeat_bmp_jane_doe_demo_chf_01"
+    },
+    {
+      "label": "dka-maria-gonzalez__icu-flowsheet.md",
+      "file_type": "document",
+      "source_file": "samples/dka-maria-gonzalez__icu-flowsheet.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "dka-maria-gonzalez__icu-flowsheet.md",
+      "id": "samples_dka_maria_gonzalez_icu_flowsheet"
+    },
+    {
+      "label": "ICU Insulin Drip Flowsheet - Maria Gonzalez (DEMO-DKA-01)",
+      "file_type": "document",
+      "source_file": "samples/dka-maria-gonzalez__icu-flowsheet.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 31,
+      "norm_label": "icu insulin drip flowsheet - maria gonzalez (demo-dka-01)",
+      "id": "samples_dka_maria_gonzalez_icu_flowsheet_icu_insulin_drip_flowsheet_maria_gonzalez_demo_dka_01"
+    },
+    {
+      "label": "stroke-dorothy-williams__anticoag-note.md",
+      "file_type": "document",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "stroke-dorothy-williams__anticoag-note.md",
+      "id": "samples_stroke_dorothy_williams_anticoag_note"
+    },
+    {
+      "label": "Pharmacy / Neurology Note - Anticoagulation Management",
+      "file_type": "document",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "pharmacy / neurology note - anticoagulation management",
+      "id": "samples_stroke_dorothy_williams_anticoag_note_pharmacy_neurology_note_anticoagulation_management"
+    },
+    {
+      "label": "Issue",
+      "file_type": "document",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "issue",
+      "id": "samples_stroke_dorothy_williams_anticoag_note_issue"
+    },
+    {
+      "label": "Plan",
+      "file_type": "document",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 29,
+      "norm_label": "plan",
+      "id": "samples_stroke_dorothy_williams_anticoag_note_plan"
+    },
+    {
+      "label": "generate_samples.py",
+      "file_type": "code",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "generate_samples.py",
+      "id": "scripts_generate_samples"
+    },
+    {
+      "label": "write_md()",
+      "file_type": "code",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "write_md()",
+      "id": "scripts_generate_samples_write_md"
+    },
+    {
+      "label": "write_pdf()",
+      "file_type": "code",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "write_pdf()",
+      "id": "scripts_generate_samples_write_pdf"
+    },
+    {
+      "label": "write_docx()",
+      "file_type": "code",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "write_docx()",
+      "id": "scripts_generate_samples_write_docx"
+    },
+    {
+      "label": "One-time authoring script for samples/ demo fixtures. Not part of the app - run",
+      "file_type": "rationale",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 18,
+      "norm_label": "one-time authoring script for samples/ demo fixtures. not part of the app - run",
+      "id": "scripts_generate_samples_rationale_1"
+    },
+    {
+      "label": "run_all.py",
+      "file_type": "code",
+      "source_file": "tests/run_all.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "run_all.py",
+      "id": "tests_run_all"
+    },
+    {
+      "label": "check()",
+      "file_type": "code",
+      "source_file": "tests/run_all.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "check()",
+      "id": "tests_run_all_check"
+    },
+    {
+      "label": "run_case()",
+      "file_type": "code",
+      "source_file": "tests/run_all.py",
+      "source_location": "L44",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "run_case()",
+      "id": "tests_run_all_run_case"
+    },
+    {
+      "label": "End-to-end test runner for all patient cases. Usage: python tests/run_all.py",
+      "file_type": "rationale",
+      "source_file": "tests/run_all.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "end-to-end test runner for all patient cases. usage: python tests/run_all.py",
+      "id": "tests_run_all_rationale_1"
+    },
+    {
+      "label": "input.py",
+      "file_type": "code",
+      "source_file": "agents/input.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "input.py",
+      "id": "agents_input"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "agents/input.py",
+      "source_location": "L55",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "run()",
+      "id": "agents_input_run"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/input.py",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "agents_input_py_agentmessage"
+    },
+    {
+      "label": "InputAgent: normalizes raw, messy clinical text into structured chart format. Th",
+      "file_type": "rationale",
+      "source_file": "agents/input.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "inputagent: normalizes raw, messy clinical text into structured chart format. th",
+      "id": "agents_input_rationale_1"
+    },
+    {
+      "label": "medication.py",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "medication.py",
+      "id": "agents_medication"
+    },
+    {
+      "label": "_med_key()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "_med_key()",
+      "id": "agents_medication_med_key"
+    },
+    {
+      "label": "_fallback_extract_medications()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "_fallback_extract_medications()",
+      "id": "agents_medication_fallback_extract_medications"
+    },
+    {
+      "label": "_merge_medications()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L45",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "_merge_medications()",
+      "id": "agents_medication_merge_medications"
+    },
+    {
+      "label": "extract_medications()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L66",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "extract_medications()",
+      "id": "agents_medication_extract_medications"
+    },
+    {
+      "label": "check_interactions()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L82",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "check_interactions()",
+      "id": "agents_medication_check_interactions"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "agents/medication.py",
+      "source_location": "L109",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "run()",
+      "id": "agents_medication_run"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/medication.py",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "agentmessage",
+      "id": "agents_medication_py_agentmessage"
+    },
+    {
+      "label": "risk.py",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "risk.py",
+      "id": "agents_risk"
+    },
+    {
+      "label": "_numbers_after()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_numbers_after()",
+      "id": "agents_risk_numbers_after"
+    },
+    {
+      "label": "_max_number_after()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L33",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_max_number_after()",
+      "id": "agents_risk_max_number_after"
+    },
+    {
+      "label": "_add_flag()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_add_flag()",
+      "id": "agents_risk_add_flag"
+    },
+    {
+      "label": "_deterministic_flags()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L43",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_deterministic_flags()",
+      "id": "agents_risk_deterministic_flags"
+    },
+    {
+      "label": "_merge_flags()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L132",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_merge_flags()",
+      "id": "agents_risk_merge_flags"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "agents/risk.py",
+      "source_location": "L150",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "run()",
+      "id": "agents_risk_run"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/risk.py",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "agents_risk_py_agentmessage"
+    },
+    {
+      "label": "synthesis.py",
+      "file_type": "code",
+      "source_file": "agents/synthesis.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "synthesis.py",
+      "id": "agents_synthesis"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "agents/synthesis.py",
+      "source_location": "L28",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "run()",
+      "id": "agents_synthesis_run"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/synthesis.py",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "agents_synthesis_py_agentmessage"
+    },
+    {
+      "label": "timeline.py",
+      "file_type": "code",
+      "source_file": "agents/timeline.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "timeline.py",
+      "id": "agents_timeline"
+    },
+    {
+      "label": "_fallback_events()",
+      "file_type": "code",
+      "source_file": "agents/timeline.py",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_fallback_events()",
+      "id": "agents_timeline_fallback_events"
+    },
+    {
+      "label": "_merge_events()",
+      "file_type": "code",
+      "source_file": "agents/timeline.py",
+      "source_location": "L32",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "_merge_events()",
+      "id": "agents_timeline_merge_events"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "agents/timeline.py",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "run()",
+      "id": "agents_timeline_run"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/timeline.py",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "agents_timeline_py_agentmessage"
+    },
+    {
+      "label": "limiter.py",
+      "file_type": "code",
+      "source_file": "api/limiter.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "limiter.py",
+      "id": "api_limiter"
+    },
+    {
+      "label": "Kept in its own module to avoid a circular import between main.py and the route",
+      "file_type": "rationale",
+      "source_file": "api/limiter.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "kept in its own module to avoid a circular import between main.py and the route",
+      "id": "api_limiter_rationale_1"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "main.py",
+      "id": "api_main"
+    },
+    {
+      "label": "_build_llm_config_from_headers()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L78",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "_build_llm_config_from_headers()",
+      "id": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "label": "Request",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "request",
+      "id": "request"
+    },
+    {
+      "label": "api_key_middleware()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L98",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "api_key_middleware()",
+      "id": "api_main_api_key_middleware"
+    },
+    {
+      "label": "NormalizeRequest",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L122",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalizerequest",
+      "id": "api_main_normalizerequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "basemodel",
+      "id": "basemodel"
+    },
+    {
+      "label": "NormalizeResponse",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L127",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalizeresponse",
+      "id": "api_main_normalizeresponse"
+    },
+    {
+      "label": "AnalyzeRequest",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L135",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyzerequest",
+      "id": "api_main_analyzerequest"
+    },
+    {
+      "label": "AnalyzeResponse",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L140",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyzeresponse",
+      "id": "api_main_analyzeresponse"
+    },
+    {
+      "label": "upload_file()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L157",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "upload_file()",
+      "id": "api_main_upload_file"
+    },
+    {
+      "label": "UploadFile",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "uploadfile",
+      "id": "uploadfile"
+    },
+    {
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L189",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalize()",
+      "id": "api_main_normalize"
+    },
+    {
+      "label": "analyze()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L210",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyze()",
+      "id": "api_main_analyze"
+    },
+    {
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L252",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "health()",
+      "id": "api_main_health"
+    },
+    {
+      "label": "_sample_group_of()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L264",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "_sample_group_of()",
+      "id": "api_main_sample_group_of"
+    },
+    {
+      "label": "list_samples()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L269",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "list_samples()",
+      "id": "api_main_list_samples"
+    },
+    {
+      "label": "download_sample()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L295",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "download_sample()",
+      "id": "api_main_download_sample"
+    },
+    {
+      "label": "download_sample_zip()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L308",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "download_sample_zip()",
+      "id": "api_main_download_sample_zip"
+    },
+    {
+      "label": "serve_ui()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L333",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "serve_ui()",
+      "id": "api_main_serve_ui"
+    },
+    {
+      "label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L79",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare",
+      "id": "api_main_rationale_79"
+    },
+    {
+      "label": "Extract text from an uploaded PDF, DOCX, MD, or TXT file.",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L158",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "extract text from an uploaded pdf, docx, md, or txt file.",
+      "id": "api_main_rationale_158"
+    },
+    {
+      "label": "Run InputAgent to normalize raw text into structured clinical chart format.",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L190",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "run inputagent to normalize raw text into structured clinical chart format.",
+      "id": "api_main_rationale_190"
+    },
+    {
+      "label": "List downloadable sample charts, grouped by synthetic patient \u2014 each     group i",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L270",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "list downloadable sample charts, grouped by synthetic patient \u2014 each     group i",
+      "id": "api_main_rationale_270"
+    },
+    {
+      "label": "pipeline.py",
+      "file_type": "code",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "pipeline.py",
+      "id": "orchestrator_pipeline"
+    },
+    {
+      "label": "run_pipeline()",
+      "file_type": "code",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "run_pipeline()",
+      "id": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "label": "_async_pipeline()",
+      "file_type": "code",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L35",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "_async_pipeline()",
+      "id": "orchestrator_pipeline_async_pipeline"
+    },
+    {
+      "label": "llm.py",
+      "file_type": "code",
+      "source_file": "shared/llm.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "llm.py",
+      "id": "shared_llm"
+    },
+    {
+      "label": "chat()",
+      "file_type": "code",
+      "source_file": "shared/llm.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "chat()",
+      "id": "shared_llm_chat"
+    },
+    {
+      "label": "Central LLM config. All agents import `chat` from here. Swap models by setting L",
+      "file_type": "rationale",
+      "source_file": "shared/llm.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "central llm config. all agents import `chat` from here. swap models by setting l",
+      "id": "shared_llm_rationale_1"
+    },
+    {
+      "label": "model/api_key: optional per-call overrides (e.g. a caller-supplied BYOK     key",
+      "file_type": "rationale",
+      "source_file": "shared/llm.py",
+      "source_location": "L41",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "model/api_key: optional per-call overrides (e.g. a caller-supplied byok     key",
+      "id": "shared_llm_rationale_41"
+    },
+    {
+      "label": "tracer.py",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "tracer.py",
+      "id": "weave_integration_tracer"
+    },
+    {
+      "label": "init_weave()",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "init_weave()",
+      "id": "weave_integration_tracer_init_weave"
+    },
+    {
+      "label": "trace_agent()",
+      "file_type": "code",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L47",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "trace_agent()",
+      "id": "weave_integration_tracer_trace_agent"
+    },
+    {
+      "label": "Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med",
+      "file_type": "rationale",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L48",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "decorator factory. wraps an agent run() function with a weave op.     usage: med",
+      "id": "weave_integration_tracer_rationale_48"
+    },
+    {
+      "label": "package.json",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "package.json",
+      "id": "client_package"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "name",
+      "id": "client_package_name"
+    },
+    {
+      "label": "private",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "private",
+      "id": "client_package_private"
+    },
+    {
+      "label": "version",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "version",
+      "id": "client_package_version"
+    },
+    {
+      "label": "type",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "type",
+      "id": "client_package_type"
+    },
+    {
+      "label": "packageManager",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "packagemanager",
+      "id": "client_package_packagemanager"
+    },
+    {
+      "label": "scripts",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "scripts",
+      "id": "client_package_scripts"
+    },
+    {
+      "label": "dev",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "dev",
+      "id": "client_package_scripts_dev"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L9",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "build",
+      "id": "client_package_scripts_build"
+    },
+    {
+      "label": "preview",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "preview",
+      "id": "client_package_scripts_preview"
+    },
+    {
+      "label": "dependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "dependencies",
+      "id": "client_package_dependencies"
+    },
+    {
+      "label": "react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react",
+      "id": "client_package_dependencies_react"
+    },
+    {
+      "label": "react-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L14",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react-dom",
+      "id": "client_package_dependencies_react_dom"
+    },
+    {
+      "label": "devDependencies",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L16",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "devdependencies",
+      "id": "client_package_devdependencies"
+    },
+    {
+      "label": "@tailwindcss/vite",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@tailwindcss/vite",
+      "id": "client_package_devdependencies_tailwindcss_vite"
+    },
+    {
+      "label": "@types/react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L18",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/react",
+      "id": "client_package_devdependencies_types_react"
+    },
+    {
+      "label": "@types/react-dom",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L19",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@types/react-dom",
+      "id": "client_package_devdependencies_types_react_dom"
+    },
+    {
+      "label": "@vitejs/plugin-react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L20",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "@vitejs/plugin-react",
+      "id": "client_package_devdependencies_vitejs_plugin_react"
+    },
+    {
+      "label": "lucide-react",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L21",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "lucide-react",
+      "id": "client_package_devdependencies_lucide_react"
+    },
+    {
+      "label": "react-dropzone",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react-dropzone",
+      "id": "client_package_devdependencies_react_dropzone"
+    },
+    {
+      "label": "react-markdown",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L23",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "react-markdown",
+      "id": "client_package_devdependencies_react_markdown"
+    },
+    {
+      "label": "remark-gfm",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L24",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "remark-gfm",
+      "id": "client_package_devdependencies_remark_gfm"
+    },
+    {
+      "label": "tailwindcss",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L25",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "tailwindcss",
+      "id": "client_package_devdependencies_tailwindcss"
+    },
+    {
+      "label": "typescript",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L26",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "typescript",
+      "id": "client_package_devdependencies_typescript"
+    },
+    {
+      "label": "vite",
+      "file_type": "code",
+      "source_file": "client/package.json",
+      "source_location": "L27",
+      "_origin": "ast",
+      "community": 2,
+      "norm_label": "vite",
+      "id": "client_package_devdependencies_vite"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 20,
+      "norm_label": "__init__.py",
+      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_init_py"
+    },
+    {
+      "label": "ingestion.py",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "ingestion.py",
+      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py"
+    },
+    {
+      "label": "run()",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "run()",
+      "id": "agents_ingestion_run"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "str",
+      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_str"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_agentmessage"
+    },
+    {
+      "label": "risk.py",
+      "file_type": "code",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "risk.py",
+      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py"
+    },
+    {
+      "label": "timeline.py",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "timeline.py",
+      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py"
+    },
+    {
+      "label": "str",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L15",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "str",
+      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py_str"
+    },
+    {
+      "label": "AgentMessage",
+      "file_type": "code",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L49",
+      "_origin": "ast",
+      "community": 16,
+      "norm_label": "agentmessage",
+      "id": "users_atharvb_documents_clinical_copilot_agents_timeline_py_agentmessage"
+    },
+    {
+      "label": "__init__.py",
+      "file_type": "code",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/api/__init__.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 25,
+      "norm_label": "__init__.py",
+      "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_api_init_py"
+    },
+    {
+      "label": "main.tsx",
+      "file_type": "code",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "main.tsx",
+      "id": "src_main"
     },
     {
       "label": "vite-env.d.ts",
@@ -1462,16 +2109,6 @@
       "id": "client_tsconfig_include"
     },
     {
-      "label": "vite.config.ts",
-      "file_type": "code",
-      "source_file": "client/vite.config.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 17,
-      "norm_label": "vite.config.ts",
-      "id": "client_vite_config"
-    },
-    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/orchestrator/__init__.py",
@@ -1482,36 +2119,6 @@
       "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_orchestrator_init_py"
     },
     {
-      "label": "pipeline.py",
-      "file_type": "code",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "pipeline.py",
-      "id": "orchestrator_pipeline"
-    },
-    {
-      "label": "run_pipeline()",
-      "file_type": "code",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L21",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "run_pipeline()",
-      "id": "orchestrator_pipeline_run_pipeline"
-    },
-    {
-      "label": "_async_pipeline()",
-      "file_type": "code",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L35",
-      "_origin": "ast",
-      "community": 7,
-      "norm_label": "_async_pipeline()",
-      "id": "orchestrator_pipeline_async_pipeline"
-    },
-    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/shared/__init__.py",
@@ -1520,36 +2127,6 @@
       "community": 27,
       "norm_label": "__init__.py",
       "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_shared_init_py"
-    },
-    {
-      "label": "llm.py",
-      "file_type": "code",
-      "source_file": "shared/llm.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "llm.py",
-      "id": "shared_llm"
-    },
-    {
-      "label": "chat()",
-      "file_type": "code",
-      "source_file": "shared/llm.py",
-      "source_location": "L34",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "chat()",
-      "id": "shared_llm_chat"
-    },
-    {
-      "label": "Central LLM config. All agents import `chat` from here. Swap models by setting L",
-      "file_type": "rationale",
-      "source_file": "shared/llm.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 16,
-      "norm_label": "central llm config. all agents import `chat` from here. swap models by setting l",
-      "id": "shared_llm_rationale_1"
     },
     {
       "label": "models.py",
@@ -1587,7 +2164,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "parser.py",
       "id": "shared_parser"
     },
@@ -1597,7 +2174,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "extract_text()",
       "id": "shared_parser_extract_text"
     },
@@ -1607,7 +2184,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L23",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "_extract_pdf()",
       "id": "shared_parser_extract_pdf"
     },
@@ -1617,7 +2194,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L80",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "_extract_pdf_fallback()",
       "id": "shared_parser_extract_pdf_fallback"
     },
@@ -1627,7 +2204,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L96",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "_extract_docx()",
       "id": "shared_parser_extract_docx"
     },
@@ -1637,7 +2214,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "file text extraction. pure python, no llm. uses pdfplumber for pdfs \u2014 extracts t",
       "id": "shared_parser_rationale_1"
     },
@@ -1647,7 +2224,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L24",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "uses pdfplumber for spatial-aware extraction \u2014 captures text that sits     besid",
       "id": "shared_parser_rationale_24"
     },
@@ -1657,7 +2234,7 @@
       "source_file": "shared/parser.py",
       "source_location": "L97",
       "_origin": "ast",
-      "community": 8,
+      "community": 32,
       "norm_label": "extracts paragraphs and table cells. captions on images in docx files     are st",
       "id": "shared_parser_rationale_97"
     },
@@ -1707,39 +2284,9 @@
       "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 4,
+      "community": 3,
       "norm_label": "run_all.py",
       "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py"
-    },
-    {
-      "label": "check()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L38",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "check()",
-      "id": "tests_run_all_check"
-    },
-    {
-      "label": "run_case()",
-      "file_type": "code",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L44",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "run_case()",
-      "id": "tests_run_all_run_case"
-    },
-    {
-      "label": "End-to-end test runner for all patient cases. Usage: python tests/run_all.py",
-      "file_type": "rationale",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "end-to-end test runner for all patient cases. usage: python tests/run_all.py",
-      "id": "tests_run_all_rationale_1"
     },
     {
       "label": "__init__.py",
@@ -1750,46 +2297,6 @@
       "community": 28,
       "norm_label": "__init__.py",
       "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_weave_integration_init_py"
-    },
-    {
-      "label": "tracer.py",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "tracer.py",
-      "id": "weave_integration_tracer"
-    },
-    {
-      "label": "init_weave()",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L20",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "init_weave()",
-      "id": "weave_integration_tracer_init_weave"
-    },
-    {
-      "label": "trace_agent()",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L40",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "trace_agent()",
-      "id": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "label": "Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med",
-      "file_type": "rationale",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L41",
-      "_origin": "ast",
-      "community": 4,
-      "norm_label": "decorator factory. wraps an agent run() function with a weave op.     usage: med",
-      "id": "weave_integration_tracer_rationale_41"
     },
     {
       "label": "CLAUDE.md",
@@ -2211,33 +2718,6 @@
       "id": "weave_integration_init_py"
     },
     {
-      "label": "tracer.py",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L1",
-      "community": 4,
-      "norm_label": "tracer.py",
-      "id": "weave_integration_tracer_py"
-    },
-    {
-      "label": "Decorator factory. Wraps an agent run() function with a Weave op.     Usage: med",
-      "file_type": "rationale",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L31",
-      "community": 4,
-      "norm_label": "decorator factory. wraps an agent run() function with a weave op.     usage: med",
-      "id": "weave_integration_tracer_rationale_31"
-    },
-    {
-      "label": "run_all.py",
-      "file_type": "code",
-      "source_file": "tests/run_all.py",
-      "source_location": "L1",
-      "community": 4,
-      "norm_label": "run_all.py",
-      "id": "tests_run_all_py"
-    },
-    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "agents/__init__.py",
@@ -2247,42 +2727,6 @@
       "id": "agents_init_py"
     },
     {
-      "label": "input.py",
-      "file_type": "code",
-      "source_file": "agents/input.py",
-      "source_location": "L1",
-      "community": 16,
-      "norm_label": "input.py",
-      "id": "agents_input_py"
-    },
-    {
-      "label": "risk.py",
-      "file_type": "code",
-      "source_file": "agents/risk.py",
-      "source_location": "L1",
-      "community": 3,
-      "norm_label": "risk.py",
-      "id": "agents_risk_py"
-    },
-    {
-      "label": "synthesis.py",
-      "file_type": "code",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L1",
-      "community": 16,
-      "norm_label": "synthesis.py",
-      "id": "agents_synthesis_py"
-    },
-    {
-      "label": "models.py",
-      "file_type": "code",
-      "source_file": "shared/models.py",
-      "source_location": "L1",
-      "community": 16,
-      "norm_label": "models.py",
-      "id": "shared_models_py"
-    },
-    {
       "label": "__init__.py",
       "file_type": "code",
       "source_file": "shared/__init__.py",
@@ -2290,33 +2734,6 @@
       "community": 23,
       "norm_label": "__init__.py",
       "id": "shared_init_py"
-    },
-    {
-      "label": "llm.py",
-      "file_type": "code",
-      "source_file": "shared/llm.py",
-      "source_location": "L1",
-      "community": 16,
-      "norm_label": "llm.py",
-      "id": "shared_llm_py"
-    },
-    {
-      "label": "parser.py",
-      "file_type": "code",
-      "source_file": "shared/parser.py",
-      "source_location": "L1",
-      "community": 8,
-      "norm_label": "parser.py",
-      "id": "shared_parser_py"
-    },
-    {
-      "label": "reports.py",
-      "file_type": "code",
-      "source_file": "shared/reports.py",
-      "source_location": "L1",
-      "community": 7,
-      "norm_label": "reports.py",
-      "id": "shared_reports_py"
     },
     {
       "label": "__init__.py",
@@ -2335,195 +2752,6 @@
       "community": 22,
       "norm_label": "__init__.py",
       "id": "orchestrator_init_py"
-    },
-    {
-      "label": "pipeline.py",
-      "file_type": "code",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L1",
-      "community": 7,
-      "norm_label": "pipeline.py",
-      "id": "orchestrator_pipeline_py"
-    },
-    {
-      "label": "CLAUDE.md",
-      "file_type": "document",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "community": 14,
-      "norm_label": "claude.md",
-      "id": "claude_md"
-    },
-    {
-      "label": "ingestion.py",
-      "file_type": "code",
-      "source_file": "agents/ingestion.py",
-      "source_location": "L1",
-      "community": 3,
-      "norm_label": "ingestion.py",
-      "id": "agents_ingestion_py"
-    },
-    {
-      "label": "timeline.py",
-      "file_type": "code",
-      "source_file": "agents/timeline.py",
-      "source_location": "L1",
-      "community": 3,
-      "norm_label": "timeline.py",
-      "id": "agents_timeline_py"
-    },
-    {
-      "label": "Temporary stub for testing the API.     Person 3 replaces this entire file with",
-      "file_type": "rationale",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L9",
-      "community": 7,
-      "norm_label": "temporary stub for testing the api.     person 3 replaces this entire file with",
-      "id": "orchestrator_pipeline_rationale_9"
-    },
-    {
-      "label": "W&B wandb.init call",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "line 18",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 4,
-      "norm_label": "w&b wandb.init call",
-      "id": "weave_integration_tracer_wandb_init"
-    },
-    {
-      "label": "weave.op decorator wrapping",
-      "file_type": "code",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "line 37",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 4,
-      "norm_label": "weave.op decorator wrapping",
-      "id": "weave_integration_tracer_weave_op"
-    },
-    {
-      "label": "Pipeline Stub Design",
-      "file_type": "rationale",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "line 1",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "rationale": "Stub allows Person 2's API to run independently for testing before the real async pipeline (Person 3) is ready. Separation lets parallel team development proceed without blocking on full pipeline integration.",
-      "community": 7,
-      "norm_label": "pipeline stub design",
-      "id": "orchestrator_pipeline_stub_design"
-    },
-    {
-      "label": "End-to-end Test Runner (run_all.py)",
-      "file_type": "code",
-      "source_file": "tests/run_all.py",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 18,
-      "norm_label": "end-to-end test runner (run_all.py)",
-      "id": "tests_run_all_test_runner"
-    },
-    {
-      "label": "LiteLLM \u2014 provider-agnostic LLM abstraction layer",
-      "file_type": "concept",
-      "source_file": "shared/llm.py",
-      "source_location": null,
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "litellm \u2014 provider-agnostic llm abstraction layer",
-      "id": "shared_llm_litellm"
-    },
-    {
-      "label": "LLM_MODEL env var \u2014 swap LLM provider without code changes",
-      "file_type": "rationale",
-      "source_file": "shared/llm.py",
-      "source_location": "L1-L10",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "llm_model env var \u2014 swap llm provider without code changes",
-      "id": "shared_llm_model_config"
-    },
-    {
-      "label": "Default model: anthropic/claude-sonnet-4-20250514",
-      "file_type": "concept",
-      "source_file": "shared/llm.py",
-      "source_location": "L18",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 16,
-      "norm_label": "default model: anthropic/claude-sonnet-4-20250514",
-      "id": "shared_llm_default_model"
-    },
-    {
-      "label": "W&B Weave optional tracer wrapping each agent run()",
-      "file_type": "concept",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L6-L15",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 3,
-      "norm_label": "w&b weave optional tracer wrapping each agent run()",
-      "id": "orchestrator_pipeline_weave_tracer"
-    },
-    {
-      "label": "Parallel asyncio fan-out: medication and timeline run concurrently",
-      "file_type": "rationale",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L42-L44",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 7,
-      "norm_label": "parallel asyncio fan-out: medication and timeline run concurrently",
-      "id": "orchestrator_pipeline_parallel_fan_out"
-    },
-    {
-      "label": "Clinical threshold constants (K>6.0 HIGH, BNP>1000 HIGH, SpO2<94, etc.)",
-      "file_type": "concept",
-      "source_file": "agents/risk.py",
-      "source_location": "L8-L18",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 5,
-      "norm_label": "clinical threshold constants (k>6.0 high, bnp>1000 high, spo2<94, etc.)",
-      "id": "agents_risk_clinical_thresholds"
-    },
-    {
-      "label": "SOAP Note output structure (Subjective/Objective/Assessment/Plan)",
-      "file_type": "concept",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L6-L25",
-      "source_url": null,
-      "captured_at": null,
-      "author": null,
-      "contributor": null,
-      "community": 3,
-      "norm_label": "soap note output structure (subjective/objective/assessment/plan)",
-      "id": "agents_synthesis_soap_note"
     },
     {
       "label": "Patient: Jane Doe \u2014 CHF decompensation with hyperkalemia",
@@ -2690,7 +2918,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "patient: maria gonzalez \u2014 severe dka (t1dm, missed insulin)",
       "id": "tests_case_04_dka_maria_gonzalez"
     },
@@ -2703,7 +2931,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "diagnosis: dka severe \u2014 ph 7.08, bicarb 8, glucose 512",
       "id": "tests_case_04_dka_diagnosis"
     },
@@ -2716,7 +2944,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 5,
+      "community": 4,
       "norm_label": "critical lab: glucose 512 mg/dl, bicarb 8, anion gap 28",
       "id": "tests_case_04_dka_glucose"
     },
@@ -2808,11 +3036,21 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "README.md",
+      "source_location": "L219",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "readme_clinicalcopilot",
+      "target": "readme_changelog"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "readme_clinicalcopilot",
-      "target": "readme_environment_variables",
-      "confidence_score": 1.0
+      "target": "readme_environment_variables"
     },
     {
       "relation": "contains",
@@ -2843,6 +3081,16 @@
       "confidence_score": 1.0,
       "source": "readme_clinicalcopilot",
       "target": "readme_project_structure"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L182",
+      "weight": 1.0,
+      "source": "readme_clinicalcopilot",
+      "target": "readme_sample_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -2917,56 +3165,1121 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
+      "source_file": "README.md",
+      "source_location": "L148",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_ingestion_py",
-      "target": "agents_ingestion_run"
+      "source": "readme_api",
+      "target": "readme_bring_your_own_key",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_fileupload"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
       "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_ingestion_py",
-      "target": "shared_models"
+      "source": "src_app",
+      "target": "components_resultsdashboard"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "hooks_usesession_usesession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_api_analyzechart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_appstep"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_default_llm_config"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main",
+      "target": "src_app"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_accepted_types"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_dockind"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L10",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_extof"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_fileentry"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L36",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_fileupload"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_fileuploadprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "components_fileupload_formatbytes"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_listsamples"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_normalizetext"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_sampledownloadurl"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_samplegroup"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_samplezipurl"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/FileUpload.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_api_uploadfile"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FileUpload.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_fileupload",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "components_flagbadge_flagbadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "components_flagbadge_flagbadgeprops"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "components_flagbadge_severity_dot"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "components_flagbadge_severity_styles"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge",
+      "target": "src_types_riskflag"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "components_flagbadge"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/FlagBadge.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_flagbadge_flagbadgeprops",
+      "target": "src_types_riskflag"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "components_flagbadge_flagbadge"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/ReportPanel.tsx",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_reportpanel",
+      "target": "components_reportpanel_reportpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/components/ReportPanel.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_reportpanel",
+      "target": "components_reportpanel_reportpanelprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "components_reportpanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "components_resultsdashboard_resultsdashboard"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "components_resultsdashboard_resultsdashboardprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_resultsdashboard_resultsdashboardprops",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_analyzechart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_handleresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L77",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_listsamples"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_llmheaders"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_normalizetext"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_provider_key_headers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_sampledownloadurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_samplegroup"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L73",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_samplesresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L86",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_samplezipurl"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_api_uploadfile"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api",
+      "target": "src_types_llmconfig"
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "agents/ingestion.py",
+      "source_file": "client/src/api.ts",
+      "source_location": "L59",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_analyzechart",
+      "target": "src_api_llmheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_normalizetext",
+      "target": "src_api_llmheaders"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_analyzechart",
+      "target": "src_api_handleresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/api.ts",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_listsamples",
+      "target": "src_api_handleresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_normalizetext",
+      "target": "src_api_handleresponse"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/src/api.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_api_uploadfile",
+      "target": "src_api_handleresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_settingspanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_settingspanelprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types_llmprovider"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
       "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_ingestion_run",
-      "target": "shared_models_agentmessage"
+      "source": "components_settingspanel_settingspanelprops",
+      "target": "src_types_llmconfig"
     },
     {
-      "relation": "references",
-      "context": "return_type",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_file": "client/src/hooks/useSession.ts",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "hooks_usesession",
+      "target": "hooks_usesession_usesession"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L45",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_appstep"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_default_llm_config"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_interaction"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L47",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_llmprovider"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_ingestion_run",
-      "target": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_agentmessage"
+      "source": "src_types",
+      "target": "src_types_medication"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
+      "source_file": "client/src/types.ts",
+      "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_ingestion_run",
-      "target": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_str"
+      "source": "src_types",
+      "target": "src_types_riskflag"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_soapnote"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/types.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_types",
+      "target": "src_types_timelineevent"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "samples/chf-jane-doe__labs-panel.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "samples_chf_jane_doe_labs_panel",
+      "target": "samples_chf_jane_doe_labs_panel_repeat_bmp_jane_doe_demo_chf_01"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "samples/dka-maria-gonzalez__icu-flowsheet.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "samples_dka_maria_gonzalez_icu_flowsheet",
+      "target": "samples_dka_maria_gonzalez_icu_flowsheet_icu_insulin_drip_flowsheet_maria_gonzalez_demo_dka_01"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "samples_stroke_dorothy_williams_anticoag_note",
+      "target": "samples_stroke_dorothy_williams_anticoag_note_pharmacy_neurology_note_anticoagulation_management"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "samples_stroke_dorothy_williams_anticoag_note_pharmacy_neurology_note_anticoagulation_management",
+      "target": "samples_stroke_dorothy_williams_anticoag_note_issue"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "samples/stroke-dorothy-williams__anticoag-note.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "samples_stroke_dorothy_williams_anticoag_note_pharmacy_neurology_note_anticoagulation_management",
+      "target": "samples_stroke_dorothy_williams_anticoag_note_plan"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_samples",
+      "target": "scripts_generate_samples_write_docx"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L17",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_samples",
+      "target": "scripts_generate_samples_write_md"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_samples",
+      "target": "scripts_generate_samples_write_pdf"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/generate_samples.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "scripts_generate_samples_rationale_1",
+      "target": "scripts_generate_samples"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "agents_medication"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L23",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "agents_risk"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L24",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "agents_synthesis"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L22",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "agents_timeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "tests_run_all_check"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "tests_run_all_run_case"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all",
+      "target": "weave_integration_tracer"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all_rationale_1",
+      "target": "tests_run_all"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all_run_case",
+      "target": "tests_run_all_check"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
+      "target": "tests_run_all_check"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all_run_case",
+      "target": "agents_medication_run"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/run_all.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "tests_run_all_run_case",
+      "target": "agents_risk_run"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/run_all.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all_run_case",
+      "target": "agents_synthesis_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
+      "target": "tests_run_all_run_case"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "tests_run_all_rationale_1",
+      "target": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py"
     },
     {
       "relation": "contains",
@@ -3033,16 +4346,6 @@
       "target": "agents_input"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agents/input.py",
-      "source_location": "L55",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_input_py",
-      "target": "agents_input_run"
-    },
-    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
@@ -3095,16 +4398,6 @@
       "confidence_score": 0.5,
       "source": "agents_input_py_agentmessage",
       "target": "shared_models_agentmessage"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "agents/input.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_input_rationale_1",
-      "target": "agents_input_py"
     },
     {
       "relation": "contains",
@@ -3354,17 +4647,6 @@
       "target": "shared_models_agentmessage"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L57",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_run_case",
-      "target": "agents_medication_run"
-    },
-    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "agents/medication.py",
@@ -3377,84 +4659,106 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L38",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_add_flag"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L43",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_deterministic_flags"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_max_number_after"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L132",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_merge_flags"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_numbers_after"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L150",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "agents_risk_run"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "shared_llm"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/risk.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_risk",
+      "target": "shared_llm_chat"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_file": "agents/risk.py",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "source": "agents_risk",
       "target": "shared_models"
+    },
+    {
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "agents_risk"
     },
     {
       "relation": "calls",
@@ -3470,11 +4774,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agents/risk.py",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_risk_py",
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
       "target": "agents_risk_numbers_after"
     },
     {
@@ -3491,11 +4795,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agents/risk.py",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
       "source_location": "L33",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_risk_py",
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
       "target": "agents_risk_max_number_after"
     },
     {
@@ -3512,32 +4816,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agents/risk.py",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
       "source_location": "L38",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_risk_py",
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
       "target": "agents_risk_add_flag"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agents/risk.py",
-      "source_location": "L43-L129",
-      "weight": 1.0,
-      "source": "agents_risk_deterministic_flags",
-      "target": "agents_risk_clinical_thresholds"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agents/risk.py",
-      "source_location": "L43",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_risk_py",
-      "target": "agents_risk_deterministic_flags"
     },
     {
       "relation": "calls",
@@ -3553,12 +4837,12 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "agents/risk.py",
-      "source_location": "L132",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L43",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_risk_py",
-      "target": "agents_risk_merge_flags"
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "target": "agents_risk_deterministic_flags"
     },
     {
       "relation": "calls",
@@ -3574,32 +4858,23 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
-      "source_location": "L7",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L132",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_ingestion_py",
-      "target": "agents_risk_run"
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "target": "agents_risk_merge_flags"
     },
     {
-      "relation": "contains",
+      "relation": "references",
+      "context": "return_type",
       "confidence": "EXTRACTED",
       "source_file": "agents/risk.py",
       "source_location": "L150",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_risk_py",
-      "target": "agents_risk_run"
-    },
-    {
-      "relation": "implements",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "agents/synthesis.py",
-      "source_location": "L6-L25",
-      "weight": 1.0,
       "source": "agents_risk_run",
-      "target": "agents_synthesis_soap_note"
+      "target": "agents_risk_py_agentmessage"
     },
     {
       "relation": "calls",
@@ -3652,17 +4927,7 @@
       "source_location": "L28",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_synthesis_py",
-      "target": "agents_risk_run"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_timeline_py",
+      "source": "agents_synthesis",
       "target": "agents_risk_run"
     },
     {
@@ -3676,23 +4941,33 @@
       "target": "agents_risk_run"
     },
     {
-      "relation": "references",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L8",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L7",
       "weight": 1.0,
-      "source": "orchestrator_pipeline_weave_tracer",
+      "confidence_score": 1.0,
+      "source": "users_atharvb_documents_clinical_copilot_agents_ingestion_py",
       "target": "agents_risk_run"
     },
     {
-      "relation": "calls",
+      "relation": "contains",
       "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "tests/run_all.py",
-      "source_location": "L51",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L49",
       "weight": 1.0,
-      "source": "tests_run_all_run_case",
+      "confidence_score": 1.0,
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "agents_risk_run"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
       "target": "agents_risk_run"
     },
     {
@@ -3772,16 +5047,6 @@
       "target": "agents_synthesis"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "agents/synthesis.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_synthesis_py",
-      "target": "agents_synthesis_run"
-    },
-    {
       "relation": "references",
       "context": "return_type",
       "confidence": "EXTRACTED",
@@ -3815,17 +5080,6 @@
       "target": "shared_models_agentmessage"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_run_case",
-      "target": "agents_synthesis_run"
-    },
-    {
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "agents/synthesis.py",
@@ -3838,54 +5092,76 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_file": "agents/timeline.py",
       "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "source": "agents_timeline",
       "target": "agents_timeline_fallback_events"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_file": "agents/timeline.py",
       "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "source": "agents_timeline",
       "target": "agents_timeline_merge_events"
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_file": "agents/timeline.py",
       "source_location": "L49",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "source": "agents_timeline",
       "target": "agents_timeline_run"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_file": "agents/timeline.py",
       "source_location": "L6",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "source": "agents_timeline",
       "target": "shared_llm"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/timeline.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_timeline",
+      "target": "shared_llm_chat"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_file": "agents/timeline.py",
       "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "source": "agents_timeline",
       "target": "shared_models"
+    },
+    {
+      "relation": "imports_from",
+      "context": "submodule_import",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "agents_timeline"
     },
     {
       "relation": "references",
@@ -3899,16 +5175,6 @@
       "target": "users_atharvb_documents_clinical_copilot_agents_timeline_py_str"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_timeline_py",
-      "target": "agents_timeline_fallback_events"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -3920,25 +5186,14 @@
       "target": "agents_timeline_fallback_events"
     },
     {
-      "relation": "references",
-      "context": "parameter_type",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L49",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "agents_timeline_run",
-      "target": "users_atharvb_documents_clinical_copilot_agents_timeline_py_str"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
-      "source_location": "L32",
+      "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "agents_timeline_py",
-      "target": "agents_timeline_merge_events"
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "agents_timeline_fallback_events"
     },
     {
       "relation": "calls",
@@ -3950,6 +5205,27 @@
       "confidence_score": 1.0,
       "source": "agents_timeline_run",
       "target": "agents_timeline_merge_events"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "agents_timeline_merge_events"
+    },
+    {
+      "relation": "references",
+      "context": "return_type",
+      "confidence": "EXTRACTED",
+      "source_file": "agents/timeline.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_timeline_run",
+      "target": "agents_timeline_py_agentmessage"
     },
     {
       "relation": "calls",
@@ -3983,6 +5259,48 @@
       "confidence_score": 1.0,
       "source": "agents_timeline_run",
       "target": "users_atharvb_documents_clinical_copilot_agents_timeline_py_agentmessage"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "agents_timeline_run",
+      "target": "users_atharvb_documents_clinical_copilot_agents_timeline_py_str"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "agents_timeline_run"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/limiter.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_limiter_rationale_1",
+      "target": "api_limiter"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_limiter"
     },
     {
       "relation": "contains",
@@ -4028,11 +5346,51 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "api/main.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L295",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_main_download_sample"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L308",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_main_download_sample_zip"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
       "source_location": "L187",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "api_main",
       "target": "api_main_health"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L269",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_main_list_samples"
     },
     {
       "relation": "contains",
@@ -4063,6 +5421,16 @@
       "confidence_score": 1.0,
       "source": "api_main",
       "target": "api_main_normalizeresponse"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L264",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main",
+      "target": "api_main_sample_group_of"
     },
     {
       "relation": "contains",
@@ -4151,6 +5519,60 @@
       "target": "weave_integration_tracer_init_weave"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L213",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_analyze",
+      "target": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_build_llm_config_from_headers",
+      "target": "request"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L194",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_normalize",
+      "target": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L79",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_rationale_79",
+      "target": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L210",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_analyze",
+      "target": "request"
+    },
+    {
       "relation": "references",
       "context": "parameter_type",
       "confidence": "EXTRACTED",
@@ -4159,6 +5581,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "api_main_api_key_middleware",
+      "target": "request"
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L189",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_normalize",
       "target": "request"
     },
     {
@@ -4249,10 +5682,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "api/main.py",
-      "source_location": "L100",
+      "source_location": "L158",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "api_main_rationale_100",
+      "source": "api_main_rationale_158",
       "target": "api_main_upload_file"
     },
     {
@@ -4281,10 +5714,10 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "api/main.py",
-      "source_location": "L132",
+      "source_location": "L190",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "api_main_rationale_132",
+      "source": "api_main_rationale_190",
       "target": "api_main_normalize"
     },
     {
@@ -4321,6 +5754,195 @@
       "target": "shared_reports_generate_patient_report"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L282",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_list_samples",
+      "target": "api_main_sample_group_of"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "api/main.py",
+      "source_location": "L270",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "api_main_rationale_270",
+      "target": "api_main_list_samples"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "orchestrator_pipeline_async_pipeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "orchestrator_pipeline_run_pipeline"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "weave_integration_tracer"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline",
+      "target": "weave_integration_tracer_trace_agent"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "orchestrator/pipeline.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "orchestrator_pipeline_run_pipeline",
+      "target": "orchestrator_pipeline_async_pipeline"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/llm.py",
+      "source_location": "L21",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_llm",
+      "target": "shared_llm_chat"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/llm.py",
+      "source_location": "L1",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_llm_rationale_1",
+      "target": "shared_llm"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "shared_llm"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "target": "shared_llm"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/shared/reports.py",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_shared_reports_py",
+      "target": "shared_llm"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "shared/llm.py",
+      "source_location": "L41",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "shared_llm_rationale_41",
+      "target": "shared_llm_chat"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "source_file": "shared/reports.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "confidence_score": 0.8,
+      "source": "shared_reports_generate_patient_report",
+      "target": "shared_llm_chat"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
+      "target": "weave_integration_tracer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "weave_integration_tracer",
+      "target": "weave_integration_tracer_init_weave"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "weave_integration_tracer",
+      "target": "weave_integration_tracer_trace_agent"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "weave_integration/tracer.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "weave_integration_tracer_rationale_48",
+      "target": "weave_integration_tracer_trace_agent"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "client/package.json",
@@ -4349,6 +5971,16 @@
       "confidence_score": 1.0,
       "source": "client_package",
       "target": "client_package_name"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/package.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "client_package",
+      "target": "client_package_packagemanager"
     },
     {
       "relation": "contains",
@@ -4551,518 +6183,80 @@
       "target": "client_package_devdependencies_vitejs_plugin_react"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "components_fileupload"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "components_resultsdashboard"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_api"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_api_analyzechart"
-    },
-    {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_analysisresult"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_appstep"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/main.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_main",
-      "target": "src_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "src_api"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_api_analyzechart"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_api_handleresponse"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_api_normalizetext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_api_uploadfile"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/api.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api",
-      "target": "src_types_analysisresult"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api_analyzechart",
-      "target": "src_api_handleresponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L29",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api_normalizetext",
-      "target": "src_api_handleresponse"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/api.ts",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_api_uploadfile",
-      "target": "src_api_handleresponse"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "src_api_uploadfile"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "src_api_normalizetext"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "components_fileupload_accepted_types"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L22",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "components_fileupload_fileentry"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "components_fileupload_fileupload"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "components_fileupload_fileuploadprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/FileUpload.tsx",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_fileupload",
-      "target": "components_fileupload_formatbytes"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "components_flagbadge_flagbadge"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "components_flagbadge_flagbadgeprops"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "components_flagbadge_severity_dot"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "components_flagbadge_severity_styles"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "src_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge",
-      "target": "src_types_riskflag"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "components_flagbadge"
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/FlagBadge.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_flagbadge_flagbadgeprops",
-      "target": "src_types_riskflag"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/ReportPanel.tsx",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_reportpanel",
-      "target": "components_reportpanel_reportpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/src/components/ReportPanel.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_reportpanel",
-      "target": "components_reportpanel_reportpanelprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "components_reportpanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "components_resultsdashboard_resultsdashboard"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "components_resultsdashboard_resultsdashboardprops"
+      "source": "users_atharvb_documents_clinical_copilot_agents_ingestion_py",
+      "target": "agents_ingestion_run"
     },
     {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L3",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L4",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "src_types"
+      "source": "users_atharvb_documents_clinical_copilot_agents_ingestion_py",
+      "target": "shared_models"
     },
     {
-      "relation": "imports",
-      "context": "import",
+      "relation": "calls",
+      "context": "call",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L3",
+      "source_file": "agents/ingestion.py",
+      "source_location": "L15",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "components_resultsdashboard",
-      "target": "src_types_analysisresult"
+      "source": "agents_ingestion_run",
+      "target": "shared_models_agentmessage"
     },
     {
       "relation": "references",
-      "context": "field",
+      "context": "return_type",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_resultsdashboard_resultsdashboardprops",
-      "target": "src_types_analysisresult"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_analysisresult"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L45",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_appstep"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_interaction"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
       "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_medication"
+      "source": "agents_ingestion_run",
+      "target": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_agentmessage"
     },
     {
-      "relation": "contains",
+      "relation": "references",
+      "context": "parameter_type",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L1",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/ingestion.py",
+      "source_location": "L7",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_riskflag"
+      "source": "agents_ingestion_run",
+      "target": "users_atharvb_documents_clinical_copilot_agents_ingestion_py_str"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L24",
+      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/agents/risk.py",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_soapnote"
+      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_agents_risk_py",
+      "target": "shared_models"
     },
     {
-      "relation": "contains",
+      "relation": "imports_from",
+      "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/types.ts",
-      "source_location": "L18",
+      "source_file": "/Users/atharvb/Documents/clinical-copilot/agents/timeline.py",
+      "source_location": "L5",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "src_types",
-      "target": "src_types_timelineevent"
+      "source": "users_atharvb_documents_clinical_copilot_agents_timeline_py",
+      "target": "shared_models"
     },
     {
       "relation": "contains",
@@ -5237,201 +6431,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline",
-      "target": "orchestrator_pipeline_async_pipeline"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline",
-      "target": "orchestrator_pipeline_run_pipeline"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline",
-      "target": "weave_integration_tracer"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline",
-      "target": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline_py",
-      "target": "orchestrator_pipeline_run_pipeline"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline_rationale_9",
-      "target": "orchestrator_pipeline_run_pipeline"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L32",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline_run_pipeline",
-      "target": "orchestrator_pipeline_async_pipeline"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "line 1",
-      "weight": 1.0,
-      "source": "orchestrator_pipeline_stub_design",
-      "target": "orchestrator_pipeline_run_pipeline"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L42-L44",
-      "weight": 1.0,
-      "source": "orchestrator_pipeline_parallel_fan_out",
-      "target": "orchestrator_pipeline_async_pipeline"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "orchestrator/pipeline.py",
-      "source_location": "L35",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "orchestrator_pipeline_py",
-      "target": "orchestrator_pipeline_async_pipeline"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/llm.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_llm",
-      "target": "shared_llm_chat"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/llm.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_llm_rationale_1",
-      "target": "shared_llm"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/shared/reports.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_shared_reports_py",
-      "target": "shared_llm"
-    },
-    {
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shared/llm.py",
-      "source_location": "L18",
-      "weight": 1.0,
-      "source": "shared_llm_chat",
-      "target": "shared_llm_default_model"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shared/llm.py",
-      "source_location": "L25",
-      "weight": 1.0,
-      "source": "shared_llm_chat",
-      "target": "shared_llm_litellm"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "shared/llm.py",
-      "source_location": "L1-L10",
-      "weight": 1.0,
-      "source": "shared_llm_model_config",
-      "target": "shared_llm_chat"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/llm.py",
-      "source_location": "L21",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_llm_py",
-      "target": "shared_llm_chat"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "source_file": "shared/reports.py",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 0.8,
-      "source": "shared_reports_generate_patient_report",
-      "target": "shared_llm_chat"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/llm.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_llm_rationale_1",
-      "target": "shared_llm_py"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "shared/models.py",
       "source_location": "L4",
       "weight": 1.0,
@@ -5448,16 +6447,6 @@
       "confidence_score": 1.0,
       "source": "shared_models_agentmessage",
       "target": "typeddict"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/models.py",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_models_py",
-      "target": "shared_models_agentmessage"
     },
     {
       "relation": "contains",
@@ -5543,16 +6532,6 @@
       "target": "shared_parser_extract_docx"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/parser.py",
-      "source_location": "L10",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_parser_py",
-      "target": "shared_parser_extract_text"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -5562,16 +6541,6 @@
       "confidence_score": 1.0,
       "source": "shared_parser_extract_pdf",
       "target": "shared_parser_extract_pdf_fallback"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/parser.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_parser_py",
-      "target": "shared_parser_extract_pdf"
     },
     {
       "relation": "rationale_for",
@@ -5584,26 +6553,6 @@
       "target": "shared_parser_extract_pdf"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/parser.py",
-      "source_location": "L80",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_parser_py",
-      "target": "shared_parser_extract_pdf_fallback"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/parser.py",
-      "source_location": "L96",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_parser_py",
-      "target": "shared_parser_extract_docx"
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "shared/parser.py",
@@ -5612,16 +6561,6 @@
       "confidence_score": 1.0,
       "source": "shared_parser_rationale_97",
       "target": "shared_parser_extract_docx"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/parser.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_parser_rationale_1",
-      "target": "shared_parser_py"
     },
     {
       "relation": "rationale_for",
@@ -5656,213 +6595,11 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "shared/reports.py",
-      "source_location": "L34",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_reports_py",
-      "target": "shared_reports_generate_doctor_report"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/reports.py",
-      "source_location": "L123",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_reports_py",
-      "target": "shared_reports_generate_patient_report"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "shared/reports.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "shared_reports_rationale_1",
-      "target": "shared_reports_py"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_rationale_1",
-      "target": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L38",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
-      "target": "tests_run_all_check"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
-      "target": "tests_run_all_run_case"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py",
-      "target": "weave_integration_tracer"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_py",
-      "target": "tests_run_all_check"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L58",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_run_case",
-      "target": "tests_run_all_check"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L36",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_py",
-      "target": "tests_run_all_run_case"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "tests/run_all.py",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "tests_run_all_rationale_1",
-      "target": "tests_run_all_py"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer",
-      "target": "weave_integration_tracer_init_weave"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L40",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer",
-      "target": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "line 18",
-      "weight": 1.0,
-      "source": "weave_integration_tracer_init_weave",
-      "target": "weave_integration_tracer_wandb_init"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L13",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer_py",
-      "target": "weave_integration_tracer_init_weave"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L30",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer_py",
-      "target": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L31",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer_rationale_31",
-      "target": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "L41",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "weave_integration_tracer_rationale_41",
-      "target": "weave_integration_tracer_trace_agent"
-    },
-    {
-      "relation": "calls",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "weave_integration/tracer.py",
-      "source_location": "line 37",
-      "weight": 1.0,
-      "source": "weave_integration_tracer_trace_agent",
-      "target": "weave_integration_tracer_weave_op"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/CLAUDE.md",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_claude_md",
-      "target": "clinicalcopilot_claude_graphify"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CLAUDE.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "claude_md",
       "target": "clinicalcopilot_claude_graphify"
     },
     {
@@ -6236,26 +6973,6 @@
       "target": "session_plan_frontend_react_vite"
     },
     {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.85,
-      "source_file": "tests/case_04_dka.txt",
-      "source_location": null,
-      "weight": 0.85,
-      "source": "tests_case_04_dka_glucose",
-      "target": "agents_risk_clinical_thresholds"
-    },
-    {
-      "relation": "conceptually_related_to",
-      "confidence": "INFERRED",
-      "confidence_score": 0.95,
-      "source_file": "tests/sample_chart.txt",
-      "source_location": null,
-      "weight": 0.95,
-      "source": "tests_sample_chart_hyperkalemia",
-      "target": "agents_risk_clinical_thresholds"
-    },
-    {
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -6443,5 +7160,5 @@
       "source_file": "tests/run_all.py"
     }
   ],
-  "built_at_commit": "44bc960477b77b88c58e8d93741f551a439ff371"
+  "built_at_commit": "feb54179db53cdafa87adbfe720e16e48753dc78"
 }
