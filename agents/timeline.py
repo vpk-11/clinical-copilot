@@ -46,11 +46,16 @@ def _merge_events(primary: list, fallback: list) -> list:
     return sorted(merged, key=lambda e: (e["date"] == "unknown", e["date"]))
 
 
-def run(ingestion_msg: dict, trace_id: str) -> AgentMessage:
+def run(ingestion_msg: dict, trace_id: str, llm_config: dict | None = None) -> AgentMessage:
     text = ingestion_msg["payload"]["raw_text"]
     fallback = _fallback_events(text)
+    llm_config = llm_config or {}
     try:
-        raw = chat(PROMPT.format(text=text[:3000]))
+        raw = chat(
+            PROMPT.format(text=text[:3000]),
+            model=llm_config.get("model"),
+            api_key=llm_config.get("api_key"),
+        )
         raw = raw.replace("```json", "").replace("```", "").strip()
         events = json.loads(raw).get("events", [])
     except Exception:

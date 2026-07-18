@@ -31,20 +31,34 @@ load_dotenv()
 DEFAULT_MODEL = "anthropic/claude-sonnet-4-20250514"
 
 
-def chat(prompt: str, max_tokens: int = 1000, retries: int = 3) -> str:
+def chat(
+    prompt: str,
+    max_tokens: int = 1000,
+    retries: int = 3,
+    model: str | None = None,
+    api_key: str | None = None,
+) -> str:
+    """
+    model/api_key: optional per-call overrides (e.g. a caller-supplied BYOK
+    key from a request header). Falls back to LLM_MODEL / the provider SDK's
+    own env var when not given. Never logged.
+    """
     if not _LITELLM_AVAILABLE:
         raise RuntimeError(
             "litellm is not installed. Run: pip install litellm"
         )
-    model = os.getenv("LLM_MODEL", DEFAULT_MODEL)
+    model = model or os.getenv("LLM_MODEL", DEFAULT_MODEL)
     for attempt in range(retries):
         try:
             t0 = time.time()
-            resp = _litellm_completion(
+            completion_kwargs = dict(
                 model=model,
                 messages=[{"role": "user", "content": prompt}],
                 max_tokens=max_tokens,
             )
+            if api_key:
+                completion_kwargs["api_key"] = api_key
+            resp = _litellm_completion(**completion_kwargs)
             latency = time.time() - t0
 
             if _OBS_AVAILABLE and _wandb.run is not None:

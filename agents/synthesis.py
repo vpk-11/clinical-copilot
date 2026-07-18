@@ -30,8 +30,10 @@ def run(
     medication_msg: dict,
     timeline_msg: dict,
     risk_msg: dict,
-    trace_id: str
+    trace_id: str,
+    llm_config: dict | None = None,
 ) -> AgentMessage:
+    llm_config = llm_config or {}
     flags = sorted(
         risk_msg["payload"].get("flags", []),
         key=lambda f: {"HIGH": 0, "MEDIUM": 1, "LOW": 2}.get(f.get("severity", "LOW"), 3)
@@ -50,7 +52,12 @@ def run(
     }
     degraded_reason = None
     try:
-        raw = chat(SYNTHESIS_PROMPT.format(**payload_in), max_tokens=1500)
+        raw = chat(
+            SYNTHESIS_PROMPT.format(**payload_in),
+            max_tokens=1500,
+            model=llm_config.get("model"),
+            api_key=llm_config.get("api_key"),
+        )
         raw = raw.replace("```json", "").replace("```", "").strip()
         result = json.loads(raw)
     except Exception as e:

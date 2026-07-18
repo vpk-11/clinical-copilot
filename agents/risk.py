@@ -147,13 +147,23 @@ def _merge_flags(primary: list, fallback: list) -> list:
     return merged
 
 
-def run(ingestion_msg: dict, medication_msg: dict, trace_id: str) -> AgentMessage:
+def run(
+    ingestion_msg: dict,
+    medication_msg: dict,
+    trace_id: str,
+    llm_config: dict | None = None,
+) -> AgentMessage:
     text = ingestion_msg["payload"]["raw_text"]
     medication_list = medication_msg["payload"].get("medications", [])
     meds = json.dumps(medication_list)
     fallback = _deterministic_flags(text, medication_list)
+    llm_config = llm_config or {}
     try:
-        raw = chat(PROMPT.format(text=text[:3000], medications=meds))
+        raw = chat(
+            PROMPT.format(text=text[:3000], medications=meds),
+            model=llm_config.get("model"),
+            api_key=llm_config.get("api_key"),
+        )
         raw = raw.replace("```json", "").replace("```", "").strip()
         flags = json.loads(raw).get("flags", [])
     except Exception:

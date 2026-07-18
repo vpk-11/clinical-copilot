@@ -4,13 +4,13 @@ from concurrent.futures import ThreadPoolExecutor
 from agents import ingestion, medication, timeline, risk, synthesis
 
 try:
-    from weave_integration.tracer import trace_agent
+    from weave_integration.tracer import trace_agent, WANDB_ENABLED
     ingestion.run  = trace_agent("ingestion")(ingestion.run)
     medication.run = trace_agent("medication")(medication.run)
     timeline.run   = trace_agent("timeline")(timeline.run)
     risk.run       = trace_agent("risk")(risk.run)
     synthesis.run  = trace_agent("synthesis")(synthesis.run)
-    print("[pipeline] Weave tracing enabled")
+    print("[pipeline] Weave tracing enabled" if WANDB_ENABLED else "[pipeline] Weave tracing disabled (WANDB_ENABLED=false)")
 except Exception as e:
     print(f"[pipeline] Weave not available, running without tracing: {e}")
 
@@ -18,7 +18,7 @@ _executor = ThreadPoolExecutor(max_workers=4)
 
 
 
-def run_pipeline(raw_text: str, patient_id: str = "ANON") -> dict:
+def run_pipeline(raw_text: str, patient_id: str = "ANON", llm_config: dict | None = None) -> dict:
     try:
         loop = asyncio.get_running_loop()
     except RuntimeError:
@@ -28,25 +28,25 @@ def run_pipeline(raw_text: str, patient_id: str = "ANON") -> dict:
         # Called from within FastAPI's event loop — run in a fresh thread
         import concurrent.futures
         with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id)).result()
-    return asyncio.run(_async_pipeline(raw_text, patient_id))
+            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id, llm_config)).result()
+    return asyncio.run(_async_pipeline(raw_text, patient_id, llm_config))
 
 
-async def _async_pipeline(raw_text: str, patient_id: str) -> dict:
+async def _async_pipeline(raw_text: str, patient_id: str, llm_config: dict | None = None) -> dict:
     trace_id = str(uuid.uuid4())
     loop = asyncio.get_event_loop()
 
     ing = await loop.run_in_executor(_executor, ingestion.run, raw_text, patient_id)
     ing["trace_id"] = trace_id
 
-    med_future = loop.run_in_executor(_executor, medication.run, ing, trace_id)
-    tl_future  = loop.run_in_executor(_executor, timeline.run,   ing, trace_id)
+    med_future = loop.run_in_executor(_executor, medication.run, ing, trace_id, llm_config)
+    tl_future  = loop.run_in_executor(_executor, timeline.run,   ing, trace_id, llm_config)
     med, tl = await asyncio.gather(med_future, tl_future)
 
-    risk_msg = await loop.run_in_executor(_executor, risk.run, ing, med, trace_id)
+    risk_msg = await loop.run_in_executor(_executor, risk.run, ing, med, trace_id, llm_config)
 
     synth = await loop.run_in_executor(
-        _executor, synthesis.run, ing, med, tl, risk_msg, trace_id
+        _executor, synthesis.run, ing, med, tl, risk_msg, trace_id, llm_config
     )
 
     return {
