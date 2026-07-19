@@ -7,6 +7,8 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
 
 > **Demo only.** Do not use with real patient data. Clinical text is sent to third-party LLM and tracing services (Anthropic, W&B Weave). No PHI redaction is applied.
 
+**🚀 Live Demo:** [clinical-copilot-v5qq.onrender.com](https://clinical-copilot-v5qq.onrender.com/)
+
 **📹 Demo Recording:** [Watch here](https://drive.google.com/file/d/1O5VG0oMqfU5h_XWtX1KQuSq83G04O8Xy/view?usp=sharing)
 
 ---
@@ -157,7 +159,9 @@ Every request to `/normalize` and `/analyze` can override the server's default L
 | `x-llm-model` | Bare model id (e.g. `gpt-4o`). Blank falls back to that provider's default model. |
 | `x-anthropic-api-key` / `x-openai-api-key` / `x-groq-api-key` | Caller-supplied key for the selected provider. Blank falls back to the server's env-configured key. |
 
-The UI exposes this as a settings panel (top-right gear icon): keys are held in `sessionStorage`, sent as request headers, and cleared when the tab closes.
+The UI exposes this as a settings panel (top-right gear icon): keys are held in `sessionStorage`, sent as request headers, cleared when the tab closes, and cleared automatically if you switch provider (a key typed for one provider is meaningless for another).
+
+`ollama` is rejected with a 400 on any hosted deployment (detected via Render's own `RENDER` env var) since it requires a server running on the same machine as the backend, which is never true on a hosted container. It only works when you run ClinicalCopilot locally with Ollama installed.
 
 ### `/analyze` response
 
@@ -173,11 +177,13 @@ The UI exposes this as a settings panel (top-right gear icon): keys are held in 
   "interactions": [{ "drug": "", "warnings": "" }],
   "timeline_events": [{ "date": "", "event": "", "category": "" }],
   "risk_flags": [{ "flag": "", "severity": "HIGH", "evidence": "" }],
-  "weave_url": "https://wandb.ai/..."
+  "weave_url": "https://wandb.ai/...",
+  "model_used": "anthropic/claude-sonnet-4-20250514",
+  "used_byok": false
 }
 ```
 
-`pipeline_status` is `"ok"` on clean runs and `"degraded"` when any LLM step fell back to deterministic extraction. The response still contains usable data in degraded mode.
+`pipeline_status` is `"ok"` on clean runs and `"degraded"` when any LLM step fell back to deterministic extraction. The response still contains usable data in degraded mode. `model_used` and `used_byok` tell you exactly which model ran and whether it was your pasted key or the server default. The UI shows all of this as a status strip above the results, plus a toast if the run degraded or failed outright.
 
 ---
 
@@ -239,13 +245,15 @@ clinical-copilot/
 │   │   ├── api.ts                     <- fetch wrappers
 │   │   ├── types.ts                   <- shared TypeScript types
 │   │   ├── hooks/
-│   │   │   └── useSession.ts          <- sessionStorage-backed state (BYOK config)
+│   │   │   ├── useSession.ts          <- sessionStorage-backed state (BYOK config)
+│   │   │   └── useToast.ts            <- transient toast queue (errors, degraded runs)
 │   │   └── components/
 │   │       ├── FileUpload.tsx         <- file intake + normalization + sample downloads
-│   │       ├── ResultsDashboard.tsx   <- flags, reports, meds, timeline
+│   │       ├── ResultsDashboard.tsx   <- flags, reports, meds, timeline, model/key status strip
 │   │       ├── ReportPanel.tsx        <- markdown render + print-to-PDF
 │   │       ├── FlagBadge.tsx          <- severity badge
-│   │       └── SettingsPanel.tsx      <- BYOK provider/model/key panel
+│   │       ├── SettingsPanel.tsx      <- BYOK provider/model/key panel
+│   │       └── ToastStack.tsx         <- bottom-right toast notifications
 │   └── vite.config.ts
 ├── samples/               <- synthetic patient document bundles, downloadable from the UI
 ├── scripts/
@@ -260,4 +268,4 @@ clinical-copilot/
 ---
 
 ## Changelog
-- **v1.1.0** (2026-07-19) — minor bump
+- **v1.1.0** (2026-07-19) — live demo deployed on Render. Fixed BYOK key leaking across provider switches, blocked Ollama on hosted deploys, added model/key/degraded status strip and toast notifications to the results UI, added real application logging (was silently disabled), fixed static asset auth exemption.
