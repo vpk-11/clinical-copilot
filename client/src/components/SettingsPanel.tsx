@@ -4,12 +4,17 @@ import type { LLMConfig, LLMProvider } from "../types";
 
 export const REPO_URL = "https://github.com/vpk-11/clinical-copilot";
 
-const PROVIDERS: { value: LLMProvider; label: string; placeholder: string }[] = [
+const PROVIDERS: { value: LLMProvider; label: string; placeholder: string; localOnly?: boolean }[] = [
   { value: "anthropic", label: "Anthropic", placeholder: "claude-sonnet-4-20250514" },
   { value: "openai", label: "OpenAI", placeholder: "gpt-4o" },
   { value: "groq", label: "Groq", placeholder: "llama-3.3-70b-versatile" },
-  { value: "ollama", label: "Ollama (local)", placeholder: "llama3" },
+  { value: "ollama", label: "Ollama (local only)", placeholder: "llama3", localOnly: true },
 ];
+
+function isLocalHost(): boolean {
+  if (typeof window === "undefined") return false;
+  return ["localhost", "127.0.0.1"].includes(window.location.hostname);
+}
 
 interface SettingsPanelProps {
   config: LLMConfig;
@@ -21,6 +26,7 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
   const selected = PROVIDERS.find((p) => p.value === config.provider);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const firstFieldRef = useRef<HTMLSelectElement>(null);
+  const localOnlyAllowed = isLocalHost();
 
   useEffect(() => {
     if (!open) return;
@@ -94,14 +100,16 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
                   ref={firstFieldRef}
                   value={config.provider}
                   onChange={(e) =>
-                    onChange({ ...config, provider: e.target.value as LLMProvider | "", model: "" })
+                    // Clear model + apiKey on provider switch — a key typed
+                    // for one provider is meaningless (and wrong) for another.
+                    onChange({ ...config, provider: e.target.value as LLMProvider | "", model: "", apiKey: "" })
                   }
                   className="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-clinical-500"
                 >
                   <option value="">Server default</option>
                   {PROVIDERS.map((p) => (
-                    <option key={p.value} value={p.value}>
-                      {p.label}
+                    <option key={p.value} value={p.value} disabled={p.localOnly && !localOnlyAllowed}>
+                      {p.localOnly && !localOnlyAllowed ? `${p.label} — unavailable here` : p.label}
                     </option>
                   ))}
                 </select>
@@ -111,10 +119,21 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
                 <div className="flex gap-2 items-start bg-red-50 border border-red-100 rounded-lg p-2.5">
                   <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" aria-hidden="true" />
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    The server default is rate limited and configured for
-                    demo/testing use only. For anything heavier, pick a
+                    The server default has no key configured and is rate
+                    limited for demo/testing use only. For real use, pick a
                     provider above and drop in your own key - it's never
                     saved, never logged, and never leaves this tab.
+                  </p>
+                </div>
+              )}
+
+              {config.provider === "ollama" && !localOnlyAllowed && (
+                <div className="flex gap-2 items-start bg-red-50 border border-red-100 rounded-lg p-2.5">
+                  <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" aria-hidden="true" />
+                  <p className="text-xs text-slate-600 leading-relaxed">
+                    Ollama needs a server running on the same machine as the
+                    backend. It won't work on this hosted deployment - only
+                    when you run ClinicalCopilot locally with Ollama installed.
                   </p>
                 </div>
               )}
@@ -142,17 +161,21 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
                   {config.provider !== "ollama" && (
                     <div>
                       <label htmlFor="llm-api-key" className="text-xs font-medium text-slate-600 block mb-1">
-                        API Key
+                        API Key <span className="text-red-500">*</span> required
                       </label>
                       <input
                         id="llm-api-key"
                         type="password"
                         value={config.apiKey}
                         onChange={(e) => onChange({ ...config, apiKey: e.target.value })}
-                        placeholder="Leave blank to use server key"
+                        placeholder={`Paste your ${selected?.label} key`}
+                        aria-describedby="llm-api-key-hint"
                         autoComplete="off"
                         className="w-full border border-slate-300 rounded-lg px-3 py-1.5 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-clinical-500"
                       />
+                      <p id="llm-api-key-hint" className="text-xs text-slate-400 mt-1">
+                        No server-side key for this provider - without one, requests will fail.
+                      </p>
                     </div>
                   )}
                 </>

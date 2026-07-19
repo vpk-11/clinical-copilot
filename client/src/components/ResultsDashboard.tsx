@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ExternalLink, ChevronDown, ChevronUp, AlertTriangle } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp, AlertTriangle, Cpu, KeyRound, AlertOctagon } from "lucide-react";
 import type { AnalysisResult } from "../types";
 import FlagBadge from "./FlagBadge";
 import ReportPanel from "./ReportPanel";
@@ -15,9 +15,33 @@ export default function ResultsDashboard({ result }: ResultsDashboardProps) {
 
   const highFlags = result.risk_flags.filter((f) => f.severity === "HIGH");
   const otherFlags = result.risk_flags.filter((f) => f.severity !== "HIGH");
+  const degraded = result.pipeline_status === "degraded";
 
   return (
     <div className="space-y-5">
+      {/* Model / config status strip */}
+      <div
+        className={`flex items-center gap-4 flex-wrap rounded-xl px-4 py-2.5 text-xs ${
+          degraded ? "bg-amber-50 border border-amber-200" : "bg-slate-100"
+        }`}
+      >
+        <span className="inline-flex items-center gap-1.5 text-slate-600">
+          <Cpu className="w-3.5 h-3.5" aria-hidden="true" />
+          <span className="font-mono">{result.model_used}</span>
+        </span>
+        <span className="inline-flex items-center gap-1.5 text-slate-500">
+          <KeyRound className="w-3.5 h-3.5" aria-hidden="true" />
+          {result.used_byok ? "Your key" : "Server default"}
+        </span>
+        {degraded && (
+          <span className="inline-flex items-center gap-1.5 text-amber-700 font-medium">
+            <AlertOctagon className="w-3.5 h-3.5" aria-hidden="true" />
+            Fell back to deterministic extraction
+            {result.pipeline_status_reason ? `: ${result.pipeline_status_reason}` : ""}
+          </span>
+        )}
+      </div>
+
       {/* Risk flags banner */}
       {highFlags.length > 0 && (
         <div className="bg-red-50 border border-red-200 rounded-xl p-4">

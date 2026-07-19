@@ -8,9 +8,12 @@ Examples:
   LLM_MODEL=groq/llama-3.3-70b-versatile
   LLM_MODEL=ollama/llama3
 """
+import logging
 import os
 import time
 from dotenv import load_dotenv
+
+logger = logging.getLogger(__name__)
 
 try:
     from litellm import completion as _litellm_completion
@@ -75,6 +78,12 @@ def chat(
 
             return resp.choices[0].message.content
         except Exception as e:
+            # Never log the prompt (chart text) or api_key — only enough to
+            # diagnose which model/provider failed and why.
+            logger.warning(
+                "llm call failed model=%s byok=%s attempt=%d/%d error=%s: %s",
+                model, bool(api_key), attempt + 1, retries, type(e).__name__, e,
+            )
             if attempt < retries - 1 and ("rate" in str(e).lower() or "429" in str(e)):
                 time.sleep(5 * (attempt + 1))  # 5s, 10s backoff
                 continue
