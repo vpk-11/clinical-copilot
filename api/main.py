@@ -97,7 +97,11 @@ def _build_llm_config_from_headers(request: Request) -> dict | None:
 @app.middleware("http")
 async def api_key_middleware(request: Request, call_next):
     path = request.url.path
-    exempt = path in ("/health", "/") or path.startswith("/samples")
+    exempt = (
+        path in ("/health", "/", "/favicon.ico")
+        or path.startswith("/samples")
+        or path.startswith("/assets/")
+    )
     if _API_KEY and not exempt:
         client_key = request.headers.get("X-API-Key", "")
         if not hmac.compare_digest(client_key, _API_KEY):
