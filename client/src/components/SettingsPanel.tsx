@@ -85,9 +85,9 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
               <div className="flex gap-2 items-start bg-clinical-50 border border-clinical-100 rounded-lg p-2.5">
                 <ShieldCheck className="w-4 h-4 text-clinical-600 shrink-0 mt-0.5" aria-hidden="true" />
                 <p className="text-xs text-slate-600 leading-relaxed">
-                  Your key never leaves your browser tab. It's held in sessionStorage
-                  and sent directly as a request header, cleared the moment you close
-                  the tab. Never stored server-side, never logged.
+                  Keys stay in this tab only - sent straight to the model
+                  provider as a request header, never stored server-side or
+                  logged, cleared the moment you close the tab.
                 </p>
               </div>
 
@@ -119,10 +119,9 @@ export default function SettingsPanel({ config, onChange }: SettingsPanelProps) 
                 <div className="flex gap-2 items-start bg-red-50 border border-red-100 rounded-lg p-2.5">
                   <AlertTriangle className="w-4 h-4 text-red-500 shrink-0 mt-0.5" aria-hidden="true" />
                   <p className="text-xs text-slate-600 leading-relaxed">
-                    The server default has no key configured and is rate
-                    limited for demo/testing use only. For real use, pick a
-                    provider above and drop in your own key - it's never
-                    saved, never logged, and never leaves this tab.
+                    Server default runs a lightweight model, rate limited for
+                    demo use - fine for a quick look, not peak accuracy. Pick
+                    a provider above and add your own key for better results.
                   </p>
                 </div>
               )}

@@ -3,7 +3,9 @@ import { Activity, ChevronDown, ChevronUp, Edit3, Loader2, RotateCcw } from "luc
 import FileUpload from "./components/FileUpload";
 import ResultsDashboard from "./components/ResultsDashboard";
 import SettingsPanel, { REPO_URL } from "./components/SettingsPanel";
+import ToastStack from "./components/ToastStack";
 import { useSession } from "./hooks/useSession";
+import { useToast } from "./hooks/useToast";
 import { analyzeChart } from "./api";
 import { DEFAULT_LLM_CONFIG } from "./types";
 import type { AnalysisResult, AppStep, LLMConfig } from "./types";
@@ -18,6 +20,7 @@ export default function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<AnalysisResult | null>(null);
+  const { toasts, push: pushToast, dismiss: dismissToast } = useToast();
 
   const handleFileReady = useCallback((text: string, names: string[]) => {
     setNormalizedText(text);
@@ -35,11 +38,20 @@ export default function App() {
       const data = await analyzeChart(normalizedText, patientId, llmConfig);
       setResult(data);
       setStep("results");
+      if (data.pipeline_status === "degraded") {
+        pushToast(
+          "warning",
+          "Analysis fell back to deterministic extraction",
+          data.pipeline_status_reason || undefined
+        );
+      }
     } catch (e) {
-      setError((e as Error).message);
+      const message = (e as Error).message;
+      setError(message);
       setStep("preview");
+      pushToast("error", "Analysis failed", message);
     }
-  }, [normalizedText, patientId, llmConfig]);
+  }, [normalizedText, patientId, llmConfig, pushToast]);
 
   const handleReset = useCallback(() => {
     setStep("upload");
@@ -243,6 +255,8 @@ export default function App() {
           Source on GitHub
         </a>
       </footer>
+
+      <ToastStack toasts={toasts} onDismiss={dismissToast} />
     </div>
   );
 }
