@@ -40,7 +40,15 @@ export async function normalizeText(
   text: string,
   patientId: string,
   llmConfig?: LLMConfig
-): Promise<{ normalized_text: string; original_char_count: number; normalized_char_count: number; status: string; status_reason: string }> {
+): Promise<{
+  normalized_text: string;
+  original_char_count: number;
+  normalized_char_count: number;
+  status: string;
+  status_reason: string;
+  model_used: string;
+  used_byok: boolean;
+}> {
   const res = await fetch(`${API_BASE}/normalize`, {
     method: "POST",
     headers: { "Content-Type": "application/json", ...llmHeaders(llmConfig) },

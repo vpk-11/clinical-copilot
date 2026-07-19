@@ -17,6 +17,10 @@ from api.limiter import limiter
 
 load_dotenv()
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+)
 logger = logging.getLogger(__name__)
 
 try:
@@ -28,6 +32,7 @@ except Exception as e:
 from orchestrator.pipeline import run_pipeline
 from shared.parser import extract_text
 from shared.reports import generate_doctor_report, generate_patient_report
+from shared.llm import DEFAULT_MODEL as _DEFAULT_LLM_MODEL
 
 app = FastAPI(title="ClinicalCopilot", version="2.0.0")
 
@@ -35,6 +40,12 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 _API_KEY = os.environ.get("API_KEY")
+
+# Render sets this automatically on every service. Ollama needs a locally
+# running server on the same machine as the backend process — that's never
+# true on a hosted deploy, so refuse it there instead of failing deep
+# inside litellm with a confusing connection error.
+_IS_HOSTED = bool(os.environ.get("RENDER"))
 
 # .doc is intentionally excluded — python-docx parses .docx (Office Open XML)
 # but cannot parse binary .doc (Word 97-2003) format.
@@ -87,11 +98,27 @@ def _build_llm_config_from_headers(request: Request) -> dict | None:
     provider = request.headers.get("x-llm-provider", "").strip().lower()
     if provider not in _PROVIDER_DEFAULT_MODELS:
         return None
+    if provider == "ollama" and _IS_HOSTED:
+        raise HTTPException(
+            status_code=400,
+            detail=(
+                "Ollama requires a locally running server on the same machine as "
+                "the backend. It isn't available on this hosted deployment — "
+                "self-host ClinicalCopilot with Ollama running to use it."
+            ),
+        )
     model_name = request.headers.get("x-llm-model", "").strip()
     model = f"{provider}/{model_name}" if model_name else _PROVIDER_DEFAULT_MODELS[provider]
     key_header = _PROVIDER_KEY_HEADERS.get(provider)
     api_key = request.headers.get(key_header, "").strip() if key_header else ""
     return {"model": model, "api_key": api_key or None}
+
+
+def _llm_meta(llm_config: dict | None) -> tuple[str, bool]:
+    """Returns (model actually in use, whether a caller-supplied key was used)."""
+    if llm_config:
+        return llm_config["model"], bool(llm_config.get("api_key"))
+    return os.environ.get("LLM_MODEL", _DEFAULT_LLM_MODEL), False
 
 
 @app.middleware("http")
@@ -134,6 +161,8 @@ class NormalizeResponse(BaseModel):
     normalized_char_count: int
     status: str = "ok"
     status_reason: str = ""
+    model_used: str = ""
+    used_byok: bool = False
 
 
 class AnalyzeRequest(BaseModel):
@@ -155,6 +184,8 @@ class AnalyzeResponse(BaseModel):
     timeline_events: list
     risk_flags: list
     weave_url: str
+    model_used: str
+    used_byok: bool
 
 
 @app.post("/upload")
@@ -196,9 +227,16 @@ async def normalize(req: NormalizeRequest, request: Request):
         raise HTTPException(status_code=400, detail="Text too short to normalize.")
 
     llm_config = _build_llm_config_from_headers(request)
+    model_used, used_byok = _llm_meta(llm_config)
     from agents.input import run as input_run
     result = input_run(req.text.strip(), req.patient_id, llm_config)
     normalized = result["payload"]["normalized_text"]
+
+    logger.info(
+        "normalize patient_id=%s model=%s byok=%s status=%s reason=%s chars=%d",
+        req.patient_id, model_used, used_byok, result["status"],
+        result["payload"].get("reason", ""), len(normalized),
+    )
 
     return NormalizeResponse(
         normalized_text=normalized,
@@ -206,6 +244,8 @@ async def normalize(req: NormalizeRequest, request: Request):
         normalized_char_count=len(normalized),
         status=result["status"],
         status_reason=result["payload"].get("reason", ""),
+        model_used=model_used,
+        used_byok=used_byok,
     )
 
 
@@ -215,11 +255,20 @@ async def analyze(req: AnalyzeRequest, request: Request):
     if not req.text or len(req.text.strip()) < 50:
         raise HTTPException(status_code=400, detail="Text too short. Provide a clinical chart.")
     llm_config = _build_llm_config_from_headers(request)
+    model_used, used_byok = _llm_meta(llm_config)
     try:
         result = run_pipeline(req.text.strip(), req.patient_id, llm_config)
 
         doctor_report = generate_doctor_report(result, req.patient_id)
         patient_report = generate_patient_report(result)
+
+        logger.info(
+            "analyze patient_id=%s model=%s byok=%s pipeline_status=%s reason=%s "
+            "flags=%d meds=%d trace_id=%s",
+            req.patient_id, model_used, used_byok,
+            result.get("pipeline_status", "ok"), result.get("pipeline_status_reason", ""),
+            len(result["risk_flags"]), len(result["medications"]), result["trace_id"],
+        )
 
         from weave_integration.tracer import WANDB_ENABLED
         if WANDB_ENABLED:
@@ -247,8 +296,11 @@ async def analyze(req: AnalyzeRequest, request: Request):
             timeline_events=result["timeline_events"],
             risk_flags=result["risk_flags"],
             weave_url=weave_url,
+            model_used=model_used,
+            used_byok=used_byok,
         )
     except Exception as e:
+        logger.exception("analyze failed patient_id=%s model=%s byok=%s", req.patient_id, model_used, used_byok)
         raise HTTPException(status_code=500, detail=f"Pipeline error: {str(e)}")
 
 

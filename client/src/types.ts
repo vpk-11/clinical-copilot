@@ -30,6 +30,8 @@ export interface SoapNote {
 
 export interface AnalysisResult {
   trace_id: string;
+  pipeline_status: string;
+  pipeline_status_reason: string;
   doctor_report: string;
   patient_report: string;
   soap_note: SoapNote;
@@ -40,6 +42,8 @@ export interface AnalysisResult {
   timeline_events: TimelineEvent[];
   risk_flags: RiskFlag[];
   weave_url: string;
+  model_used: string;
+  used_byok: boolean;
 }
 
 export type AppStep = "upload" | "preview" | "analyzing" | "results";
