@@ -52,406 +52,24 @@
   },
   "nodes": [
     {
-      "label": "main.py",
+      "label": "App.tsx",
       "file_type": "code",
-      "source_file": "api/main.py",
+      "source_file": "client/src/App.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "api_main",
-      "community": 7,
-      "norm_label": "main.py"
-    },
-    {
-      "label": "_build_llm_config_from_headers()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L89",
-      "_origin": "ast",
-      "id": "api_main_build_llm_config_from_headers",
-      "community": 7,
-      "norm_label": "_build_llm_config_from_headers()"
-    },
-    {
-      "label": "Request",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
-      "_origin": "ast",
-      "id": "request",
-      "community": 7,
-      "norm_label": "request"
-    },
-    {
-      "label": "_llm_meta()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L117",
-      "_origin": "ast",
-      "id": "api_main_llm_meta",
-      "community": 7,
-      "norm_label": "_llm_meta()"
-    },
-    {
-      "label": "api_key_middleware()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L125",
-      "_origin": "ast",
-      "id": "api_main_api_key_middleware",
-      "community": 7,
-      "norm_label": "api_key_middleware()"
-    },
-    {
-      "label": "NormalizeRequest",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L153",
-      "_origin": "ast",
-      "id": "api_main_normalizerequest",
-      "community": 7,
-      "norm_label": "normalizerequest"
-    },
-    {
-      "label": "BaseModel",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "_origin": "ast",
-      "id": "basemodel",
-      "community": 7,
-      "norm_label": "basemodel"
-    },
-    {
-      "label": "NormalizeResponse",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L158",
-      "_origin": "ast",
-      "id": "api_main_normalizeresponse",
-      "community": 7,
-      "norm_label": "normalizeresponse"
-    },
-    {
-      "label": "AnalyzeRequest",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L168",
-      "_origin": "ast",
-      "id": "api_main_analyzerequest",
-      "community": 7,
-      "norm_label": "analyzerequest"
-    },
-    {
-      "label": "AnalyzeResponse",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L173",
-      "_origin": "ast",
-      "id": "api_main_analyzeresponse",
-      "community": 7,
-      "norm_label": "analyzeresponse"
-    },
-    {
-      "label": "upload_file()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L192",
-      "_origin": "ast",
-      "id": "api_main_upload_file",
-      "community": 32,
-      "norm_label": "upload_file()"
-    },
-    {
-      "label": "UploadFile",
-      "file_type": "code",
-      "source_file": "",
-      "source_location": "",
-      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
-      "_origin": "ast",
-      "id": "uploadfile",
-      "community": 32,
-      "norm_label": "uploadfile"
-    },
-    {
-      "label": "normalize()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L224",
-      "_origin": "ast",
-      "id": "api_main_normalize",
-      "community": 7,
-      "norm_label": "normalize()"
-    },
-    {
-      "label": "analyze()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L254",
-      "_origin": "ast",
-      "id": "api_main_analyze",
-      "community": 7,
-      "norm_label": "analyze()"
-    },
-    {
-      "label": "health()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L308",
-      "_origin": "ast",
-      "id": "api_main_health",
-      "community": 7,
-      "norm_label": "health()"
-    },
-    {
-      "label": "_sample_group_of()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L320",
-      "_origin": "ast",
-      "id": "api_main_sample_group_of",
-      "community": 7,
-      "norm_label": "_sample_group_of()"
-    },
-    {
-      "label": "list_samples()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L325",
-      "_origin": "ast",
-      "id": "api_main_list_samples",
-      "community": 7,
-      "norm_label": "list_samples()"
-    },
-    {
-      "label": "download_sample()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L351",
-      "_origin": "ast",
-      "id": "api_main_download_sample",
-      "community": 7,
-      "norm_label": "download_sample()"
-    },
-    {
-      "label": "download_sample_zip()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L364",
-      "_origin": "ast",
-      "id": "api_main_download_sample_zip",
-      "community": 7,
-      "norm_label": "download_sample_zip()"
-    },
-    {
-      "label": "serve_ui()",
-      "file_type": "code",
-      "source_file": "api/main.py",
-      "source_location": "L389",
-      "_origin": "ast",
-      "id": "api_main_serve_ui",
-      "community": 7,
-      "norm_label": "serve_ui()"
-    },
-    {
-      "label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L90",
-      "_origin": "ast",
-      "id": "api_main_rationale_90",
-      "community": 7,
-      "norm_label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare"
-    },
-    {
-      "label": "Returns (model actually in use, whether a caller-supplied key was used).",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L118",
-      "_origin": "ast",
-      "id": "api_main_rationale_118",
-      "community": 7,
-      "norm_label": "returns (model actually in use, whether a caller-supplied key was used)."
-    },
-    {
-      "label": "Extract text from an uploaded PDF, DOCX, MD, or TXT file.",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L193",
-      "_origin": "ast",
-      "id": "api_main_rationale_193",
-      "community": 32,
-      "norm_label": "extract text from an uploaded pdf, docx, md, or txt file."
-    },
-    {
-      "label": "Run InputAgent to normalize raw text into structured clinical chart format.",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L225",
-      "_origin": "ast",
-      "id": "api_main_rationale_225",
-      "community": 7,
-      "norm_label": "run inputagent to normalize raw text into structured clinical chart format."
-    },
-    {
-      "label": "List downloadable sample charts, grouped by synthetic patient \u2014 each     group i",
-      "file_type": "rationale",
-      "source_file": "api/main.py",
-      "source_location": "L326",
-      "_origin": "ast",
-      "id": "api_main_rationale_326",
-      "community": 7,
-      "norm_label": "list downloadable sample charts, grouped by synthetic patient \u2014 each     group i"
-    },
-    {
-      "label": "api.ts",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "src_api",
+      "id": "src_app",
       "community": 6,
-      "norm_label": "api.ts"
+      "norm_label": "app.tsx"
     },
     {
-      "label": "PROVIDER_KEY_HEADERS",
+      "label": "App()",
       "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L5",
-      "_origin": "ast",
-      "id": "src_api_provider_key_headers",
-      "community": 6,
-      "norm_label": "provider_key_headers"
-    },
-    {
-      "label": "llmHeaders()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
+      "source_file": "client/src/App.tsx",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "src_api_llmheaders",
+      "id": "src_app_app",
       "community": 6,
-      "norm_label": "llmheaders()"
-    },
-    {
-      "label": "handleResponse()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L22",
-      "_origin": "ast",
-      "id": "src_api_handleresponse",
-      "community": 6,
-      "norm_label": "handleresponse()"
-    },
-    {
-      "label": "uploadFile()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L30",
-      "_origin": "ast",
-      "id": "src_api_uploadfile",
-      "community": 6,
-      "norm_label": "uploadfile()"
-    },
-    {
-      "label": "normalizeText()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L39",
-      "_origin": "ast",
-      "id": "src_api_normalizetext",
-      "community": 6,
-      "norm_label": "normalizetext()"
-    },
-    {
-      "label": "analyzeChart()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L60",
-      "_origin": "ast",
-      "id": "src_api_analyzechart",
-      "community": 6,
-      "norm_label": "analyzechart()"
-    },
-    {
-      "label": "SampleGroup",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "src_api_samplegroup",
-      "community": 6,
-      "norm_label": "samplegroup"
-    },
-    {
-      "label": "SamplesResponse",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L81",
-      "_origin": "ast",
-      "id": "src_api_samplesresponse",
-      "community": 6,
-      "norm_label": "samplesresponse"
-    },
-    {
-      "label": "listSamples()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L85",
-      "_origin": "ast",
-      "id": "src_api_listsamples",
-      "community": 6,
-      "norm_label": "listsamples()"
-    },
-    {
-      "label": "sampleDownloadUrl()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L90",
-      "_origin": "ast",
-      "id": "src_api_sampledownloadurl",
-      "community": 6,
-      "norm_label": "sampledownloadurl()"
-    },
-    {
-      "label": "sampleZipUrl()",
-      "file_type": "code",
-      "source_file": "client/src/api.ts",
-      "source_location": "L94",
-      "_origin": "ast",
-      "id": "src_api_samplezipurl",
-      "community": 6,
-      "norm_label": "samplezipurl()"
-    },
-    {
-      "label": "ResultsDashboard.tsx",
-      "file_type": "code",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "components_resultsdashboard",
-      "community": 6,
-      "norm_label": "resultsdashboard.tsx"
-    },
-    {
-      "label": "ResultsDashboardProps",
-      "file_type": "code",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "components_resultsdashboard_resultsdashboardprops",
-      "community": 6,
-      "norm_label": "resultsdashboardprops"
-    },
-    {
-      "label": "ResultsDashboard()",
-      "file_type": "code",
-      "source_file": "client/src/components/ResultsDashboard.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "components_resultsdashboard_resultsdashboard",
-      "community": 6,
-      "norm_label": "resultsdashboard()"
+      "norm_label": "app()"
     },
     {
       "label": "SettingsPanel.tsx",
@@ -504,14 +122,486 @@
       "norm_label": "settingspanel()"
     },
     {
+      "label": "ToastStack.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "components_toaststack",
+      "community": 6,
+      "norm_label": "toaststack.tsx"
+    },
+    {
+      "label": "ToastStackProps",
+      "file_type": "code",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "components_toaststack_toaststackprops",
+      "community": 6,
+      "norm_label": "toaststackprops"
+    },
+    {
+      "label": "ToastStack()",
+      "file_type": "code",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "components_toaststack_toaststack",
+      "community": 6,
+      "norm_label": "toaststack()"
+    },
+    {
+      "label": "useToast.ts",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "hooks_usetoast",
+      "community": 6,
+      "norm_label": "usetoast.ts"
+    },
+    {
+      "label": "ToastTone",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "hooks_usetoast_toasttone",
+      "community": 6,
+      "norm_label": "toasttone"
+    },
+    {
+      "label": "ToastItem",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "hooks_usetoast_toastitem",
+      "community": 6,
+      "norm_label": "toastitem"
+    },
+    {
+      "label": "useToast()",
+      "file_type": "code",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "hooks_usetoast_usetoast",
+      "community": 6,
+      "norm_label": "usetoast()"
+    },
+    {
+      "label": "main.py",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "main.py",
+      "id": "api_main"
+    },
+    {
+      "label": "_build_llm_config_from_headers()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "_build_llm_config_from_headers()",
+      "id": "api_main_build_llm_config_from_headers"
+    },
+    {
+      "label": "Request",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "request",
+      "id": "request"
+    },
+    {
+      "label": "_llm_meta()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L117",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "_llm_meta()",
+      "id": "api_main_llm_meta"
+    },
+    {
+      "label": "api_key_middleware()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L125",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "api_key_middleware()",
+      "id": "api_main_api_key_middleware"
+    },
+    {
+      "label": "NormalizeRequest",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L153",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalizerequest",
+      "id": "api_main_normalizerequest"
+    },
+    {
+      "label": "BaseModel",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "basemodel",
+      "id": "basemodel"
+    },
+    {
+      "label": "NormalizeResponse",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L158",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalizeresponse",
+      "id": "api_main_normalizeresponse"
+    },
+    {
+      "label": "AnalyzeRequest",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L168",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyzerequest",
+      "id": "api_main_analyzerequest"
+    },
+    {
+      "label": "AnalyzeResponse",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L173",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyzeresponse",
+      "id": "api_main_analyzeresponse"
+    },
+    {
+      "label": "upload_file()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L192",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "upload_file()",
+      "id": "api_main_upload_file"
+    },
+    {
+      "label": "UploadFile",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/api/main.py",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "uploadfile",
+      "id": "uploadfile"
+    },
+    {
+      "label": "normalize()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L224",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "normalize()",
+      "id": "api_main_normalize"
+    },
+    {
+      "label": "analyze()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L254",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "analyze()",
+      "id": "api_main_analyze"
+    },
+    {
+      "label": "health()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L308",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "health()",
+      "id": "api_main_health"
+    },
+    {
+      "label": "_sample_group_of()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L320",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "_sample_group_of()",
+      "id": "api_main_sample_group_of"
+    },
+    {
+      "label": "list_samples()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L325",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "list_samples()",
+      "id": "api_main_list_samples"
+    },
+    {
+      "label": "download_sample()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L351",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "download_sample()",
+      "id": "api_main_download_sample"
+    },
+    {
+      "label": "download_sample_zip()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L364",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "download_sample_zip()",
+      "id": "api_main_download_sample_zip"
+    },
+    {
+      "label": "serve_ui()",
+      "file_type": "code",
+      "source_file": "api/main.py",
+      "source_location": "L389",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "serve_ui()",
+      "id": "api_main_serve_ui"
+    },
+    {
+      "label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L90",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare",
+      "id": "api_main_rationale_90"
+    },
+    {
+      "label": "Returns (model actually in use, whether a caller-supplied key was used).",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L118",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "returns (model actually in use, whether a caller-supplied key was used).",
+      "id": "api_main_rationale_118"
+    },
+    {
+      "label": "Extract text from an uploaded PDF, DOCX, MD, or TXT file.",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L193",
+      "_origin": "ast",
+      "community": 32,
+      "norm_label": "extract text from an uploaded pdf, docx, md, or txt file.",
+      "id": "api_main_rationale_193"
+    },
+    {
+      "label": "Run InputAgent to normalize raw text into structured clinical chart format.",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L225",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "run inputagent to normalize raw text into structured clinical chart format.",
+      "id": "api_main_rationale_225"
+    },
+    {
+      "label": "List downloadable sample charts, grouped by synthetic patient \u2014 each     group i",
+      "file_type": "rationale",
+      "source_file": "api/main.py",
+      "source_location": "L326",
+      "_origin": "ast",
+      "community": 7,
+      "norm_label": "list downloadable sample charts, grouped by synthetic patient \u2014 each     group i",
+      "id": "api_main_rationale_326"
+    },
+    {
+      "label": "api.ts",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "api.ts",
+      "id": "src_api"
+    },
+    {
+      "label": "PROVIDER_KEY_HEADERS",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L5",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "provider_key_headers",
+      "id": "src_api_provider_key_headers"
+    },
+    {
+      "label": "llmHeaders()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L13",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "llmheaders()",
+      "id": "src_api_llmheaders"
+    },
+    {
+      "label": "handleResponse()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L22",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "handleresponse()",
+      "id": "src_api_handleresponse"
+    },
+    {
+      "label": "uploadFile()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L30",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "uploadfile()",
+      "id": "src_api_uploadfile"
+    },
+    {
+      "label": "normalizeText()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L39",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "normalizetext()",
+      "id": "src_api_normalizetext"
+    },
+    {
+      "label": "analyzeChart()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L60",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "analyzechart()",
+      "id": "src_api_analyzechart"
+    },
+    {
+      "label": "SampleGroup",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L73",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "samplegroup",
+      "id": "src_api_samplegroup"
+    },
+    {
+      "label": "SamplesResponse",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L81",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "samplesresponse",
+      "id": "src_api_samplesresponse"
+    },
+    {
+      "label": "listSamples()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L85",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "listsamples()",
+      "id": "src_api_listsamples"
+    },
+    {
+      "label": "sampleDownloadUrl()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L90",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "sampledownloadurl()",
+      "id": "src_api_sampledownloadurl"
+    },
+    {
+      "label": "sampleZipUrl()",
+      "file_type": "code",
+      "source_file": "client/src/api.ts",
+      "source_location": "L94",
+      "_origin": "ast",
+      "community": 3,
+      "norm_label": "samplezipurl()",
+      "id": "src_api_samplezipurl"
+    },
+    {
+      "label": "ResultsDashboard.tsx",
+      "file_type": "code",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L1",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "resultsdashboard.tsx",
+      "id": "components_resultsdashboard"
+    },
+    {
+      "label": "ResultsDashboardProps",
+      "file_type": "code",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L7",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "resultsdashboardprops",
+      "id": "components_resultsdashboard_resultsdashboardprops"
+    },
+    {
+      "label": "ResultsDashboard()",
+      "file_type": "code",
+      "source_file": "client/src/components/ResultsDashboard.tsx",
+      "source_location": "L11",
+      "_origin": "ast",
+      "community": 6,
+      "norm_label": "resultsdashboard()",
+      "id": "components_resultsdashboard_resultsdashboard"
+    },
+    {
       "label": "types.ts",
       "file_type": "code",
       "source_file": "client/src/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_types",
       "community": 6,
-      "norm_label": "types.ts"
+      "norm_label": "types.ts",
+      "id": "src_types"
     },
     {
       "label": "RiskFlag",
@@ -519,9 +609,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "src_types_riskflag",
       "community": 6,
-      "norm_label": "riskflag"
+      "norm_label": "riskflag",
+      "id": "src_types_riskflag"
     },
     {
       "label": "Medication",
@@ -529,9 +619,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "src_types_medication",
       "community": 6,
-      "norm_label": "medication"
+      "norm_label": "medication",
+      "id": "src_types_medication"
     },
     {
       "label": "Interaction",
@@ -539,9 +629,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L13",
       "_origin": "ast",
-      "id": "src_types_interaction",
       "community": 6,
-      "norm_label": "interaction"
+      "norm_label": "interaction",
+      "id": "src_types_interaction"
     },
     {
       "label": "TimelineEvent",
@@ -549,9 +639,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L18",
       "_origin": "ast",
-      "id": "src_types_timelineevent",
       "community": 6,
-      "norm_label": "timelineevent"
+      "norm_label": "timelineevent",
+      "id": "src_types_timelineevent"
     },
     {
       "label": "SoapNote",
@@ -559,9 +649,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L24",
       "_origin": "ast",
-      "id": "src_types_soapnote",
       "community": 6,
-      "norm_label": "soapnote"
+      "norm_label": "soapnote",
+      "id": "src_types_soapnote"
     },
     {
       "label": "AnalysisResult",
@@ -569,9 +659,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L31",
       "_origin": "ast",
-      "id": "src_types_analysisresult",
       "community": 6,
-      "norm_label": "analysisresult"
+      "norm_label": "analysisresult",
+      "id": "src_types_analysisresult"
     },
     {
       "label": "AppStep",
@@ -579,9 +669,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L49",
       "_origin": "ast",
-      "id": "src_types_appstep",
       "community": 6,
-      "norm_label": "appstep"
+      "norm_label": "appstep",
+      "id": "src_types_appstep"
     },
     {
       "label": "LLMProvider",
@@ -589,9 +679,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L51",
       "_origin": "ast",
-      "id": "src_types_llmprovider",
       "community": 6,
-      "norm_label": "llmprovider"
+      "norm_label": "llmprovider",
+      "id": "src_types_llmprovider"
     },
     {
       "label": "LLMConfig",
@@ -599,9 +689,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L53",
       "_origin": "ast",
-      "id": "src_types_llmconfig",
       "community": 6,
-      "norm_label": "llmconfig"
+      "norm_label": "llmconfig",
+      "id": "src_types_llmconfig"
     },
     {
       "label": "DEFAULT_LLM_CONFIG",
@@ -609,9 +699,9 @@
       "source_file": "client/src/types.ts",
       "source_location": "L59",
       "_origin": "ast",
-      "id": "src_types_default_llm_config",
       "community": 6,
-      "norm_label": "default_llm_config"
+      "norm_label": "default_llm_config",
+      "id": "src_types_default_llm_config"
     },
     {
       "label": "llm.py",
@@ -619,9 +709,9 @@
       "source_file": "shared/llm.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "shared_llm",
       "community": 16,
-      "norm_label": "llm.py"
+      "norm_label": "llm.py",
+      "id": "shared_llm"
     },
     {
       "label": "chat()",
@@ -629,9 +719,9 @@
       "source_file": "shared/llm.py",
       "source_location": "L37",
       "_origin": "ast",
-      "id": "shared_llm_chat",
       "community": 16,
-      "norm_label": "chat()"
+      "norm_label": "chat()",
+      "id": "shared_llm_chat"
     },
     {
       "label": "Central LLM config. All agents import `chat` from here. Swap models by setting L",
@@ -639,9 +729,9 @@
       "source_file": "shared/llm.py",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "shared_llm_rationale_1",
       "community": 16,
-      "norm_label": "central llm config. all agents import `chat` from here. swap models by setting l"
+      "norm_label": "central llm config. all agents import `chat` from here. swap models by setting l",
+      "id": "shared_llm_rationale_1"
     },
     {
       "label": "model/api_key: optional per-call overrides (e.g. a caller-supplied BYOK     key",
@@ -649,9 +739,9 @@
       "source_file": "shared/llm.py",
       "source_location": "L44",
       "_origin": "ast",
-      "id": "shared_llm_rationale_44",
       "community": 16,
-      "norm_label": "model/api_key: optional per-call overrides (e.g. a caller-supplied byok     key"
+      "norm_label": "model/api_key: optional per-call overrides (e.g. a caller-supplied byok     key",
+      "id": "shared_llm_rationale_44"
     },
     {
       "label": "README.md",
@@ -839,7 +929,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "evaluations.py",
       "id": "weave_integration_evaluations"
     },
@@ -849,7 +939,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L78",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "clinicalcopilotmodel",
       "id": "weave_integration_evaluations_clinicalcopilotmodel"
     },
@@ -859,7 +949,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": ".predict()",
       "id": "weave_integration_evaluations_clinicalcopilotmodel_predict"
     },
@@ -869,7 +959,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L102",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "soap_completeness()",
       "id": "weave_integration_evaluations_soap_completeness"
     },
@@ -879,7 +969,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L115",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "flag_relevance()",
       "id": "weave_integration_evaluations_flag_relevance"
     },
@@ -889,7 +979,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L144",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "medication_safety()",
       "id": "weave_integration_evaluations_medication_safety"
     },
@@ -899,7 +989,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L168",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "clinical_accuracy()",
       "id": "weave_integration_evaluations_clinical_accuracy"
     },
@@ -909,7 +999,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L204",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "run_evaluations()",
       "id": "weave_integration_evaluations_run_evaluations"
     },
@@ -919,7 +1009,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "w&b weave evaluations for clinicalcopilot --------------------------------------",
       "id": "weave_integration_evaluations_rationale_1"
     },
@@ -929,7 +1019,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L103",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "score 0-1: are all 4 soap sections non-empty and not error strings?",
       "id": "weave_integration_evaluations_rationale_103"
     },
@@ -939,7 +1029,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L116",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "llm judge: are the high flags appropriate for this case type?",
       "id": "weave_integration_evaluations_rationale_116"
     },
@@ -949,7 +1039,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L145",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "check if contraindicated meds were flagged for hold.",
       "id": "weave_integration_evaluations_rationale_145"
     },
@@ -959,7 +1049,7 @@
       "source_file": "weave_integration/evaluations.py",
       "source_location": "L169",
       "_origin": "ast",
-      "community": 16,
+      "community": 34,
       "norm_label": "llm judge: is the soap assessment clinically accurate for the case type?",
       "id": "weave_integration_evaluations_rationale_169"
     },
@@ -1084,32 +1174,12 @@
       "id": "weave_integration_monitor_rationale_58"
     },
     {
-      "label": "App.tsx",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L1",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "app.tsx",
-      "id": "src_app"
-    },
-    {
-      "label": "App()",
-      "file_type": "code",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L11",
-      "_origin": "ast",
-      "community": 6,
-      "norm_label": "app()",
-      "id": "src_app_app"
-    },
-    {
       "label": "FileUpload.tsx",
       "file_type": "code",
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "fileupload.tsx",
       "id": "components_fileupload"
     },
@@ -1119,7 +1189,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L10",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "extof()",
       "id": "components_fileupload_extof"
     },
@@ -1129,7 +1199,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L14",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "dockind()",
       "id": "components_fileupload_dockind"
     },
@@ -1139,7 +1209,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L20",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "accepted_types",
       "id": "components_fileupload_accepted_types"
     },
@@ -1149,7 +1219,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L28",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "formatbytes()",
       "id": "components_fileupload_formatbytes"
     },
@@ -1159,7 +1229,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L34",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "fileentry",
       "id": "components_fileupload_fileentry"
     },
@@ -1169,7 +1239,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L42",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "fileuploadprops",
       "id": "components_fileupload_fileuploadprops"
     },
@@ -1179,7 +1249,7 @@
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L49",
       "_origin": "ast",
-      "community": 6,
+      "community": 3,
       "norm_label": "fileupload()",
       "id": "components_fileupload_fileupload"
     },
@@ -1429,7 +1499,7 @@
       "source_file": "tests/run_all.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "run_all.py",
       "id": "tests_run_all"
     },
@@ -1439,7 +1509,7 @@
       "source_file": "tests/run_all.py",
       "source_location": "L38",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "check()",
       "id": "tests_run_all_check"
     },
@@ -1449,7 +1519,7 @@
       "source_file": "tests/run_all.py",
       "source_location": "L44",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "run_case()",
       "id": "tests_run_all_run_case"
     },
@@ -1459,7 +1529,7 @@
       "source_file": "tests/run_all.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "end-to-end test runner for all patient cases. usage: python tests/run_all.py",
       "id": "tests_run_all_rationale_1"
     },
@@ -1510,7 +1580,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "medication.py",
       "id": "agents_medication"
     },
@@ -1520,7 +1590,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L18",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "_med_key()",
       "id": "agents_medication_med_key"
     },
@@ -1530,7 +1600,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L22",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "_fallback_extract_medications()",
       "id": "agents_medication_fallback_extract_medications"
     },
@@ -1540,7 +1610,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L45",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "_merge_medications()",
       "id": "agents_medication_merge_medications"
     },
@@ -1550,7 +1620,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L66",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "extract_medications()",
       "id": "agents_medication_extract_medications"
     },
@@ -1560,7 +1630,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L82",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "check_interactions()",
       "id": "agents_medication_check_interactions"
     },
@@ -1570,7 +1640,7 @@
       "source_file": "agents/medication.py",
       "source_location": "L109",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "run()",
       "id": "agents_medication_run"
     },
@@ -1581,7 +1651,7 @@
       "source_location": "",
       "origin_file": "/Users/vpk/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinical-copilot/agents/medication.py",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "agentmessage",
       "id": "agents_medication_py_agentmessage"
     },
@@ -1774,7 +1844,7 @@
       "source_file": "orchestrator/pipeline.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "pipeline.py",
       "id": "orchestrator_pipeline"
     },
@@ -1784,7 +1854,7 @@
       "source_file": "orchestrator/pipeline.py",
       "source_location": "L21",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "run_pipeline()",
       "id": "orchestrator_pipeline_run_pipeline"
     },
@@ -1794,7 +1864,7 @@
       "source_file": "orchestrator/pipeline.py",
       "source_location": "L35",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "_async_pipeline()",
       "id": "orchestrator_pipeline_async_pipeline"
     },
@@ -1804,7 +1874,7 @@
       "source_file": "weave_integration/tracer.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "tracer.py",
       "id": "weave_integration_tracer"
     },
@@ -1824,7 +1894,7 @@
       "source_file": "weave_integration/tracer.py",
       "source_location": "L47",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "trace_agent()",
       "id": "weave_integration_tracer_trace_agent"
     },
@@ -1834,7 +1904,7 @@
       "source_file": "weave_integration/tracer.py",
       "source_location": "L48",
       "_origin": "ast",
-      "community": 7,
+      "community": 8,
       "norm_label": "decorator factory. wraps an agent run() function with a weave op.     usage: med",
       "id": "weave_integration_tracer_rationale_48"
     },
@@ -2564,7 +2634,7 @@
       "source_file": "/Users/vpk11/Library/CloudStorage/OneDrive-Personal/Documents/Development/clinicalcopilot/tests/run_all.py",
       "source_location": "L1",
       "_origin": "ast",
-      "community": 16,
+      "community": 8,
       "norm_label": "run_all.py",
       "id": "users_vpk11_library_cloudstorage_onedrive_personal_documents_development_clinicalcopilot_tests_run_all_py"
     },
@@ -3283,6 +3353,370 @@
   ],
   "links": [
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_fileupload"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "components_resultsdashboard"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_settingspanel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "components_toaststack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "hooks_usesession_usesession"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "hooks_usetoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "src_app",
+      "target": "hooks_usetoast_usetoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_api"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_api_analyzechart"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_app_app"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_analysisresult"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_appstep"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L8",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_default_llm_config"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/App.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_app",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/main.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "src_main",
+      "target": "src_app"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/App.tsx",
+      "source_location": "L23",
+      "weight": 1.0,
+      "source": "src_app_app",
+      "target": "hooks_usetoast_usetoast"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_islocalhost"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L7",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_providers"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L19",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_settingspanel"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "components_settingspanel_settingspanelprops"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L3",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel",
+      "target": "src_types_llmprovider"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L29",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel_settingspanel",
+      "target": "components_settingspanel_islocalhost"
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/SettingsPanel.tsx",
+      "source_location": "L15",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "components_settingspanel_settingspanelprops",
+      "target": "src_types_llmconfig"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "components_toaststack",
+      "target": "components_toaststack_toaststack",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "components_toaststack",
+      "target": "components_toaststack_toaststackprops",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_toaststack",
+      "target": "hooks_usetoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "components_toaststack",
+      "target": "hooks_usetoast_toastitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "field",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/components/ToastStack.tsx",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "components_toaststack_toaststackprops",
+      "target": "hooks_usetoast_toastitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "hooks_usetoast",
+      "target": "hooks_usetoast_toastitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "hooks_usetoast",
+      "target": "hooks_usetoast_toasttone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "client/src/hooks/useToast.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "hooks_usetoast",
+      "target": "hooks_usetoast_usetoast",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -3400,9 +3834,9 @@
       "source_file": "api/main.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main",
-      "target": "api_main_llm_meta",
-      "confidence_score": 1.0
+      "target": "api_main_llm_meta"
     },
     {
       "relation": "contains",
@@ -3493,9 +3927,9 @@
       "source_file": "api/main.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main",
-      "target": "shared_llm",
-      "confidence_score": 1.0
+      "target": "shared_llm"
     },
     {
       "relation": "imports_from",
@@ -3580,9 +4014,9 @@
       "source_file": "api/main.py",
       "source_location": "L90",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_rationale_90",
-      "target": "api_main_build_llm_config_from_headers",
-      "confidence_score": 1.0
+      "target": "api_main_build_llm_config_from_headers"
     },
     {
       "relation": "references",
@@ -3624,9 +4058,9 @@
       "source_file": "api/main.py",
       "source_location": "L258",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_analyze",
-      "target": "api_main_llm_meta",
-      "confidence_score": 1.0
+      "target": "api_main_llm_meta"
     },
     {
       "relation": "calls",
@@ -3635,9 +4069,9 @@
       "source_file": "api/main.py",
       "source_location": "L230",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_normalize",
-      "target": "api_main_llm_meta",
-      "confidence_score": 1.0
+      "target": "api_main_llm_meta"
     },
     {
       "relation": "rationale_for",
@@ -3645,9 +4079,9 @@
       "source_file": "api/main.py",
       "source_location": "L118",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_rationale_118",
-      "target": "api_main_llm_meta",
-      "confidence_score": 1.0
+      "target": "api_main_llm_meta"
     },
     {
       "relation": "references",
@@ -3739,9 +4173,9 @@
       "source_file": "api/main.py",
       "source_location": "L193",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_rationale_193",
-      "target": "api_main_upload_file",
-      "confidence_score": 1.0
+      "target": "api_main_upload_file"
     },
     {
       "relation": "calls",
@@ -3771,9 +4205,9 @@
       "source_file": "api/main.py",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_rationale_225",
-      "target": "api_main_normalize",
-      "confidence_score": 1.0
+      "target": "api_main_normalize"
     },
     {
       "relation": "calls",
@@ -3825,9 +4259,9 @@
       "source_file": "api/main.py",
       "source_location": "L326",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "api_main_rationale_326",
-      "target": "api_main_list_samples",
-      "confidence_score": 1.0
+      "target": "api_main_list_samples"
     },
     {
       "relation": "imports_from",
@@ -3984,17 +4418,6 @@
       "target": "src_types_llmconfig"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_api"
-    },
-    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -4081,17 +4504,6 @@
       "confidence_score": 1.0,
       "source": "components_fileupload",
       "target": "src_api_normalizetext"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_api_analyzechart"
     },
     {
       "relation": "imports",
@@ -4213,17 +4625,6 @@
       "target": "src_types_analysisresult"
     },
     {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "components_resultsdashboard"
-    },
-    {
       "relation": "references",
       "context": "field",
       "confidence": "EXTRACTED",
@@ -4235,101 +4636,6 @@
       "target": "src_types_analysisresult"
     },
     {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "source": "components_settingspanel",
-      "target": "components_settingspanel_islocalhost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L7",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "components_settingspanel_providers"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L19",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "components_settingspanel_settingspanel"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L14",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "components_settingspanel_settingspanelprops"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "src_types"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "src_types_llmconfig"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel",
-      "target": "src_types_llmprovider"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L29",
-      "weight": 1.0,
-      "source": "components_settingspanel_settingspanel",
-      "target": "components_settingspanel_islocalhost",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "references",
-      "context": "field",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/components/SettingsPanel.tsx",
-      "source_location": "L15",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "components_settingspanel_settingspanelprops",
-      "target": "src_types_llmconfig"
-    },
-    {
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
@@ -4338,17 +4644,6 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_flagbadge",
-      "target": "src_types"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
       "target": "src_types"
     },
     {
@@ -4477,56 +4772,12 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_analysisresult"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_appstep"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "client/src/components/FileUpload.tsx",
       "source_location": "L8",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "components_fileupload",
       "target": "src_types_llmconfig"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L9",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_llmconfig"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_types_default_llm_config"
     },
     {
       "relation": "imports_from",
@@ -4774,9 +5025,9 @@
       "source_file": "shared/llm.py",
       "source_location": "L44",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "shared_llm_rationale_44",
-      "target": "shared_llm_chat",
-      "confidence_score": 1.0
+      "target": "shared_llm_chat"
     },
     {
       "relation": "calls",
@@ -5298,49 +5549,6 @@
       "confidence_score": 1.0,
       "source": "weave_integration_monitor_rationale_58",
       "target": "weave_integration_monitor_clinicalsafetyscorer"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L3",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "components_fileupload"
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L6",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "hooks_usesession_usesession"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/App.tsx",
-      "source_location": "L8",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_app",
-      "target": "src_app_app"
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "client/src/main.tsx",
-      "source_location": "L4",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "src_main",
-      "target": "src_app"
     },
     {
       "relation": "contains",
@@ -7876,5 +8084,5 @@
       "source_file": "tests/run_all.py"
     }
   ],
-  "built_at_commit": "ce4e3ad6b9a117bc228ca36381e526ef74aefd8f"
+  "built_at_commit": "906974b8e4030010fad3730d2993ba51b04d232e"
 }
