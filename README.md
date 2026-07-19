@@ -1,7 +1,7 @@
 # ClinicalCopilot
 
-<!-- version: v1.1.0 -->
-![Version](https://img.shields.io/badge/version-v1.1.0-blue)
+<!-- version: v1.1.1 -->
+![Version](https://img.shields.io/badge/version-v1.1.1-blue)
 
 Multi-agent clinical chart analyzer. Paste a raw patient note and get a structured SOAP note, prioritized red flags, medication reconciliation with drug interaction alerts, and a reconstructed medical timeline.
 
@@ -268,4 +268,5 @@ clinical-copilot/
 ---
 
 ## Changelog
+- **v1.1.1** (2026-07-19) — patch bump
 - **v1.1.0** (2026-07-19) — live demo deployed on Render. Fixed BYOK key leaking across provider switches, blocked Ollama on hosted deploys, added model/key/degraded status strip and toast notifications to the results UI, added real application logging (was silently disabled), fixed static asset auth exemption.
