@@ -7,6 +7,8 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
 
 > **Demo only.** Do not use with real patient data. Clinical text is sent to third-party LLM and tracing services (Anthropic, W&B Weave). No PHI redaction is applied.
 
+**📹 Demo Recording:** [Watch here](https://drive.google.com/file/d/1O5VG0oMqfU5h_XWtX1KQuSq83G04O8Xy/view?usp=sharing)
+
 ---
 
 ## What It Does

@@ -1,1 +1,27 @@
-{"0": "Weave Tracing Integration", "1": "Multi-Agent Pipeline", "2": "FastAPI Endpoints", "3": "Orchestration Pipeline", "4": "UI-API Bridge", "5": "Shared Data Models", "6": "Weave Init Module", "7": "Agents Module", "8": "Shared Module", "9": "API Module", "10": "Orchestrator Module", "11": "Health Check", "12": "FastAPI App"}
+{
+  "0": "Task Documentation",
+  "1": "Agent Implementations",
+  "2": "FastAPI + Contract Layer",
+  "3": "README Architecture",
+  "4": "Multi-Agent Pipeline Docs",
+  "5": "Clinical Test Cases",
+  "6": "LiteLLM Config",
+  "7": "Environment Setup",
+  "8": "Task Scaffolding",
+  "9": "Demo + Submission",
+  "10": "Weave Tracing",
+  "11": "Orchestrator Pipeline",
+  "12": "Shared Models",
+  "13": "Risk Deterministic Flags",
+  "14": "Test Runner",
+  "15": "API Module",
+  "16": "Agents Module",
+  "17": "Orchestrator Module",
+  "18": "Shared Module",
+  "19": "Community 19",
+  "20": "Community 20",
+  "21": "Community 21",
+  "22": "Community 22",
+  "23": "Community 23",
+  "24": "Community 24"
+}
