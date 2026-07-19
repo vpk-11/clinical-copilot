@@ -1,7 +1,7 @@
 # Graph Report - clinical-copilot  (2026-07-19)
 
 ## Corpus Check
-- 43 files · ~17,913 words
+- 43 files · ~18,090 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
@@ -10,7 +10,7 @@
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `906974b8`
+- Built from commit: `8b3e700d`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -150,7 +150,7 @@ Cohesion: 0.17
 Nodes (11): clinical_accuracy(), ClinicalCopilotModel, flag_relevance(), medication_safety(), W&B Weave Evaluations for ClinicalCopilot --------------------------------------, Score 0-1: are all 4 SOAP sections non-empty and not error strings?, LLM judge: are the HIGH flags appropriate for this case type?, Check if contraindicated meds were flagged for hold. (+3 more)
 
 ## Knowledge Gaps
-- **118 isolated node(s):** `PROVIDERS`, `ToastTone`, `PROVIDER_KEY_HEADERS`, `SamplesResponse`, `Medication` (+113 more)
+- **118 isolated node(s):** `What It Does`, `Architecture`, `Stack`, `Backend`, `Frontend` (+113 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -167,7 +167,7 @@ _Questions this graph is uniquely positioned to answer:_
   _`AgentMessage` has 3 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `chat()` (e.g. with `run()` and `run()`) actually correct?**
   _`chat()` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **What connects `PROVIDERS`, `ToastTone`, `x-llm-provider selects anthropic|openai|groq|ollama.     x-llm-model is the bare` to the rest of the system?**
+- **What connects `What It Does`, `Architecture`, `Stack` to the rest of the system?**
   _142 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `Task Documentation` be split into smaller, more focused modules?**
   _Cohesion score 0.1111111111111111 - nodes in this community are weakly interconnected._
