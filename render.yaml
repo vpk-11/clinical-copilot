@@ -9,7 +9,7 @@ services:
     healthCheckPath: /health
     envVars:
       - key: LLM_MODEL
-        value: "groq/llama-3.3-70b-versatile"
+        value: "groq/openai/gpt-oss-20b"
       - key: ANTHROPIC_API_KEY
         sync: false # set in Render dashboard under Environment -> Secret Files
       - key: WANDB_PROJECT
