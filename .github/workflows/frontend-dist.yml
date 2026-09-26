@@ -1,0 +1,18 @@
+name: Build Frontend
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'client/src/**'
+      - 'client/index.html'
+      - 'client/package.json'
+      - 'client/vite.config.ts'
+
+permissions:
+  contents: write
+
+jobs:
+  dist:
+    uses: vpk-11/workflows/.github/workflows/frontend-dist.yml@v1
+    with:
+      dir: 'client'
