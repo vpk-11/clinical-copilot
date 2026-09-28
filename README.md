@@ -1,7 +1,7 @@
 # ClinicalCopilot
 
-<!-- version: v1.4.4 -->
-![Version](https://img.shields.io/badge/version-v1.4.4-blue)
+<!-- version: v1.5.0 -->
+![Version](https://img.shields.io/badge/version-v1.5.0-blue)
 
 Multi-agent clinical chart analyzer. Paste a raw patient note and get a structured SOAP note, prioritized red flags, medication reconciliation with drug interaction alerts, and a reconstructed medical timeline.
 
@@ -268,6 +268,7 @@ clinical-copilot/
 ---
 
 ## Changelog
+- **v1.5.0** (2026-09-28): minor bump
 - **v1.4.4** (2026-09-26): patch bump
 - **v1.4.3** (2026-09-26): patch bump
 - **v1.4.2** (2026-09-26): patch bump
