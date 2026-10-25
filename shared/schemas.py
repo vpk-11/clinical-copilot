@@ -1,5 +1,7 @@
 """Pydantic shapes for LLM JSON output. Mirrors client/src/types.ts."""
-from pydantic import BaseModel
+from typing import Any
+
+from pydantic import BaseModel, Field
 
 
 class Medication(BaseModel):
@@ -30,3 +32,9 @@ class RiskFlag(BaseModel):
 
 class RiskOut(BaseModel):
     flags: list[RiskFlag]
+
+
+class SynthesisOut(BaseModel):
+    soap_note: dict[str, Any]
+    summary: str = ""
+    red_flags: list[str] = Field(default_factory=list)

@@ -1,7 +1,8 @@
 import json
 from datetime import datetime
 from shared.models import AgentMessage
-from shared.llm import chat
+from shared.llm import chat_parsed
+from shared.schemas import SynthesisOut
 
 SYNTHESIS_PROMPT = """You are a senior physician. Using the structured agent outputs below,
 write a concise, accurate SOAP note. Clinical language only.
@@ -33,7 +34,6 @@ def run(
     trace_id: str,
     llm_config: dict | None = None,
 ) -> AgentMessage:
-    llm_config = llm_config or {}
     flags = sorted(
         risk_msg["payload"].get("flags", []),
         key=lambda f: {"HIGH": 0, "MEDIUM": 1, "LOW": 2}.get(f.get("severity", "LOW"), 3)
@@ -50,21 +50,15 @@ def run(
         "flags": json.dumps(flags),
         "raw_text": ingestion_msg["payload"]["raw_text"][:1500]
     }
-    degraded_reason = None
-    try:
-        raw = chat(
-            SYNTHESIS_PROMPT.format(**payload_in),
-            max_tokens=1500,
-            model=llm_config.get("model"),
-            api_key=llm_config.get("api_key"),
-        )
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        result = json.loads(raw)
-    except Exception as e:
-        degraded_reason = f"Synthesis LLM failed ({type(e).__name__}): {e}"
+    parsed, degraded_reason = chat_parsed(
+        SYNTHESIS_PROMPT.format(**payload_in), SynthesisOut, llm_config, max_tokens=1500
+    )
+    if parsed:
+        result = parsed.model_dump()
+    else:
         result = {
-            "soap_note": {"subjective": "Error", "objective": "Error", "assessment": "Error", "plan": str(e)},
-            "summary": "Synthesis failed — deterministic fallback data may still be available",
+            "soap_note": {"subjective": "Error", "objective": "Error", "assessment": "Error", "plan": degraded_reason},
+            "summary": "Synthesis failed. Deterministic fallback data may still be available",
             "red_flags": [f["flag"] for f in flags[:3]],
             "reason": degraded_reason,
         }

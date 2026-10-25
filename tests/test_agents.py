@@ -30,7 +30,7 @@ def test_agent_degrades_when_llm_raises(stub_llm, name):
     assert msg["status"] == "degraded"
 
 
-@pytest.mark.parametrize("name", ["medication", "timeline", "risk"])
+@pytest.mark.parametrize("name", ["medication", "timeline", "risk", "synthesis"])
 @pytest.mark.parametrize("bad", ["not json", '{"medications": "x", "events": "x", "flags": "x"}', "{}"])
 def test_bad_llm_json_is_parse_error(stub_llm, name, bad):
     stub_llm.response = bad
@@ -65,3 +65,10 @@ def test_openfda_timeout_medication_still_returns(stub_llm):
     assert msg["status"] == "ok"
     assert msg["payload"]["interactions"] == []
     assert msg["payload"]["medications"][0]["name"] == "Lisinopril"
+
+
+def test_synthesis_missing_optional_keys_still_ok(stub_llm):
+    stub_llm.response = '{"soap_note": {"subjective": "s"}}'
+    msg = synthesis.run(ING, MED, TL, RISK, "t")
+    assert msg["status"] == "ok"
+    assert msg["payload"]["red_flags"] == [] and msg["payload"]["summary"] == ""
