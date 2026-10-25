@@ -69,3 +69,9 @@ def test_stream_requires_api_key_and_is_rate_limited(client, monkeypatch):
     monkeypatch.setattr(main, "_API_KEY", None)
     codes = [client.post("/analyze/stream", json=BODY).status_code for _ in range(11)]
     assert codes[-1] == 429
+
+
+def test_health_version_matches_pyproject(client):
+    import tomllib
+    expected = tomllib.load(open("pyproject.toml", "rb"))["project"]["version"]
+    assert client.get("/health").json()["version"] == expected

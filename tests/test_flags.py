@@ -24,8 +24,8 @@ def test_sample_triggers_expected_high_flag(path, flag):
     assert {"flag": flag, "severity": "HIGH"}.items() <= next(f for f in flags if f["flag"] == flag).items()
 
 
-def test_recall_is_one_on_labeled_set():
-    assert all(s["fn"] == 0 for s in evaluate(LABELS).values())
+def test_precision_and_recall_are_one_on_labeled_set():
+    assert all(s["fn"] == 0 and s["fp"] == 0 for s in evaluate(LABELS).values())
 
 
 def test_negative_charts_raise_no_flags():
@@ -33,3 +33,8 @@ def test_negative_charts_raise_no_flags():
         if not expected:
             text = open(os.path.join(ROOT, path)).read()
             assert _deterministic_flags(text, []) == []
+
+
+def test_nstemi_history_does_not_raise_stemi():
+    text = open(os.path.join(ROOT, "samples/chf-jane-doe__ed-note.txt")).read()
+    assert "STEMI" not in {f["flag"] for f in _deterministic_flags(text, [])}

@@ -47,7 +47,7 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
   FastAPI /analyze
         |
         v
-  React UI  +  W&B Weave Dashboard
+  React UI
 ```
 
 Medication and Timeline run in parallel. Risk waits on Medication and Timeline. Synthesis waits on Risk.
@@ -215,7 +215,7 @@ python scripts/eval_flags.py # precision/recall of the rule layer, no LLM
 
 `tests/run_all.py` is a separate live-LLM smoke script, not part of CI.
 
-The eval harness scores `agents/risk.py::_deterministic_flags` per flag family against `tests/eval/labels.json` (5 seeded charts plus 3 negatives). Threshold flags (potassium, SpO2, BNP, HR, RR, BP, glucose, troponin, lactate, bicarb, WBC) are numeric cutoffs; STEMI, septic shock, DKA, acute CHF decompensation and stroke are keyword rules on diagnosis text. CI requires recall 1.0 on the seeded set.
+The eval harness scores `agents/risk.py::_deterministic_flags` per flag family against `tests/eval/labels.json` (5 seeded charts plus 3 negatives). Threshold flags (potassium, SpO2, BNP, HR, RR, BP, glucose, troponin, lactate, bicarb, WBC) are numeric cutoffs; STEMI, septic shock, DKA, acute CHF decompensation and stroke are keyword rules on diagnosis text. CI requires precision and recall of 1.0 on the labeled set. Rules do not handle negation ("rule out DKA" still flags).
 
 ## Benchmark
 

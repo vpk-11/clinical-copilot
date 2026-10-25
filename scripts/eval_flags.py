@@ -1,7 +1,7 @@
 """
 Precision/recall of agents.risk._deterministic_flags per flag family, no LLM.
 Usage: python scripts/eval_flags.py
-Exit 1 if recall < 1.0 on any seeded flag.
+Exit 1 on any false negative or false positive (precision and recall gate at 1.0).
 STEMI, Septic shock, DKA, Acute CHF decompensation and Acute ischemic stroke
 are keyword rules on diagnosis text; the rest are numeric thresholds.
 """
@@ -40,7 +40,7 @@ def main() -> int:
         prec = s["tp"] / (s["tp"] + s["fp"]) if s["tp"] + s["fp"] else 1.0
         rec = s["tp"] / (s["tp"] + s["fn"]) if s["tp"] + s["fn"] else 1.0
         print(f"{name:45} {prec:5.2f} {rec:5.2f}  {s['tp']:2} {s['fp']:2} {s['fn']:2}")
-    return 1 if any(s["fn"] for s in stats.values()) else 0
+    return 1 if any(s["fn"] or s["fp"] for s in stats.values()) else 0
 
 
 if __name__ == "__main__":

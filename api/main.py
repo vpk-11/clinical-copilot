@@ -4,6 +4,7 @@ import io
 import json
 import logging
 import os
+import tomllib
 import zipfile
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
@@ -18,6 +19,9 @@ from slowapi.errors import RateLimitExceeded
 from api.limiter import limiter
 
 load_dotenv()
+
+# stamped by the version-bump workflow
+_VERSION = tomllib.loads((Path(__file__).resolve().parent.parent / "pyproject.toml").read_text())["project"]["version"]
 
 logging.basicConfig(
     level=logging.INFO,
@@ -36,7 +40,7 @@ from shared.parser import extract_text
 from shared.reports import generate_doctor_report, generate_patient_report
 from shared.llm import DEFAULT_MODEL as _DEFAULT_LLM_MODEL
 
-app = FastAPI(title="ClinicalCopilot", version="2.0.0")
+app = FastAPI(title="ClinicalCopilot", version=_VERSION)
 
 app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
@@ -359,7 +363,7 @@ async def analyze_stream(req: AnalyzeRequest, request: Request):
 
 @app.get("/health")
 def health():
-    return {"status": "ok", "service": "ClinicalCopilot", "version": "2.0.0"}
+    return {"status": "ok", "service": "ClinicalCopilot", "version": _VERSION}
 
 
 _SAMPLE_MEDIA_TYPES = {

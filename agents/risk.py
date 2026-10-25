@@ -117,7 +117,7 @@ def _deterministic_flags(text: str, meds: list) -> list:
     # Critical diagnoses by keyword
     if re.search(r"acute decompensated CHF|acute CHF", text, re.I):
         _add_flag(flags, "Acute CHF decompensation", "HIGH", "Acute decompensated CHF exacerbation")
-    if re.search(r"STEMI|ST elevation", text, re.I):
+    if re.search(r"\bSTEMI\b|ST elevation", text, re.I):
         _add_flag(flags, "STEMI", "HIGH", "ST elevation myocardial infarction — activate cath lab")
     if re.search(r"septic shock|urosepsis|sepsis protocol", text, re.I):
         _add_flag(flags, "Septic shock", "HIGH", "Sepsis protocol activated")
