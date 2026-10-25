@@ -12,6 +12,7 @@ import logging
 import os
 import time
 from dotenv import load_dotenv
+from pydantic import ValidationError
 
 logger = logging.getLogger(__name__)
 
@@ -105,5 +106,16 @@ def parse_json(raw: str, model):
 
 def failure_reason(e: Exception) -> str:
     """Degraded-run reason. Never includes chart text."""
-    from pydantic import ValidationError
     return "parse_error" if isinstance(e, ValidationError) else f"llm_error ({type(e).__name__})"
+
+
+def chat_parsed(prompt: str, schema, llm_config: dict | None, **kwargs):
+    """Returns (validated model | None, degraded reason | None). Never raises."""
+    llm_config = llm_config or {}
+    try:
+        raw = chat(prompt, model=llm_config.get("model"), api_key=llm_config.get("api_key"), **kwargs)
+        return parse_json(raw, schema), None
+    except Exception as e:
+        reason = failure_reason(e)
+        logger.warning("llm output degraded schema=%s reason=%s", schema.__name__, reason)
+        return None, reason

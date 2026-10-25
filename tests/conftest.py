@@ -25,9 +25,10 @@ class StubLLM:
 def stub_llm(monkeypatch):
     stub = StubLLM()
     import shared.llm
-    from agents import input as input_agent, medication, risk, synthesis, timeline
+    from agents import input as input_agent, synthesis
     from shared import reports
-    for mod in (shared.llm, input_agent, medication, reports, risk, synthesis, timeline):
+    # medication/timeline/risk call shared.llm.chat via chat_parsed; the rest import chat directly
+    for mod in (shared.llm, input_agent, reports, synthesis):
         monkeypatch.setattr(mod, "chat", stub)
     return stub
 

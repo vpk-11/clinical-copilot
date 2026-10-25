@@ -1,17 +1,14 @@
-import logging
 import re
 import requests
 from datetime import datetime
 from shared.models import AgentMessage
-from shared.llm import chat, parse_json, failure_reason
+from shared.llm import chat_parsed
 from shared.schemas import MedicationsOut
 
 EXTRACT_PROMPT = """Return ONLY raw JSON. No prose. No markdown.
 Extract ALL medications from this clinical text.
 {{"medications": [{{"name": "drug name", "dose": "dose or unknown", "frequency": "frequency or unknown"}}]}}
 Text: {text}"""
-
-logger = logging.getLogger(__name__)
 
 ACE_INHIBITORS = {"lisinopril", "enalapril", "ramipril", "benazepril", "captopril"}
 POTASSIUM_SPARING_DIURETICS = {"spironolactone", "eplerenone", "amiloride", "triamterene"}
@@ -68,19 +65,8 @@ def _merge_medications(primary: list, fallback: list) -> list:
 def extract_medications(text: str, llm_config: dict | None = None) -> tuple[list, str | None]:
     """Returns (medications, degraded_reason). Regex fallback always merged in."""
     fallback = _fallback_extract_medications(text)
-    llm_config = llm_config or {}
-    reason = None
-    try:
-        raw = chat(
-            EXTRACT_PROMPT.format(text=text[:2000]),
-            model=llm_config.get("model"),
-            api_key=llm_config.get("api_key"),
-        )
-        extracted = [m.model_dump() for m in parse_json(raw, MedicationsOut).medications]
-    except Exception as e:
-        reason = failure_reason(e)
-        logger.warning("medication extraction degraded: %s", reason)
-        extracted = []
+    parsed, reason = chat_parsed(EXTRACT_PROMPT.format(text=text[:2000]), MedicationsOut, llm_config)
+    extracted = [m.model_dump() for m in parsed.medications] if parsed else []
     return _merge_medications(extracted, fallback), reason
 
 

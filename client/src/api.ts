@@ -57,19 +57,6 @@ export async function normalizeText(
   return handleResponse(res);
 }
 
-export async function analyzeChart(
-  text: string,
-  patientId: string,
-  llmConfig?: LLMConfig
-): Promise<AnalysisResult> {
-  const res = await fetch(`${API_BASE}/analyze`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json", ...llmHeaders(llmConfig) },
-    body: JSON.stringify({ text, patient_id: patientId }),
-  });
-  return handleResponse(res);
-}
-
 export type AgentName = "ingestion" | "medication" | "timeline" | "risk" | "synthesis";
 export type AgentState = "running" | "ok" | "degraded" | "error";
 

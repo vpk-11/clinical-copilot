@@ -4,8 +4,6 @@ import io
 import json
 import logging
 import os
-import queue
-import threading
 import zipfile
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
@@ -33,7 +31,7 @@ try:
 except Exception as e:
     logger.warning("Weave init failed — tracing disabled: %s", e)
 
-from orchestrator.pipeline import run_pipeline
+from orchestrator.pipeline import run_pipeline, run_pipeline_async
 from shared.parser import extract_text
 from shared.reports import generate_doctor_report, generate_patient_report
 from shared.llm import DEFAULT_MODEL as _DEFAULT_LLM_MODEL
@@ -253,54 +251,64 @@ async def normalize(req: NormalizeRequest, request: Request):
     )
 
 
-def _run_analyze(req: AnalyzeRequest, llm_config: dict | None, progress=None) -> AnalyzeResponse:
+def _build_response(req: AnalyzeRequest, llm_config: dict | None, result: dict) -> AnalyzeResponse:
     model_used, used_byok = _llm_meta(llm_config)
+    doctor_report = generate_doctor_report(result, req.patient_id)
+    patient_report = generate_patient_report(result)
+
+    logger.info(
+        "analyze patient_id=%s model=%s byok=%s pipeline_status=%s reason=%s "
+        "flags=%d meds=%d trace_id=%s",
+        req.patient_id, model_used, used_byok,
+        result.get("pipeline_status", "ok"), result.get("pipeline_status_reason", ""),
+        len(result["risk_flags"]), len(result["medications"]), result["trace_id"],
+    )
+
+    from weave_integration.tracer import WANDB_ENABLED
+    if WANDB_ENABLED:
+        entity = os.environ.get("WANDB_ENTITY", "")
+        project = os.environ.get("WANDB_PROJECT", "clinical-copilot")
+        weave_url = (
+            f"https://wandb.ai/{entity}/{project}/weave"
+            if entity
+            else f"https://wandb.ai/{project}/weave"
+        )
+    else:
+        weave_url = ""
+
+    return AnalyzeResponse(
+        trace_id=result["trace_id"],
+        pipeline_status=result.get("pipeline_status", "ok"),
+        pipeline_status_reason=result.get("pipeline_status_reason", ""),
+        doctor_report=doctor_report,
+        patient_report=patient_report,
+        soap_note=result["soap_note"],
+        red_flags=result["red_flags"],
+        summary=result.get("summary", ""),
+        medications=result["medications"],
+        interactions=result["interactions"],
+        timeline_events=result["timeline_events"],
+        risk_flags=result["risk_flags"],
+        weave_url=weave_url,
+        model_used=model_used,
+        used_byok=used_byok,
+    )
+
+
+def _pipeline_error(req: AnalyzeRequest, llm_config: dict | None, e: Exception) -> HTTPException:
+    model_used, used_byok = _llm_meta(llm_config)
+    logger.error(
+        "analyze failed patient_id=%s model=%s byok=%s", req.patient_id, model_used, used_byok, exc_info=e
+    )
+    return HTTPException(status_code=500, detail=f"Pipeline error: {str(e)}")
+
+
+def _run_analyze(req: AnalyzeRequest, llm_config: dict | None) -> AnalyzeResponse:
     try:
-        result = run_pipeline(req.text.strip(), req.patient_id, llm_config, progress)
-
-        doctor_report = generate_doctor_report(result, req.patient_id)
-        patient_report = generate_patient_report(result)
-
-        logger.info(
-            "analyze patient_id=%s model=%s byok=%s pipeline_status=%s reason=%s "
-            "flags=%d meds=%d trace_id=%s",
-            req.patient_id, model_used, used_byok,
-            result.get("pipeline_status", "ok"), result.get("pipeline_status_reason", ""),
-            len(result["risk_flags"]), len(result["medications"]), result["trace_id"],
-        )
-
-        from weave_integration.tracer import WANDB_ENABLED
-        if WANDB_ENABLED:
-            entity = os.environ.get("WANDB_ENTITY", "")
-            project = os.environ.get("WANDB_PROJECT", "clinical-copilot")
-            weave_url = (
-                f"https://wandb.ai/{entity}/{project}/weave"
-                if entity
-                else f"https://wandb.ai/{project}/weave"
-            )
-        else:
-            weave_url = ""
-
-        return AnalyzeResponse(
-            trace_id=result["trace_id"],
-            pipeline_status=result.get("pipeline_status", "ok"),
-            pipeline_status_reason=result.get("pipeline_status_reason", ""),
-            doctor_report=doctor_report,
-            patient_report=patient_report,
-            soap_note=result["soap_note"],
-            red_flags=result["red_flags"],
-            summary=result.get("summary", ""),
-            medications=result["medications"],
-            interactions=result["interactions"],
-            timeline_events=result["timeline_events"],
-            risk_flags=result["risk_flags"],
-            weave_url=weave_url,
-            model_used=model_used,
-            used_byok=used_byok,
-        )
+        result = run_pipeline(req.text.strip(), req.patient_id, llm_config)
+        return _build_response(req, llm_config, result)
     except Exception as e:
-        logger.exception("analyze failed patient_id=%s model=%s byok=%s", req.patient_id, model_used, used_byok)
-        raise HTTPException(status_code=500, detail=f"Pipeline error: {str(e)}")
+        raise _pipeline_error(req, llm_config, e)
 
 
 def _check_analyze_text(req: AnalyzeRequest) -> None:
@@ -312,7 +320,8 @@ def _check_analyze_text(req: AnalyzeRequest) -> None:
 @limiter.limit("10/minute")
 async def analyze(req: AnalyzeRequest, request: Request):
     _check_analyze_text(req)
-    return _run_analyze(req, _build_llm_config_from_headers(request))
+    # thread: the pipeline and report generation block on LLM calls
+    return await asyncio.to_thread(_run_analyze, req, _build_llm_config_from_headers(request))
 
 
 def _sse(event: str, data: dict) -> str:
@@ -325,38 +334,25 @@ async def analyze_stream(req: AnalyzeRequest, request: Request):
     """Same work as /analyze, emitting agent_started / agent_finished / pipeline_done as SSE."""
     _check_analyze_text(req)
     llm_config = _build_llm_config_from_headers(request)
-    events: queue.Queue = queue.Queue()
-    cancelled = threading.Event()
+    events: asyncio.Queue = asyncio.Queue()
 
-    def emit(item: dict) -> None:
-        if not cancelled.is_set():
-            events.put(item)
-
-    def work() -> None:
+    async def work() -> None:
         try:
-            result = _run_analyze(req, llm_config, emit)
-            emit({"event": "pipeline_done", **result.model_dump()})
-        except HTTPException as e:
-            emit({"event": "error", "detail": e.detail})
-        events.put(None)
-
-    threading.Thread(target=work, daemon=True).start()
+            result = await run_pipeline_async(req.text.strip(), req.patient_id, llm_config, events.put_nowait)
+            response = await asyncio.to_thread(_build_response, req, llm_config, result)
+            events.put_nowait({"event": "pipeline_done", **response.model_dump()})
+        except Exception as e:
+            events.put_nowait({"event": "error", "detail": _pipeline_error(req, llm_config, e).detail})
+        events.put_nowait(None)
 
     async def stream():
+        task = asyncio.create_task(work())
         try:
-            while True:
-                try:
-                    item = await asyncio.to_thread(events.get, True, 1)
-                except queue.Empty:
-                    if await request.is_disconnected():
-                        return
-                    continue
-                if item is None:
-                    return
+            while (item := await events.get()) is not None:
                 yield _sse(item.pop("event"), item)
         finally:
-            # client gone: in-flight agents finish, nothing more is emitted
-            cancelled.set()
+            # client gone: stop scheduling further agents
+            task.cancel()
 
     return StreamingResponse(stream(), media_type="text/event-stream")
 

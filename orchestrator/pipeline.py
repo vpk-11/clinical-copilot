@@ -34,11 +34,11 @@ def run_pipeline(
         # Called from within FastAPI's event loop — run in a fresh thread
         import concurrent.futures
         with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id, llm_config, progress)).result()
-    return asyncio.run(_async_pipeline(raw_text, patient_id, llm_config, progress))
+            return pool.submit(asyncio.run, run_pipeline_async(raw_text, patient_id, llm_config, progress)).result()
+    return asyncio.run(run_pipeline_async(raw_text, patient_id, llm_config, progress))
 
 
-async def _async_pipeline(
+async def run_pipeline_async(
     raw_text: str,
     patient_id: str,
     llm_config: dict | None = None,
