@@ -106,7 +106,7 @@ export default function App() {
               </button>
             )}
             <span className="text-xs text-slate-400">
-              5 parallel agents · W&B Weave
+              5 agents
             </span>
             <SettingsPanel config={llmConfig} onChange={setLlmConfig} />
           </div>
