@@ -76,7 +76,7 @@ DATASET = [
 # Model — wraps the full pipeline as a weave.Model
 # ---------------------------------------------------------------------------
 class ClinicalCopilotModel(weave.Model):
-    model_name: str = os.getenv("LLM_MODEL", "groq/llama-3.3-70b-versatile")
+    model_name: str = os.getenv("LLM_MODEL", "groq/openai/gpt-oss-120b")
 
     @weave.op()
     def predict(self, chart_path: str, id: str, **kwargs) -> dict:

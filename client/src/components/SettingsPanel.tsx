@@ -7,7 +7,7 @@ export const REPO_URL = "https://github.com/vpk-11/clinical-copilot";
 const PROVIDERS: { value: LLMProvider; label: string; placeholder: string; localOnly?: boolean }[] = [
   { value: "anthropic", label: "Anthropic", placeholder: "claude-sonnet-4-20250514" },
   { value: "openai", label: "OpenAI", placeholder: "gpt-4o" },
-  { value: "groq", label: "Groq", placeholder: "llama-3.3-70b-versatile" },
+  { value: "groq", label: "Groq", placeholder: "openai/gpt-oss-120b" },
   { value: "ollama", label: "Ollama (local only)", placeholder: "llama3", localOnly: true },
 ];
 

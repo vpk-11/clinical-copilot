@@ -87,7 +87,7 @@ _PROVIDER_KEY_HEADERS = {
 _PROVIDER_DEFAULT_MODELS = {
     "anthropic": "anthropic/claude-sonnet-4-20250514",
     "openai": "openai/gpt-4o",
-    "groq": "groq/llama-3.3-70b-versatile",
+    "groq": "groq/openai/gpt-oss-120b",
     "ollama": "ollama/llama3",
 }
 

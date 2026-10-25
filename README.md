@@ -129,7 +129,7 @@ All agents call `shared/llm.py`. Swap providers by setting `LLM_MODEL` — no ag
 ```bash
 LLM_MODEL=anthropic/claude-sonnet-4-20250514   # default
 LLM_MODEL=openai/gpt-4o
-LLM_MODEL=groq/llama-3.3-70b-versatile
+LLM_MODEL=groq/openai/gpt-oss-120b
 LLM_MODEL=ollama/llama3
 ```
 
