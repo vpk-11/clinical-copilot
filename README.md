@@ -56,6 +56,8 @@ Weave tracing is off by default and disabled on the Render deploy (`WANDB_ENABLE
 
 Every LLM agent returns `status="ok"` or `status="degraded"` so the API response distinguishes clean runs from fallback runs. LLM JSON is validated with Pydantic (`shared/schemas.py`): malformed output degrades the agent with reason `parse_error` and the deterministic fallback runs.
 
+Failed LLM steps are re-run based on why they failed: truncated or empty output is retried once with double the `max_tokens`, unparseable output is retried once, rate limits and timeouts back off (honoring the provider's retry hint, up to 4 attempts), and auth or model-not-found errors fail immediately. The degraded reason (`truncated`, `parse_error`, `llm_error (<ErrorType>)`) is reported per agent in `pipeline_status_reason`.
+
 ## Stack
 
 | Layer | Tech |
@@ -109,7 +111,7 @@ Set `API_KEY` in `.env` to enforce API key auth on all endpoints. Clients must s
 | Variable | Required | Default | Purpose |
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | For Anthropic models | none | Provider key for default LiteLLM model |
-| `WANDB_API_KEY` | No | none | W&B/Weave tracing. Missing = degraded mode |
+| `WANDB_API_KEY` | No | none | Only used when `WANDB_ENABLED=true` |
 | `WANDB_ENABLED` | No | `false` | Set to `true` (with `WANDB_API_KEY`) to turn on W&B/Weave tracing. Off by default |
 | `LLM_MODEL` | No | `anthropic/claude-sonnet-4-20250514` | Any LiteLLM model string |
 | `API_KEY` | No | none | Enables `X-API-Key` header enforcement |
