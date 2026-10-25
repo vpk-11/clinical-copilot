@@ -218,7 +218,7 @@ export default function App() {
             <Loader2 className="w-12 h-12 text-clinical-500 animate-spin" aria-hidden="true" />
             <div className="text-center">
               <p className="text-base font-semibold text-slate-700">
-                Running 5 parallel agents
+                Running 5 agents
               </p>
               <p className="text-sm text-slate-500 mt-1">
                 Ingestion · Medication · Timeline · Risk · Synthesis
