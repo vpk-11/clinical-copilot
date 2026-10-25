@@ -3,7 +3,7 @@ InputAgent: normalizes raw, messy clinical text into structured chart format.
 This runs BEFORE the main pipeline. Its output feeds directly into ingestion.run().
 """
 import uuid
-from datetime import datetime
+from datetime import UTC, datetime
 from shared.models import AgentMessage
 from shared.llm import chat
 
@@ -80,5 +80,5 @@ def run(raw_text: str, patient_id: str = "ANON", llm_config: dict | None = None)
         status="degraded" if degraded_reason else "ok",
         payload=payload,
         trace_id=trace_id,
-        timestamp=datetime.utcnow().isoformat(),
+        timestamp=datetime.now(UTC).isoformat(),
     )

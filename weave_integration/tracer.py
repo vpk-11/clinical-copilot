@@ -1,6 +1,6 @@
 import os
 from functools import wraps
-from datetime import datetime
+from datetime import UTC, datetime
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -34,7 +34,7 @@ def init_weave():
     try:
         _wandb.init(
             project=os.environ.get("WANDB_PROJECT", "clinical-copilot"),
-            name=f"clinicalcopilot-{datetime.utcnow().strftime('%H%M%S')}",
+            name=f"clinicalcopilot-{datetime.now(UTC).strftime('%H%M%S')}",
             reinit=True
         )
         _weave.init(os.environ.get("WANDB_PROJECT", "clinical-copilot"))

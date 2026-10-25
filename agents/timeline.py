@@ -1,5 +1,5 @@
 import re
-from datetime import datetime
+from datetime import UTC, datetime
 from shared.models import AgentMessage
 from shared.llm import chat_parsed
 from shared.schemas import TimelineOut
@@ -58,5 +58,5 @@ def run(ingestion_msg: dict, trace_id: str, llm_config: dict | None = None) -> A
         status="degraded" if reason else "ok",
         payload=payload,
         trace_id=trace_id,
-        timestamp=datetime.utcnow().isoformat()
+        timestamp=datetime.now(UTC).isoformat()
     )

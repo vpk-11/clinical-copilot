@@ -40,3 +40,4 @@ graphify-out/[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]/
 wandb/
 graphify-out/cache/
 graphify-out/
+scripts/bench_results.json

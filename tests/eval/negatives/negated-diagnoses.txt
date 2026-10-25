@@ -1,0 +1,18 @@
+PATIENT: Test Negative Four | DOB: 1980-05-05
+DATE: 2026-04-04
+
+CHIEF COMPLAINT:
+Chest discomfort, resolved.
+
+HISTORY OF PRESENT ILLNESS:
+No evidence of STEMI on serial ECG. Denies stroke alert symptoms. DKA ruled out with normal ketones.
+Not in septic shock. Without acute CHF on exam.
+
+VITALS:
+BP 126/78, HR 80, RR 16, SpO2 98% on RA
+
+LABS (TODAY):
+K 4.1, Glucose 110, Troponin I 0.01
+
+ASSESSMENT & PLAN:
+1. Atypical chest pain, discharge with outpatient follow up.

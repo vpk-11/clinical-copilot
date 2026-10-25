@@ -1,6 +1,6 @@
 import json
 import re
-from datetime import datetime
+from datetime import UTC, datetime
 from shared.models import AgentMessage
 from shared.llm import chat_parsed
 from shared.schemas import RiskOut
@@ -23,6 +23,35 @@ Medications: {medications}"""
 
 ACE_INHIBITORS = {"lisinopril", "enalapril", "ramipril", "benazepril", "captopril"}
 POTASSIUM_SPARING_DIURETICS = {"spironolactone", "eplerenone", "amiloride", "triamterene"}
+
+
+DIAGNOSIS_RULES = [
+    (r"acute decompensated CHF|acute CHF", "Acute CHF decompensation", "Acute decompensated CHF exacerbation"),
+    (r"\bSTEMI\b|ST elevation", "STEMI", "ST elevation myocardial infarction, activate cath lab"),
+    (r"septic shock|urosepsis|sepsis protocol", "Septic shock", "Sepsis protocol activated"),
+    (r"\bDKA\b|diabetic ketoacidosis|ketoacidosis", "DKA", "Diabetic ketoacidosis confirmed"),
+    (r"stroke alert|MCA occlusion|\btPA\b|thrombectomy", "Acute ischemic stroke", "Large vessel occlusion, stroke alert"),
+]
+# cues earlier in the same sentence, within NEGATION_WINDOW characters of the keyword
+NEGATED = re.compile(r"\b(no|not|denies|denied|without|negative for|ruled out|absence of|free of)\b", re.I)
+NEGATED_AFTER = re.compile(r"^\W{0,3}(is |was |were )?(ruled out|excluded|negative|not present|absent)\b", re.I)
+RULE_OUT = re.compile(r"\b(rule out|r/o|possible|suspected|\?)", re.I)
+NEGATION_WINDOW = 60
+
+
+def _dx_status(pattern: str, text: str) -> str:
+    """present | possible | absent for a diagnosis keyword, judged per mention. Best mention wins."""
+    best = "absent"
+    for m in re.finditer(pattern, text, re.I):
+        sentence_start = max(text.rfind(c, 0, m.start()) for c in ".;\n") + 1
+        before = text[max(sentence_start, m.start() - NEGATION_WINDOW):m.start()]
+        if NEGATED.search(before) or NEGATED_AFTER.match(text[m.end():m.end() + 30]):
+            continue
+        if RULE_OUT.search(before):
+            best = "possible"
+            continue
+        return "present"
+    return best
 
 
 def _numbers_after(label: str, text: str) -> list:
@@ -114,17 +143,13 @@ def _deterministic_flags(text: str, meds: list) -> list:
             "Lisinopril plus spironolactone increases hyperkalemia risk",
         )
 
-    # Critical diagnoses by keyword
-    if re.search(r"acute decompensated CHF|acute CHF", text, re.I):
-        _add_flag(flags, "Acute CHF decompensation", "HIGH", "Acute decompensated CHF exacerbation")
-    if re.search(r"\bSTEMI\b|ST elevation", text, re.I):
-        _add_flag(flags, "STEMI", "HIGH", "ST elevation myocardial infarction — activate cath lab")
-    if re.search(r"septic shock|urosepsis|sepsis protocol", text, re.I):
-        _add_flag(flags, "Septic shock", "HIGH", "Sepsis protocol activated")
-    if re.search(r"DKA|diabetic ketoacidosis|ketoacidosis", text, re.I):
-        _add_flag(flags, "DKA", "HIGH", "Diabetic ketoacidosis confirmed")
-    if re.search(r"stroke alert|MCA occlusion|tPA|thrombectomy", text, re.I):
-        _add_flag(flags, "Acute ischemic stroke", "HIGH", "Large vessel occlusion — stroke alert")
+    # Critical diagnoses by keyword, with negation and rule-out handling
+    for pattern, flag, evidence in DIAGNOSIS_RULES:
+        status = _dx_status(pattern, text)
+        if status == "present":
+            _add_flag(flags, flag, "HIGH", evidence)
+        elif status == "possible":
+            _add_flag(flags, flag, "MEDIUM", f"Possible (rule out): {evidence}")
 
     return flags
 
@@ -167,5 +192,5 @@ def run(
         status="degraded" if reason else "ok",
         payload=payload,
         trace_id=trace_id,
-        timestamp=datetime.utcnow().isoformat()
+        timestamp=datetime.now(UTC).isoformat()
     )

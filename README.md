@@ -217,11 +217,11 @@ python scripts/eval_flags.py # precision/recall of the rule layer, no LLM
 
 `tests/run_all.py` is a separate live-LLM smoke script, not part of CI.
 
-The eval harness scores `agents/risk.py::_deterministic_flags` per flag family against `tests/eval/labels.json` (5 seeded charts plus 3 negatives). Threshold flags (potassium, SpO2, BNP, HR, RR, BP, glucose, troponin, lactate, bicarb, WBC) are numeric cutoffs; STEMI, septic shock, DKA, acute CHF decompensation and stroke are keyword rules on diagnosis text. CI requires precision and recall of 1.0 on the labeled set. Rules do not handle negation ("rule out DKA" still flags).
+The eval harness scores `agents/risk.py::_deterministic_flags` per flag family against `tests/eval/labels.json` (5 seeded charts plus 3 negatives). Threshold flags (potassium, SpO2, BNP, HR, RR, BP, glucose, troponin, lactate, bicarb, WBC) are numeric cutoffs; STEMI, septic shock, DKA, acute CHF decompensation and stroke are keyword rules on diagnosis text. CI requires precision and recall of 1.0 on the labeled set. Diagnosis keywords respect negation ("no STEMI", "DKA ruled out", "denies stroke alert" do not flag) and rule-outs ("rule out DKA", "R/O STEMI") flag at MEDIUM as possible rather than HIGH.
 
 ## Benchmark
 
-`python scripts/bench_pipeline.py [runs]` compares the production parallel fan-out against a sequential baseline (same agent functions) over the 5 sample ED notes, printing median and p95. It makes live LLM calls (5 charts x runs x 2 modes). No numbers are published here until a run is recorded.
+`python scripts/bench_pipeline.py [runs] [sleep_s]` compares the production parallel fan-out against a sequential baseline (same agent functions) over the 5 sample ED notes, printing median and p95. It makes live LLM calls (5 charts x runs x 2 modes), alternating modes within each repetition. A run counts only if the pipeline status is `ok` and no rate-limit or timeout backoff fired during it; other runs are reported separately and never averaged in. Results go to `scripts/bench_results.json` (gitignored). Needs a provider tier whose token-per-minute limit fits one pipeline run (about 10k tokens): Groq's free tier (8000 TPM) does not, and every run there is rate limited. No numbers are published here until a clean run is recorded.
 
 ## Pipeline Smoke Test
 

@@ -1,10 +1,40 @@
 {
-  "samples/chf-jane-doe__ed-note.txt": ["Hyperkalemia", "Hypoxemia", "Elevated BNP", "Tachycardia", "Tachypnea", "ACE inhibitor + potassium-sparing diuretic", "Acute CHF decompensation"],
-  "samples/dka-maria-gonzalez__ed-note.txt": ["Hyperkalemia", "Tachycardia", "Tachypnea", "Critical hyperglycemia", "Severe metabolic acidosis", "DKA"],
-  "samples/sepsis-john-smith__ed-note.txt": ["Hypoxemia", "Tachycardia", "Tachypnea", "Hypotension", "Elevated lactate", "Leukocytosis", "Septic shock"],
-  "samples/stemi-robert-chen__ed-note.txt": ["Elevated troponin", "STEMI"],
-  "samples/stroke-dorothy-williams__ed-note.txt": ["Hypertensive urgency", "Acute ischemic stroke"],
+  "samples/chf-jane-doe__ed-note.txt": [
+    "Hyperkalemia",
+    "Hypoxemia",
+    "Elevated BNP",
+    "Tachycardia",
+    "Tachypnea",
+    "ACE inhibitor + potassium-sparing diuretic",
+    "Acute CHF decompensation"
+  ],
+  "samples/dka-maria-gonzalez__ed-note.txt": [
+    "Hyperkalemia",
+    "Tachycardia",
+    "Tachypnea",
+    "Critical hyperglycemia",
+    "Severe metabolic acidosis",
+    "DKA"
+  ],
+  "samples/sepsis-john-smith__ed-note.txt": [
+    "Hypoxemia",
+    "Tachycardia",
+    "Tachypnea",
+    "Hypotension",
+    "Elevated lactate",
+    "Leukocytosis",
+    "Septic shock"
+  ],
+  "samples/stemi-robert-chen__ed-note.txt": [
+    "Elevated troponin",
+    "STEMI"
+  ],
+  "samples/stroke-dorothy-williams__ed-note.txt": [
+    "Hypertensive urgency",
+    "Acute ischemic stroke"
+  ],
   "tests/eval/negatives/routine-htn-followup.txt": [],
   "tests/eval/negatives/uri-clinic-visit.txt": [],
-  "tests/eval/negatives/diabetes-stable.txt": []
+  "tests/eval/negatives/diabetes-stable.txt": [],
+  "tests/eval/negatives/negated-diagnoses.txt": []
 }

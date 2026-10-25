@@ -38,3 +38,20 @@ def test_negative_charts_raise_no_flags():
 def test_nstemi_history_does_not_raise_stemi():
     text = open(os.path.join(ROOT, "samples/chf-jane-doe__ed-note.txt")).read()
     assert "STEMI" not in {f["flag"] for f in _deterministic_flags(text, [])}
+
+
+@pytest.mark.parametrize("text,flag,expected", [
+    ("Patient has DKA.", "DKA", "HIGH"),
+    ("No DKA on labs.", "DKA", None),
+    ("DKA was ruled out.", "DKA", None),
+    ("Denies stroke alert criteria.", "Acute ischemic stroke", None),
+    ("Rule out DKA. Awaiting ketones.", "DKA", "MEDIUM"),
+    ("R/O STEMI, troponin pending.", "STEMI", "MEDIUM"),
+    ("No chest pain. STEMI activated.", "STEMI", "HIGH"),
+    ("No acute distress\nDKA confirmed", "DKA", "HIGH"),
+    ("Not DKA. Later: DKA developed.", "DKA", "HIGH"),
+    ("Discharge with outpatient follow up.", "Acute ischemic stroke", None),
+])
+def test_negation_and_rule_out(text, flag, expected):
+    severity = {f["flag"]: f["severity"] for f in _deterministic_flags(text, [])}.get(flag)
+    assert severity == expected

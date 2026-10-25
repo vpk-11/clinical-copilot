@@ -1,5 +1,5 @@
 import json
-from datetime import datetime
+from datetime import UTC, datetime
 from shared.models import AgentMessage
 from shared.llm import chat_parsed
 from shared.schemas import SynthesisOut
@@ -67,5 +67,5 @@ def run(
         status="degraded" if degraded_reason else "ok",
         payload=result,
         trace_id=trace_id,
-        timestamp=datetime.utcnow().isoformat()
+        timestamp=datetime.now(UTC).isoformat()
     )
