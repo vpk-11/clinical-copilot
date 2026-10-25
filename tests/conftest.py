@@ -16,9 +16,11 @@ class StubLLM:
         self.error: Exception | None = None
         self.queue: list[str] = []  # one-shot responses served before `response`
         self.calls = 0
+        self.kwargs: list[dict] = []
 
     def __call__(self, prompt, *args, **kwargs):
         self.calls += 1
+        self.kwargs.append(kwargs)
         if self.error:
             raise self.error
         return self.queue.pop(0) if self.queue else self.response

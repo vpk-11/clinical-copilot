@@ -10,6 +10,7 @@ Examples:
 """
 import logging
 import os
+import re
 import time
 from dotenv import load_dotenv
 from pydantic import ValidationError
@@ -33,19 +34,43 @@ except ImportError:
 load_dotenv()
 
 DEFAULT_MODEL = "anthropic/claude-sonnet-4-20250514"
+DEFAULT_MAX_TOKENS = 2000
+# retried with backoff; auth, bad-request and similar errors fail fast
+TRANSIENT_ERRORS = {
+    "RateLimitError", "Timeout", "APIConnectionError", "ServiceUnavailableError", "InternalServerError",
+}
+
+
+MAX_RETRY_WAIT_S = 30
+
+
+def retry_delay(e: Exception, attempt: int) -> float:
+    """Honour the provider's "try again in 1m5.2s" / "350ms" hint, else 5s, 10s backoff."""
+    m = re.search(r"try again in (?:(\d+)m)?([\d.]+)(ms|s)", str(e))
+    if m:
+        seconds = int(m.group(1) or 0) * 60 + float(m.group(2)) / (1000 if m.group(3) == "ms" else 1)
+        return min(seconds + 0.5, MAX_RETRY_WAIT_S)
+    return 5 * (attempt + 1)
+
+
+class LLMTruncated(Exception):
+    """Output hit max_tokens or came back empty."""
 
 
 def chat(
     prompt: str,
-    max_tokens: int = 1000,
-    retries: int = 3,
+    max_tokens: int = DEFAULT_MAX_TOKENS,
+    retries: int = 4,
     model: str | None = None,
     api_key: str | None = None,
+    fail_on_truncation: bool = False,
 ) -> str:
     """
     model/api_key: optional per-call overrides (e.g. a caller-supplied BYOK
     key from a request header). Falls back to LLM_MODEL / the provider SDK's
     own env var when not given. Never logged.
+    fail_on_truncation: raise LLMTruncated when the output hit max_tokens or is empty
+    (reasoning models can spend the whole budget before answering).
     """
     if not _LITELLM_AVAILABLE:
         raise RuntimeError(
@@ -62,10 +87,6 @@ def chat(
             )
             if api_key:
                 completion_kwargs["api_key"] = api_key
-            if "gpt-oss" in model:
-                # reasoning model: default effort spends the whole max_tokens budget
-                # on hidden reasoning and returns empty content
-                completion_kwargs["reasoning_effort"] = "low"
             resp = _litellm_completion(**completion_kwargs)
             latency = time.time() - t0
 
@@ -81,7 +102,12 @@ def chat(
                 except Exception:
                     pass
 
-            return resp.choices[0].message.content
+            choice = resp.choices[0]
+            if fail_on_truncation and (
+                getattr(choice, "finish_reason", None) == "length" or not (choice.message.content or "").strip()
+            ):
+                raise LLMTruncated(f"finish_reason={getattr(choice, 'finish_reason', None)}")
+            return choice.message.content
         except Exception as e:
             # Never log the prompt (chart text) or api_key — only enough to
             # diagnose which model/provider failed and why.
@@ -89,8 +115,8 @@ def chat(
                 "llm call failed model=%s byok=%s attempt=%d/%d error=%s: %s",
                 model, bool(api_key), attempt + 1, retries, type(e).__name__, e,
             )
-            if attempt < retries - 1 and ("rate" in str(e).lower() or "429" in str(e)):
-                time.sleep(5 * (attempt + 1))  # 5s, 10s backoff
+            if attempt < retries - 1 and type(e).__name__ in TRANSIENT_ERRORS:
+                time.sleep(retry_delay(e, attempt))
                 continue
             raise
 
@@ -110,23 +136,40 @@ def parse_json(raw: str, model):
 
 def failure_reason(e: Exception) -> str:
     """Degraded-run reason. Never includes chart text."""
+    if isinstance(e, LLMTruncated):
+        return "truncated"
     return "parse_error" if isinstance(e, ValidationError) else f"llm_error ({type(e).__name__})"
 
 
 def chat_parsed(prompt: str, schema, llm_config: dict | None, **kwargs):
     """
     Returns (validated model | None, degraded reason | None). Never raises.
-    Output that fails validation is retried once (LLM output varies run to run);
-    call errors are not, chat() already retries rate limits.
+    Re-runs once based on why the first attempt failed:
+      truncated   -> double max_tokens
+      parse_error -> same call again (output varies run to run)
+      other       -> no re-run (chat() already backs off on transient errors;
+                     auth and bad-request errors will not fix themselves)
     """
     llm_config = llm_config or {}
+    max_tokens = kwargs.pop("max_tokens", DEFAULT_MAX_TOKENS)
     for attempt in range(2):
         try:
-            raw = chat(prompt, model=llm_config.get("model"), api_key=llm_config.get("api_key"), **kwargs)
+            raw = chat(
+                prompt,
+                max_tokens=max_tokens,
+                model=llm_config.get("model"),
+                api_key=llm_config.get("api_key"),
+                fail_on_truncation=True,
+                **kwargs,
+            )
             return parse_json(raw, schema), None
         except Exception as e:
             reason = failure_reason(e)
-            logger.warning("llm output degraded schema=%s reason=%s attempt=%d/2", schema.__name__, reason, attempt + 1)
-            if reason != "parse_error":
+            logger.warning(
+                "llm output degraded schema=%s reason=%s attempt=%d/2", schema.__name__, reason, attempt + 1
+            )
+            if reason == "truncated":
+                max_tokens *= 2
+            elif reason != "parse_error":
                 break
     return None, reason
