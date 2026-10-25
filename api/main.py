@@ -1,7 +1,11 @@
+import asyncio
 import hmac
 import io
+import json
 import logging
 import os
+import queue
+import threading
 import zipfile
 from fastapi import FastAPI, HTTPException, Request, UploadFile, File
 from fastapi.responses import FileResponse, JSONResponse, StreamingResponse
@@ -249,15 +253,10 @@ async def normalize(req: NormalizeRequest, request: Request):
     )
 
 
-@app.post("/analyze", response_model=AnalyzeResponse)
-@limiter.limit("10/minute")
-async def analyze(req: AnalyzeRequest, request: Request):
-    if not req.text or len(req.text.strip()) < 50:
-        raise HTTPException(status_code=400, detail="Text too short. Provide a clinical chart.")
-    llm_config = _build_llm_config_from_headers(request)
+def _run_analyze(req: AnalyzeRequest, llm_config: dict | None, progress=None) -> AnalyzeResponse:
     model_used, used_byok = _llm_meta(llm_config)
     try:
-        result = run_pipeline(req.text.strip(), req.patient_id, llm_config)
+        result = run_pipeline(req.text.strip(), req.patient_id, llm_config, progress)
 
         doctor_report = generate_doctor_report(result, req.patient_id)
         patient_report = generate_patient_report(result)
@@ -302,6 +301,64 @@ async def analyze(req: AnalyzeRequest, request: Request):
     except Exception as e:
         logger.exception("analyze failed patient_id=%s model=%s byok=%s", req.patient_id, model_used, used_byok)
         raise HTTPException(status_code=500, detail=f"Pipeline error: {str(e)}")
+
+
+def _check_analyze_text(req: AnalyzeRequest) -> None:
+    if not req.text or len(req.text.strip()) < 50:
+        raise HTTPException(status_code=400, detail="Text too short. Provide a clinical chart.")
+
+
+@app.post("/analyze", response_model=AnalyzeResponse)
+@limiter.limit("10/minute")
+async def analyze(req: AnalyzeRequest, request: Request):
+    _check_analyze_text(req)
+    return _run_analyze(req, _build_llm_config_from_headers(request))
+
+
+def _sse(event: str, data: dict) -> str:
+    return f"event: {event}\ndata: {json.dumps(data)}\n\n"
+
+
+@app.post("/analyze/stream")
+@limiter.limit("10/minute")
+async def analyze_stream(req: AnalyzeRequest, request: Request):
+    """Same work as /analyze, emitting agent_started / agent_finished / pipeline_done as SSE."""
+    _check_analyze_text(req)
+    llm_config = _build_llm_config_from_headers(request)
+    events: queue.Queue = queue.Queue()
+    cancelled = threading.Event()
+
+    def emit(item: dict) -> None:
+        if not cancelled.is_set():
+            events.put(item)
+
+    def work() -> None:
+        try:
+            result = _run_analyze(req, llm_config, emit)
+            emit({"event": "pipeline_done", **result.model_dump()})
+        except HTTPException as e:
+            emit({"event": "error", "detail": e.detail})
+        events.put(None)
+
+    threading.Thread(target=work, daemon=True).start()
+
+    async def stream():
+        try:
+            while True:
+                try:
+                    item = await asyncio.to_thread(events.get, True, 1)
+                except queue.Empty:
+                    if await request.is_disconnected():
+                        return
+                    continue
+                if item is None:
+                    return
+                yield _sse(item.pop("event"), item)
+        finally:
+            # client gone: in-flight agents finish, nothing more is emitted
+            cancelled.set()
+
+    return StreamingResponse(stream(), media_type="text/event-stream")
 
 
 @app.get("/health")

@@ -6,7 +6,8 @@ import SettingsPanel, { REPO_URL } from "./components/SettingsPanel";
 import ToastStack from "./components/ToastStack";
 import { useSession } from "./hooks/useSession";
 import { useToast } from "./hooks/useToast";
-import { analyzeChart } from "./api";
+import { analyzeChartStream } from "./api";
+import type { AgentName, AgentState } from "./api";
 import { DEFAULT_LLM_CONFIG } from "./types";
 import type { AnalysisResult, AppStep, LLMConfig } from "./types";
 
@@ -20,6 +21,7 @@ export default function App() {
   const [isEditing, setIsEditing] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<AnalysisResult | null>(null);
+  const [agentStates, setAgentStates] = useState<Partial<Record<AgentName, AgentState>>>({});
   const { toasts, push: pushToast, dismiss: dismissToast } = useToast();
 
   const handleFileReady = useCallback((text: string, names: string[]) => {
@@ -34,8 +36,13 @@ export default function App() {
     if (!normalizedText.trim()) return;
     setStep("analyzing");
     setError("");
+    setAgentStates({});
     try {
-      const data = await analyzeChart(normalizedText, patientId, llmConfig);
+      const data = await analyzeChartStream(normalizedText, patientId, llmConfig, (e) => {
+        if (!e.agent) return;
+        const state: AgentState = e.event === "agent_started" ? "running" : e.status ?? "ok";
+        setAgentStates((prev) => ({ ...prev, [e.agent as AgentName]: state }));
+      });
       setResult(data);
       setStep("results");
       if (data.pipeline_status === "degraded") {
@@ -218,22 +225,30 @@ export default function App() {
               </p>
             </div>
             <div className="flex flex-col gap-1.5 w-64">
-              {[
-                "Extracting clinical sections...",
-                "Identifying medications + OpenFDA lookup...",
-                "Building medical timeline...",
-                "Detecting risk flags...",
-                "Generating reports...",
-              ].map((label, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div
-                    className="w-1.5 h-1.5 rounded-full bg-clinical-400 animate-pulse"
-                    style={{ animationDelay: `${i * 200}ms` }}
-                    aria-hidden="true"
-                  />
-                  <span className="text-xs text-slate-500">{label}</span>
-                </div>
-              ))}
+              {([
+                ["ingestion", "Extracting clinical sections..."],
+                ["medication", "Identifying medications + OpenFDA lookup..."],
+                ["timeline", "Building medical timeline..."],
+                ["risk", "Detecting risk flags..."],
+                ["synthesis", "Generating reports..."],
+              ] as [AgentName, string][]).map(([agent, label]) => {
+                const state = agentStates[agent];
+                const dot =
+                  state === "ok" ? "bg-green-500"
+                  : state === "degraded" || state === "error" ? "bg-amber-500"
+                  : state === "running" ? "bg-clinical-400 animate-pulse"
+                  : "bg-slate-300";
+                return (
+                  <div key={agent} className="flex items-center gap-2">
+                    <div className={`w-1.5 h-1.5 rounded-full ${dot}`} aria-hidden="true" />
+                    <span className="text-xs text-slate-500">
+                      {label}
+                      {state === "ok" && " done"}
+                      {state === "degraded" && " degraded"}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         )}

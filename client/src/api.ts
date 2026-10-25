@@ -70,6 +70,49 @@ export async function analyzeChart(
   return handleResponse(res);
 }
 
+export type AgentName = "ingestion" | "medication" | "timeline" | "risk" | "synthesis";
+export type AgentState = "running" | "ok" | "degraded" | "error";
+
+export interface StreamEvent {
+  event: string;
+  agent?: AgentName;
+  status?: AgentState;
+}
+
+// POST + fetch streaming: EventSource only supports GET.
+export async function analyzeChartStream(
+  text: string,
+  patientId: string,
+  llmConfig: LLMConfig | undefined,
+  onEvent: (e: StreamEvent) => void
+): Promise<AnalysisResult> {
+  const res = await fetch(`${API_BASE}/analyze/stream`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...llmHeaders(llmConfig) },
+    body: JSON.stringify({ text, patient_id: patientId }),
+  });
+  if (!res.ok || !res.body) return handleResponse(res);
+
+  const reader = res.body.pipeThrough(new TextDecoderStream()).getReader();
+  let buffer = "";
+  for (;;) {
+    const { value, done } = await reader.read();
+    if (done) throw new Error("Stream ended before pipeline_done");
+    buffer += value;
+    let end: number;
+    while ((end = buffer.indexOf("\n\n")) !== -1) {
+      const block = buffer.slice(0, end);
+      buffer = buffer.slice(end + 2);
+      const [eventLine, dataLine] = block.split("\n");
+      const event = eventLine.slice("event: ".length);
+      const data = JSON.parse(dataLine.slice("data: ".length));
+      if (event === "error") throw new Error(data.detail);
+      if (event === "pipeline_done") return data as AnalysisResult;
+      onEvent({ event, ...data });
+    }
+  }
+}
+
 export interface SampleGroup {
   group: string;
   demo_id: string;
