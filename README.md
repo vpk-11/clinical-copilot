@@ -5,7 +5,7 @@
 
 Multi-agent clinical chart analyzer. Paste a raw patient note and get a structured SOAP note, prioritized red flags, medication reconciliation with drug interaction alerts, and a reconstructed medical timeline.
 
-> **Demo only.** Do not use with real patient data. Clinical text is sent to third-party LLM and tracing services (Anthropic, W&B Weave). No PHI redaction is applied.
+> **Demo only.** Do not use with real patient data. Clinical text is sent to third-party LLM providers (and to W&B Weave if you enable tracing). No PHI redaction is applied.
 
 **🚀 Live Demo:** [clinical-copilot-v5qq.onrender.com](https://clinical-copilot-v5qq.onrender.com/)
 
@@ -16,7 +16,7 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
 ## What It Does
 
 - **SOAP note** structured from unstructured chart text
-- **Red flags** ranked by severity (HIGH / MEDIUM / LOW) using deterministic clinical thresholds plus LLM extraction
+- **Red flags** ranked by severity (HIGH / MEDIUM / LOW) using rules and thresholds plus LLM extraction
 - **Medication list** with OpenFDA drug interaction alerts
 - **Medical timeline** reconstructed from chart history
 - **Optional W&B Weave trace** of every agent call (off by default, opt-in via `WANDB_ENABLED=true`)
