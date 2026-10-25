@@ -19,7 +19,7 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
 - **Red flags** ranked by severity (HIGH / MEDIUM / LOW) using deterministic clinical thresholds plus LLM extraction
 - **Medication list** with OpenFDA drug interaction alerts
 - **Medical timeline** reconstructed from chart history
-- **W&B Weave trace** of every agent call for auditability
+- **Optional W&B Weave trace** of every agent call (off by default, opt-in via `WANDB_ENABLED=true`)
 
 ## Architecture
 
@@ -39,7 +39,7 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
   (deterministic + LLM)             |
         |                           |
         +---------------------------+
-        v  (all 4 results collected)
+        v  (Risk and Timeline both done)
   SynthesisAgent          <- merges into SOAP note + summary
   (LiteLLM)
         |
@@ -50,9 +50,11 @@ Multi-agent clinical chart analyzer. Paste a raw patient note and get a structur
   React UI  +  W&B Weave Dashboard
 ```
 
-Medication and Timeline run in parallel. Risk waits on Medication. Synthesis collects all four.
+Medication and Timeline run in parallel. Risk waits on Medication and Timeline. Synthesis waits on Risk.
 
-Every agent returns `status="ok"` or `status="degraded"` so the API response distinguishes clean runs from fallback runs.
+Weave tracing is off by default and disabled on the Render deploy (`WANDB_ENABLED=false`), so the deployed demo does not run Weave.
+
+Every LLM agent returns `status="ok"` or `status="degraded"` so the API response distinguishes clean runs from fallback runs. LLM JSON is validated with Pydantic (`shared/schemas.py`): malformed output degrades the agent with reason `parse_error` and the deterministic fallback runs.
 
 ## Stack
 
@@ -61,7 +63,7 @@ Every agent returns `status="ok"` or `status="degraded"` so the API response dis
 | Backend | FastAPI 0.136, Python 3.12 |
 | LLM | LiteLLM 1.86 (provider-agnostic, swap via `LLM_MODEL` env var) |
 | Frontend | React 19, Vite 8, TypeScript 6, Tailwind CSS 4 |
-| Tracing | W&B Weave (best-effort, non-blocking) |
+| Tracing | W&B Weave (optional, off by default) |
 | Drug interactions | OpenFDA Drug Label API (no key required) |
 
 ---
@@ -75,11 +77,11 @@ conda create -n clinical-copilot python=3.12
 conda activate clinical-copilot
 pip install -r requirements.txt
 cp .env.example .env
-# Edit .env: add ANTHROPIC_API_KEY and WANDB_API_KEY at minimum
+# Edit .env: add ANTHROPIC_API_KEY (add WANDB_API_KEY and WANDB_ENABLED=true only to trace)
 python -m api.main
 ```
 
-Runs on `PORT` from `.env` (default `8000`). If `WANDB_API_KEY` is missing, the server starts in degraded mode (no tracing, no crash). If `ANTHROPIC_API_KEY` is missing, LLM agents fall back to deterministic extraction.
+Runs on `PORT` from `.env` (default `8000`). Tracing is off unless `WANDB_ENABLED=true`. If `ANTHROPIC_API_KEY` is missing, LLM agents fall back to deterministic extraction.
 
 ### Frontend
 
@@ -108,7 +110,7 @@ Set `API_KEY` in `.env` to enforce API key auth on all endpoints. Clients must s
 |---|---|---|---|
 | `ANTHROPIC_API_KEY` | For Anthropic models | none | Provider key for default LiteLLM model |
 | `WANDB_API_KEY` | No | none | W&B/Weave tracing. Missing = degraded mode |
-| `WANDB_ENABLED` | No | `true` | Set to `false` to disable W&B/Weave entirely, regardless of whether `WANDB_API_KEY` is set |
+| `WANDB_ENABLED` | No | `false` | Set to `true` (with `WANDB_API_KEY`) to turn on W&B/Weave tracing. Off by default |
 | `LLM_MODEL` | No | `anthropic/claude-sonnet-4-20250514` | Any LiteLLM model string |
 | `API_KEY` | No | none | Enables `X-API-Key` header enforcement |
 | `ALLOWED_ORIGINS` | No | `http://localhost:5173` | Comma-separated CORS origin list |
@@ -142,6 +144,7 @@ The matching provider SDK must be installed and the correct API key must be set.
 | POST | `/upload` | Upload PDF, DOCX, MD, or TXT. Returns extracted text. |
 | POST | `/normalize` | Normalize raw chart text via InputAgent. |
 | POST | `/analyze` | Full pipeline. Returns SOAP note, flags, meds, timeline. Rate limited to 10/minute per IP. |
+| POST | `/analyze/stream` | Same work and final payload as `/analyze`, streamed as SSE: `agent_started`, `agent_finished` (agent, status, reason), then `pipeline_done` with the `/analyze` body. Same auth and rate limit. |
 | GET | `/health` | Health check. No auth required. |
 | GET | `/samples` | List sample patient bundles (synthetic data), grouped with demo ID, patient name, and file list. No auth required. |
 | GET | `/samples/{filename}` | Download a single sample file (`.txt`/`.md`/`.pdf`/`.docx`). No auth required. |
@@ -202,6 +205,22 @@ The UI's sample picker shows the Demo ID, a copy button, per-file downloads, and
 To regenerate or edit sample content: `pip install -r requirements-dev.txt`, then edit and
 rerun `python scripts/generate_samples.py`. Not a runtime dependency of the app.
 
+## Tests
+
+```bash
+pip install -r requirements-dev.txt
+pytest                       # hermetic: stubbed LLM, no network, no API key
+python scripts/eval_flags.py # precision/recall of the rule layer, no LLM
+```
+
+`tests/run_all.py` is a separate live-LLM smoke script, not part of CI.
+
+The eval harness scores `agents/risk.py::_deterministic_flags` per flag family against `tests/eval/labels.json` (5 seeded charts plus 3 negatives). Threshold flags (potassium, SpO2, BNP, HR, RR, BP, glucose, troponin, lactate, bicarb, WBC) are numeric cutoffs; STEMI, septic shock, DKA, acute CHF decompensation and stroke are keyword rules on diagnosis text. CI requires recall 1.0 on the seeded set.
+
+## Benchmark
+
+`python scripts/bench_pipeline.py [runs]` compares the production parallel fan-out against a sequential baseline (same agent functions) over the 5 sample ED notes, printing median and p95. It makes live LLM calls (5 charts x runs x 2 modes). No numbers are published here until a run is recorded.
+
 ## Pipeline Smoke Test
 
 ```bash
@@ -228,13 +247,14 @@ clinical-copilot/
 │   ├── risk.py            <- deterministic thresholds + LLM flags
 │   └── synthesis.py       <- SOAP note synthesis
 ├── orchestrator/
-│   └── pipeline.py        <- parallel fan-out orchestration
+│   └── pipeline.py        <- parallel fan-out orchestration, optional progress callback
 ├── api/
 │   ├── main.py            <- FastAPI app, auth middleware, CORS, endpoints
 │   └── limiter.py         <- slowapi rate limiter instance
 ├── shared/
 │   ├── llm.py             <- LiteLLM wrapper, single LLM entry point
 │   ├── models.py          <- AgentMessage TypedDict contract
+│   ├── schemas.py         <- Pydantic shapes for LLM JSON output
 │   ├── parser.py          <- PDF/DOCX/TXT/MD text extraction
 │   └── reports.py         <- doctor + patient markdown report generation
 ├── weave_integration/
@@ -257,8 +277,10 @@ clinical-copilot/
 │   └── vite.config.ts
 ├── samples/               <- synthetic patient document bundles, downloadable from the UI
 ├── scripts/
-│   └── generate_samples.py <- authors samples/ content (needs requirements-dev.txt)
-├── tests/                 <- pipeline test runner (samples/ has the fixtures)
+│   ├── generate_samples.py <- authors samples/ content (needs requirements-dev.txt)
+│   ├── eval_flags.py      <- precision/recall of the deterministic risk rules
+│   └── bench_pipeline.py  <- parallel vs sequential latency (live LLM)
+├── tests/                 <- pytest suite, eval labels, live smoke runner
 ├── .env.example
 ├── requirements.txt
 ├── requirements-dev.txt
