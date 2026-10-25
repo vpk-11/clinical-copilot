@@ -1,0 +1,18 @@
+PATIENT: Test Negative One | DOB: 1970-01-01
+DATE: 2026-01-10
+
+CHIEF COMPLAINT:
+Routine hypertension follow-up.
+
+MEDICATIONS:
+1. Amlodipine 5mg PO daily
+2. Atorvastatin 20mg PO daily
+
+VITALS:
+BP 128/80, HR 72, RR 14, SpO2 98% on RA, Temp 36.8C
+
+LABS (TODAY):
+Na 140, K 4.2, Cr 0.9, Hgb 14.1, WBC 6.5
+
+ASSESSMENT & PLAN:
+1. Hypertension, controlled. Continue current regimen.

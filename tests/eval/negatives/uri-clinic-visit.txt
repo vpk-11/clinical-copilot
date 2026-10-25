@@ -1,0 +1,17 @@
+PATIENT: Test Negative Two | DOB: 1992-06-02
+DATE: 2026-02-14
+
+CHIEF COMPLAINT:
+Cough and sore throat for 3 days.
+
+MEDICATIONS:
+1. Ibuprofen 400mg PO PRN
+
+VITALS:
+BP 118/74, HR 84, RR 16, SpO2 99% on RA, Temp 37.4C
+
+LABS (TODAY):
+WBC 9.1, Glucose 96
+
+ASSESSMENT & PLAN:
+1. Viral upper respiratory infection. Supportive care and fluids.

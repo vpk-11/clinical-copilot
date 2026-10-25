@@ -1,0 +1,18 @@
+PATIENT: Test Negative Three | DOB: 1965-09-20
+DATE: 2026-03-03
+
+CHIEF COMPLAINT:
+Annual diabetes review.
+
+MEDICATIONS:
+1. Metformin 1000mg PO BID
+2. Lisinopril 10mg PO daily
+
+VITALS:
+BP 132/82, HR 76, RR 15, SpO2 97% on RA
+
+LABS (TODAY):
+Na 139, K 4.6, Cr 1.0, Glucose 142, Hgb 13.2
+
+ASSESSMENT & PLAN:
+1. Type 2 diabetes, stable. Continue metformin.
