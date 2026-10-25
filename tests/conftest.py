@@ -14,11 +14,14 @@ class StubLLM:
     def __init__(self):
         self.response = '{"soap_note": {"subjective": "s", "objective": "o", "assessment": "a", "plan": "p"}, "summary": "sum", "red_flags": []}'
         self.error: Exception | None = None
+        self.queue: list[str] = []  # one-shot responses served before `response`
+        self.calls = 0
 
     def __call__(self, prompt, *args, **kwargs):
+        self.calls += 1
         if self.error:
             raise self.error
-        return self.response
+        return self.queue.pop(0) if self.queue else self.response
 
 
 @pytest.fixture

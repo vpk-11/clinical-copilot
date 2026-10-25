@@ -72,3 +72,17 @@ def test_synthesis_missing_optional_keys_still_ok(stub_llm):
     msg = synthesis.run(ING, MED, TL, RISK, "t")
     assert msg["status"] == "ok"
     assert msg["payload"]["red_flags"] == [] and msg["payload"]["summary"] == ""
+
+
+def test_parse_error_is_retried_once(stub_llm):
+    stub_llm.queue = ["not json"]
+    stub_llm.response = '{"flags": []}'
+    msg = risk.run(ING, MED, "t")
+    assert msg["status"] == "ok"
+    assert stub_llm.calls == 2
+
+
+def test_call_error_is_not_retried(stub_llm):
+    stub_llm.error = RuntimeError("boom")
+    assert risk.run(ING, MED, "t")["status"] == "degraded"
+    assert stub_llm.calls == 1

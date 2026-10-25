@@ -62,6 +62,10 @@ def chat(
             )
             if api_key:
                 completion_kwargs["api_key"] = api_key
+            if "gpt-oss" in model:
+                # reasoning model: default effort spends the whole max_tokens budget
+                # on hidden reasoning and returns empty content
+                completion_kwargs["reasoning_effort"] = "low"
             resp = _litellm_completion(**completion_kwargs)
             latency = time.time() - t0
 
@@ -110,12 +114,19 @@ def failure_reason(e: Exception) -> str:
 
 
 def chat_parsed(prompt: str, schema, llm_config: dict | None, **kwargs):
-    """Returns (validated model | None, degraded reason | None). Never raises."""
+    """
+    Returns (validated model | None, degraded reason | None). Never raises.
+    Output that fails validation is retried once (LLM output varies run to run);
+    call errors are not, chat() already retries rate limits.
+    """
     llm_config = llm_config or {}
-    try:
-        raw = chat(prompt, model=llm_config.get("model"), api_key=llm_config.get("api_key"), **kwargs)
-        return parse_json(raw, schema), None
-    except Exception as e:
-        reason = failure_reason(e)
-        logger.warning("llm output degraded schema=%s reason=%s", schema.__name__, reason)
-        return None, reason
+    for attempt in range(2):
+        try:
+            raw = chat(prompt, model=llm_config.get("model"), api_key=llm_config.get("api_key"), **kwargs)
+            return parse_json(raw, schema), None
+        except Exception as e:
+            reason = failure_reason(e)
+            logger.warning("llm output degraded schema=%s reason=%s attempt=%d/2", schema.__name__, reason, attempt + 1)
+            if reason != "parse_error":
+                break
+    return None, reason
