@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-# Master switch — set WANDB_ENABLED=false in .env to disable W&B/Weave entirely,
-# independent of whether WANDB_API_KEY is set. Defaults on to preserve existing behavior.
-WANDB_ENABLED = os.environ.get("WANDB_ENABLED", "true").strip().lower() not in ("false", "0", "no")
+# Master switch. Opt-in: set WANDB_ENABLED=true (and WANDB_API_KEY) to trace.
+# Off by default; nothing here runs unless this is on.
+WANDB_ENABLED = os.environ.get("WANDB_ENABLED", "false").strip().lower() in ("true", "1", "yes")
 
 try:
     import wandb as _wandb
