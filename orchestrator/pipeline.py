@@ -1,5 +1,6 @@
 import asyncio
 import uuid
+from collections.abc import Callable
 from concurrent.futures import ThreadPoolExecutor
 from agents import ingestion, medication, timeline, risk, synthesis
 
@@ -18,7 +19,12 @@ _executor = ThreadPoolExecutor(max_workers=4)
 
 
 
-def run_pipeline(raw_text: str, patient_id: str = "ANON", llm_config: dict | None = None) -> dict:
+def run_pipeline(
+    raw_text: str,
+    patient_id: str = "ANON",
+    llm_config: dict | None = None,
+    progress: Callable[[dict], None] | None = None,
+) -> dict:
     try:
         loop = asyncio.get_running_loop()
     except RuntimeError:
@@ -28,31 +34,50 @@ def run_pipeline(raw_text: str, patient_id: str = "ANON", llm_config: dict | Non
         # Called from within FastAPI's event loop — run in a fresh thread
         import concurrent.futures
         with concurrent.futures.ThreadPoolExecutor(max_workers=1) as pool:
-            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id, llm_config)).result()
-    return asyncio.run(_async_pipeline(raw_text, patient_id, llm_config))
+            return pool.submit(asyncio.run, _async_pipeline(raw_text, patient_id, llm_config, progress)).result()
+    return asyncio.run(_async_pipeline(raw_text, patient_id, llm_config, progress))
 
 
-async def _async_pipeline(raw_text: str, patient_id: str, llm_config: dict | None = None) -> dict:
+async def _async_pipeline(
+    raw_text: str,
+    patient_id: str,
+    llm_config: dict | None = None,
+    progress: Callable[[dict], None] | None = None,
+) -> dict:
     trace_id = str(uuid.uuid4())
     loop = asyncio.get_event_loop()
 
-    ing = await loop.run_in_executor(_executor, ingestion.run, raw_text, patient_id)
+    async def step(name, fn, *args):
+        if progress:
+            progress({"event": "agent_started", "agent": name})
+        msg = await loop.run_in_executor(_executor, fn, *args)
+        if progress:
+            progress({
+                "event": "agent_finished",
+                "agent": name,
+                "status": msg["status"],
+                "reason": msg["payload"].get("reason", ""),
+            })
+        return msg
+
+    ing = await step("ingestion", ingestion.run, raw_text, patient_id)
     ing["trace_id"] = trace_id
 
-    med_future = loop.run_in_executor(_executor, medication.run, ing, trace_id, llm_config)
-    tl_future  = loop.run_in_executor(_executor, timeline.run,   ing, trace_id, llm_config)
-    med, tl = await asyncio.gather(med_future, tl_future)
-
-    risk_msg = await loop.run_in_executor(_executor, risk.run, ing, med, trace_id, llm_config)
-
-    synth = await loop.run_in_executor(
-        _executor, synthesis.run, ing, med, tl, risk_msg, trace_id, llm_config
+    med, tl = await asyncio.gather(
+        step("medication", medication.run, ing, trace_id, llm_config),
+        step("timeline", timeline.run, ing, trace_id, llm_config),
     )
+    risk_msg = await step("risk", risk.run, ing, med, trace_id, llm_config)
+    synth = await step("synthesis", synthesis.run, ing, med, tl, risk_msg, trace_id, llm_config)
+
+    degraded = [m for m in (med, tl, risk_msg, synth) if m["status"] != "ok"]
+    status = "degraded" if degraded else "ok"
+    reason = "; ".join(f"{m['agent']}: {m['payload'].get('reason', '')}" for m in degraded)
 
     return {
         "trace_id":              trace_id,
-        "pipeline_status":       synth["status"],
-        "pipeline_status_reason": synth["payload"].get("reason", ""),
+        "pipeline_status":       status,
+        "pipeline_status_reason": reason,
         "soap_note":             synth["payload"]["soap_note"],
         "red_flags":             synth["payload"]["red_flags"],
         "summary":               synth["payload"].get("summary", ""),

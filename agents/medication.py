@@ -1,15 +1,17 @@
-import json
+import logging
 import re
 import requests
-import uuid
 from datetime import datetime
 from shared.models import AgentMessage
-from shared.llm import chat
+from shared.llm import chat, parse_json, failure_reason
+from shared.schemas import MedicationsOut
 
 EXTRACT_PROMPT = """Return ONLY raw JSON. No prose. No markdown.
 Extract ALL medications from this clinical text.
 {{"medications": [{{"name": "drug name", "dose": "dose or unknown", "frequency": "frequency or unknown"}}]}}
 Text: {text}"""
+
+logger = logging.getLogger(__name__)
 
 ACE_INHIBITORS = {"lisinopril", "enalapril", "ramipril", "benazepril", "captopril"}
 POTASSIUM_SPARING_DIURETICS = {"spironolactone", "eplerenone", "amiloride", "triamterene"}
@@ -63,20 +65,23 @@ def _merge_medications(primary: list, fallback: list) -> list:
     return merged
 
 
-def extract_medications(text: str, llm_config: dict | None = None) -> list:
+def extract_medications(text: str, llm_config: dict | None = None) -> tuple[list, str | None]:
+    """Returns (medications, degraded_reason). Regex fallback always merged in."""
     fallback = _fallback_extract_medications(text)
     llm_config = llm_config or {}
+    reason = None
     try:
         raw = chat(
             EXTRACT_PROMPT.format(text=text[:2000]),
             model=llm_config.get("model"),
             api_key=llm_config.get("api_key"),
         )
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        extracted = json.loads(raw).get("medications", [])
-    except Exception:
+        extracted = [m.model_dump() for m in parse_json(raw, MedicationsOut).medications]
+    except Exception as e:
+        reason = failure_reason(e)
+        logger.warning("medication extraction degraded: %s", reason)
         extracted = []
-    return _merge_medications(extracted, fallback)
+    return _merge_medications(extracted, fallback), reason
 
 
 def check_interactions(meds: list) -> list:
@@ -108,12 +113,15 @@ def check_interactions(meds: list) -> list:
 
 def run(ingestion_msg: dict, trace_id: str, llm_config: dict | None = None) -> AgentMessage:
     text = ingestion_msg["payload"]["raw_text"]
-    meds = extract_medications(text, llm_config)
+    meds, reason = extract_medications(text, llm_config)
     interactions = check_interactions(meds)
+    payload = {"medications": meds, "interactions": interactions}
+    if reason:
+        payload["reason"] = reason
     return AgentMessage(
         agent="medication",
-        status="ok",
-        payload={"medications": meds, "interactions": interactions},
+        status="degraded" if reason else "ok",
+        payload=payload,
         trace_id=trace_id,
         timestamp=datetime.utcnow().isoformat()
     )

@@ -1,9 +1,11 @@
-import json
+import logging
 import re
-import uuid
 from datetime import datetime
 from shared.models import AgentMessage
-from shared.llm import chat
+from shared.llm import chat, parse_json, failure_reason
+from shared.schemas import TimelineOut
+
+logger = logging.getLogger(__name__)
 
 PROMPT = """Return ONLY raw JSON. No prose. No markdown.
 Extract a chronological medical timeline from the clinical text below.
@@ -50,21 +52,25 @@ def run(ingestion_msg: dict, trace_id: str, llm_config: dict | None = None) -> A
     text = ingestion_msg["payload"]["raw_text"]
     fallback = _fallback_events(text)
     llm_config = llm_config or {}
+    reason = None
     try:
         raw = chat(
             PROMPT.format(text=text[:3000]),
             model=llm_config.get("model"),
             api_key=llm_config.get("api_key"),
         )
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        events = json.loads(raw).get("events", [])
-    except Exception:
+        events = [e.model_dump() for e in parse_json(raw, TimelineOut).events]
+    except Exception as e:
+        reason = failure_reason(e)
+        logger.warning("timeline degraded: %s", reason)
         events = []
-    events = _merge_events(events, fallback)
+    payload = {"events": _merge_events(events, fallback)}
+    if reason:
+        payload["reason"] = reason
     return AgentMessage(
         agent="timeline",
-        status="ok",
-        payload={"events": events},
+        status="degraded" if reason else "ok",
+        payload=payload,
         trace_id=trace_id,
         timestamp=datetime.utcnow().isoformat()
     )

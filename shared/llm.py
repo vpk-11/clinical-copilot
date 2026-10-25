@@ -95,3 +95,15 @@ if _OBS_AVAILABLE:
         chat = _weave.op(name="llm:chat")(chat)
     except Exception:
         pass
+
+
+def parse_json(raw: str, model):
+    """Validate LLM JSON against a pydantic model. Raises ValidationError."""
+    raw = raw.replace("```json", "").replace("```", "").strip()
+    return model.model_validate_json(raw)
+
+
+def failure_reason(e: Exception) -> str:
+    """Degraded-run reason. Never includes chart text."""
+    from pydantic import ValidationError
+    return "parse_error" if isinstance(e, ValidationError) else f"llm_error ({type(e).__name__})"

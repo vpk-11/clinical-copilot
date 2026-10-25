@@ -1,9 +1,12 @@
 import json
+import logging
 import re
-import uuid
 from datetime import datetime
 from shared.models import AgentMessage
-from shared.llm import chat
+from shared.llm import chat, parse_json, failure_reason
+from shared.schemas import RiskOut
+
+logger = logging.getLogger(__name__)
 
 PROMPT = """Return ONLY raw JSON. No prose. No markdown.
 You are a clinical decision support system. Analyze for RED FLAGS.
@@ -158,21 +161,25 @@ def run(
     meds = json.dumps(medication_list)
     fallback = _deterministic_flags(text, medication_list)
     llm_config = llm_config or {}
+    reason = None
     try:
         raw = chat(
             PROMPT.format(text=text[:3000], medications=meds),
             model=llm_config.get("model"),
             api_key=llm_config.get("api_key"),
         )
-        raw = raw.replace("```json", "").replace("```", "").strip()
-        flags = json.loads(raw).get("flags", [])
-    except Exception:
+        flags = [f.model_dump() for f in parse_json(raw, RiskOut).flags]
+    except Exception as e:
+        reason = failure_reason(e)
+        logger.warning("risk degraded: %s", reason)
         flags = []
-    flags = _merge_flags(flags, fallback)
+    payload = {"flags": _merge_flags(flags, fallback)}
+    if reason:
+        payload["reason"] = reason
     return AgentMessage(
         agent="risk",
-        status="ok",
-        payload={"flags": flags},
+        status="degraded" if reason else "ok",
+        payload=payload,
         trace_id=trace_id,
         timestamp=datetime.utcnow().isoformat()
     )
